@@ -117,6 +117,68 @@
 
 ---
 
+### Hyperframes 整库总览
+
+- **一句话**：用 HTML 写代码直接渲染成视频的框架（HeyGen 官方出品），23 个 skills 覆盖全流程，适合想"代码驱动做视频"的人
+- **核心用法**：
+  1. 本质：composition 就是一份 HTML，DOM 用 `data-*` 属性声明时间轴，动画 runtime 可 seek，媒体播发框架接管
+  2. 标准循环：`init` 脚手架 → 查 primitive（`catalog --query` 找现成效果，有就别手写）→ 写 composition → `lint` 快检 → `check` 终检 → `preview` 预览 → 用户点头后 `render`
+  3. 先搜后写：要缩放/运镜/剪辑/音频，先读对应的 domain skill（keyframes/audio/media-use），不要自己造轮子
+  4. 质量门：`--quality draft` 迭代、`looks` 首版、`delivery` 交付；渲染只在用户批准后
+  5. 需要 Node.js 22+ 和 FFmpeg；先 `npx hyperframes usage --json` 查额度
+- **安装**：`claude plugin marketplace add heygen-com/hyperframes && claude plugin install hyperframes@hyperframes`
+- **怎么用它搞钱**：接"代码视频"定制单（数据可视化/产品演示/动态海报）：改数字就重新渲染，边际成本为零；Fiverr 上 AI 视频 $100/单档，代码驱动是降本利器
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐61,304
+
+### hyperframes-cli（开发循环）
+
+- **一句话**：Hyperframes 的命令行工作流 skill，10 步标准循环，适合天天用 Hyperframes 做片子的人
+- **核心用法**：
+  1. `init` 建项目 → `catalog --query` 找现成动效 primitive → `add` 装上，手写是最后选项
+  2. 查时间轴用 `timeline --json`（别去读 index.html 和子文件，token 省一半）
+  3. 边写边 `lint`，结构大改后必 lint；终检用 `check`（自带 lint + 浏览器审计）
+  4. 预览 `preview --background`，确认 200 才给用户看；渲染分三档：draft/looks/delivery
+  5. 改崩了用 `history undo` 回滚，别手改回去；每轮开头 `history begin`、结尾 `history end`
+  6. 验片：`ffprobe` 对时长/fps，读 render summary 第二行看 GPU 模式（Linux 上 screenshot+software gpu 是慢路径）
+- **安装**：随 Hyperframes 插件安装，`npx hyperframes` 即用
+- **怎么用它搞钱**：把"10 步循环"变成你的 SOP，接单时"当天出片"就是竞争力；改片用 history 回滚，不返工就是利润
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐61,304
+
+### hyperframes-core（技术契约）
+
+- **一句话**：Hyperframes 的 HTML composition 技术规范，适合要自己写/改 composition 的人
+- **核心用法**：
+  1. 两种根形态别混用：standalone（顶层 index.html，根 div 直接放 body）vs 子 composition（包 `<template>`，style/script 放 template 里面）
+  2. 时间轴三件套：`data-track-index` 管轨道、`class="clip"` 声明片段、子 composition 用 `data-composition-src` 挂载
+  3. 确定性规则：时间轴必须可 seek，布局/文字适配有硬性约束，lint 会拦
+  4. 按需读 references：最小骨架看 minimal-composition、选单体还是模块化看 composition-patterns、剪辑手法抄 creator-editing-recipes
+- **安装**：随 Hyperframes 插件安装
+- **怎么用它搞钱**：吃透这套契约才能做"模板化"：一套 composition 换数据批量出片（百条矩阵号/多语言版本），这是代码视频真正的规模红利
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐61,304
+
+### general-video（通用视频工作流）
+
+- **一句话**：Hyperframes 的通用视频生产流程 skill（非幻灯片/非 Remotion 移植走这个），适合从零做一条片子的人
+- **核心用法**：
+  1. 先过"源适配器"：音频/图片/字体/调色走 `/media-use` 解析复用，别自己用 CSS 瞎调；Figma 链接先跑 `/figma` 拿资产和 token
+  2. 有 BRIEF.md 就按 brief 的 workflow 执行，不问问题；没有就跑 intent interview 再路由
+  3. 脚手架：`npx hyperframes init "videos/<项目>" --non-interactive --example=blank --skill=general-video`
+  4. 素材要先 `npx hyperframes auth status` 确认登录，离线走可用 provider，卡住就如实报 blocker
+- **安装**：随 Hyperframes 插件安装
+- **怎么用它搞钱**：这是"接单-生产"的主流程跑道；Figma 到成片一条龙，设计师客户给稿你直接出片
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐61,304
+
+### Remotion 最佳实践
+
+- **一句话**：Remotion 官方的 skills 路由器（创建/排版/地图/多媒体/交互），适合用 React 写代码做视频的人
+- **核心用法**：
+  1. 这是个路由器：做新视频/新项目读 remotion-create、写 React 排版读 remotion-markup、地图动画读 remotion-maps、剪视频/取元数据读 remotion-multimedia
+  2. 原则：用户说"做个视频"先开 Studio 预览，别直接渲染；保持预览开着让用户边看边指挥
+  3. 用户在外部改了代码别覆盖，先确认
+  4. 和 Hyperframes 的关系：Remotion 是 React 范式，Hyperframes 是 HTML 范式；已有 Remotion 工程可走 remotion-to-hyperframes 迁移
+- **安装**：`npx skills add remotion-dev/remotion`（官方仓库 skills 目录）
+- **怎么用它搞钱**：React 开发者做视频零学习成本；接数据视频/播客剪辑单，代码复用率高
+- **来源**：[remotion-dev/remotion](https://github.com/remotion-dev/remotion) · skills 目录
 ## 文案钩子（5 个）
 
 ### price-anchor
@@ -287,6 +349,113 @@
 
 ---
 
+### marketingskills 整库总览
+
+- **一句话**：约 50 个营销 skills 的军火库（文案/广告/邮件/定价/转化率/获客），给做产品、做增长、接营销单的人一次装全
+- **核心用法**：
+  1. 一行装全库：`npx skills add coreyhaines31/marketingskills`，也可以只装单个 skill
+  2. 按任务调 skill：写落地页调 copywriting、投广告调 ad-creative、做邮件调 emails、定价格调 pricing、提转化调 cro
+  3. 每个 skill 开头先读"上下文清单"再动手（产品/受众/目标），不做无米之炊
+  4. skills 之间互相引用（如 copywriting 写完调 copy-editing 逐行改），形成流水线
+- **安装**：`npx skills add coreyhaines31/marketingskills`
+- **怎么用它搞钱**：接"增长顾问"单：用这套 skills 给客户做落地页+广告+邮件全案；或自己做产品时，营销环节全部 AI 化，一个人跑完获客闭环
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+
+### copywriting（转化文案）
+
+- **一句话**：写高转化营销文案的专家 skill（落地页/定价页/首页），适合卖产品、卖服务、做落地页的人
+- **核心用法**：
+  1. 动笔前先收四类上下文：页面目的（唯一行动是什么）、受众（痛点/顾虑/原话）、产品（差异化/证据）、流量来源
+  2. 原则：清晰压倒 clever（清晰定位带来 +81% 转化）、利益压倒功能、具体压倒模糊（"每周报告从 4 小时压到 15 分钟"）、一屏只讲一个论点
+  3. 写完过"去 AI 味"质检：禁"不是 X 而是 Y"翻案句、禁三段否定排比、禁"in today's fast-paced world"式 stock 开头、短文案不用破折号
+  4. 缺证据就标 `[NEED: ...]`，绝不编造数据和 testimonials
+- **安装**：`npx skills add coreyhaines31/marketingskills --skill copywriting`
+- **怎么用它搞钱**：接落地页文案单；自己卖课/卖服务时，销售页转化率直接挂钩收入
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+
+### ad-creative（广告创意量产）
+
+- **一句话**：批量生成/迭代付费广告创意（标题/描述/正文），适合投 Meta/Google/TikTok 广告的人
+- **核心用法**：
+  1. 四种模式：从零生成、用历史投放数据迭代、按获胜主题扩展、按平台规格校验
+  2. 动手前收五类信息：平台与版位、产品与卖点、受众与认知阶段、历史数据（CTR/ROAS 哪条赢）、品牌与合规红线
+  3. 核心循环：拉数据 → 找获胜模式 → 按获胜主题生成新变体 → 探新角度 → 校验规格 → 交付
+  4. 覆盖 UGC/绿幕/口播/信息流等多格式，文案同样过"去 AI 味"质检
+- **安装**：`npx skills add coreyhaines31/marketingskills --skill ad-creative`
+- **怎么用它搞钱**：接广告代投/素材单：别人一条条写，你一次出几十条变体做 A/B 测试；自己带货时素材迭代速度就是 ROAS
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+
+### lead-magnets（获客钩子）
+
+- **一句话**：设计"拿邮箱换资料"的获客钩子（电子书/清单/模板/课程），适合做私域、做 newsletter、卖课的人
+- **核心用法**：
+  1. 原则：只解决一个具体痛点（"怎么写出有回复的冷邮件" > "营销指南"）；钩子匹配购买阶段（认知期给教育、决策期给实施帮助）
+  2. 先盘点：现有内容资产（博客/指南/数据）、内部用的模板工具、能包装的专业经验
+  3. 选形态：清单/模板/速查表转化最高，别一上来就写电子书
+  4. 钩子要自然导向产品试用，写完调 copywriting 写落地页、调 emails 写捕获后的培育序列
+- **安装**：`npx skills add coreyhaines31/marketingskills --skill lead-magnets`
+- **怎么用它搞钱**：帮客户搭"钩子→邮箱→培育→成交"漏斗收服务费；自己做号时这是涨粉最稳的路径之一
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+
+### pricing（定价策略）
+
+- **一句话**：定产品价格/分档的 skill（SaaS/电商/服务都适用），适合定价拍脑袋、总被客户嫌贵的人
+- **核心用法**：
+  1. 三轴定价：分档含什么（Packaging）、按什么收费（用户数/用量/一口价）、收多少（Price Point）
+  2. 价值定价：价格定在"次优替代品"和"客户感知价值"之间；成本只是底线不是依据；不对标竞品价格（那是抄它的战略）
+  3. 核心洞察：多数"能不能便宜点"本质是"分子不够大/分母不够小"，先调价值再调价格
+  4. 新品定价先定"能学到东西的价格"，跑数据再调
+- **安装**：`npx skills add coreyhaines31/marketingskills --skill pricing`
+- **怎么用它搞钱**：给 SaaS/知识付费做定价咨询；自己产品定价从"成本加成"换成"价值定价"，利润率直接上一个台阶
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+
+### offers（offer 设计）
+
+- **一句话**：设计让人无法拒绝的 offer（服务/课程/教练/信息产品/高客单），适合卖高价但转化不行的人
+- **核心用法**：
+  1. 核心哲学：offer 本体比页面重要——弱 offer 配好文案慢慢爬，强 offer 配平庸文案立刻转化；多数"文案不行"本质是"offer 不行"
+  2. 价值公式（Hormozi）：价值 =（梦想结果 × 感知达成概率）/（时间延迟 × 付出成本）；调四个杠杆：放大梦想、加证据与保证提概率、加速首胜、降低付出
+  3. 适用：服务/课程/教练/信息产品/5K 美金以上高客单；自助 SaaS 分档订阅以 pricing 为主
+  4. 设计完调 copywriting 写销售页、调 pricing 定档
+- **安装**：`npx skills add coreyhaines31/marketingskills --skill offers`
+- **怎么用它搞钱**：帮知识付费/教练做 offer 重构收咨询费；自己卖课时 offer 改好，转化率翻倍比投流便宜得多
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+
+### cro（转化率优化）
+
+- **一句话**：按影响力排序诊断落地页的 skill，适合有流量没转化的页面
+- **核心用法**：
+  1. 先定三要素：页面类型、唯一转化目标、流量来源（不同来源预期不同）
+  2. 按影响力顺序查：价值主张 5 秒能否看懂 → 标题是否讲清核心价值 → 是否客户语言 → 行动路径 friction
+  3. 强标题公式：结果导向（"得到 X 而不用忍受 Y"）、具体数字、社交证明（"10,000+ 团队在用"）
+  4. 表单 abandonment、A/B 测试想法有专门的 references 可调
+- **安装**：`npx skills add coreyhaines31/marketingskills --skill cro`
+- **怎么用它搞钱**：接"落地页诊断"单，按页收费；自己投流时，转化率提 1 个点等于获客成本降一截
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+
+### cold-email（冷邮件）
+
+- **一句话**：写高回复率冷邮件的 skill，适合做 BD、找客户、谈合作的人
+- **核心用法**：
+  1. 动笔前收五样：写给谁（职位/公司/为什么是他）、要什么（回复/会议/介绍）、价值点、证据、研究信号（融资/招聘/动态）
+  2. 语气像同行不像销售：多用"you"，少用"I/we"；每句必须推动回复，否则删
+  3. 个性化必须连着痛点（删掉开头个性化整封还通顺 = 个性化失败）
+  4. 一个低 friction 的 CTA（"值得聊聊？"），不要一上来就约会议
+- **安装**：`npx skills add coreyhaines31/marketingskills --skill cold-email`
+- **怎么用它搞钱**：帮 B2B/出海客户做冷启动获客；自己找商单、谈分销时，回复率就是 pipeline
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+
+### emails（邮件序列）
+
+- **一句话**：搭邮件培育序列的 skill（欢迎/培育/唤醒/ onboarding），适合有名单但不会养的人
+- **核心用法**：
+  1. 先定序列类型（欢迎/培育/唤醒/售后/销售），再定受众触发点和转化目标
+  2. 原则：一封邮件只干一件事；按生命周期查缺补漏（onboarding/留存/账单/唤醒）
+  3. 写单封邮件调 copy-guidelines（结构/语气/长度/个性化字段）
+  4. 和 lead-magnets 联动：钩子捕获 → 欢迎序列 → 培育 → 成交
+- **安装**：`npx skills add coreyhaines31/marketingskills --skill emails`
+- **怎么用它搞钱**：帮客户搭"名单→培育→复购"邮件体系收服务费；自己做私域时，邮件是复购率最高的渠道之一
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
 ## 去 AI 味（2 个）
 
 > 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用），以下两条均为英文原版技能的人味清单。
@@ -363,4 +532,5 @@
 
 ## 更新日志
 
+- 2026-10-12：v1.1 追加 P0 三套（marketingskills 9 条、Hyperframes 4 条、Remotion 1 条），共 39 个 skills
 - 2026-10-12：v1 首版，25 个 skills（12 个源仓库深读提炼），每日深度比对分析持续收录中
