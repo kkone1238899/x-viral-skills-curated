@@ -192,6 +192,18 @@
 - **怎么用它搞钱**：把爆款文章 / 播客变成自己的播客节目或 PPT 课程素材，一源多用；或接"知识库搭建 / 播客代运营"单
 - **来源**：[joeseesun/qiaomu-anything-to-notebooklm](https://github.com/joeseesun/qiaomu-anything-to-notebooklm) · ⭐6229
 
+### product-launch-video（产品发布视频）
+
+- **一句话**：产品官网 URL / 文案 brief 一键变成产品发布或推广视频（SaaS 宣传、功能揭示、产品演示），适合要给自己或客户产品做推广片的人
+- **核心用法**：
+  1. 入口固定 `/hyperframes`：意图路由把"给产品做推广片"分流到这个 skill，意图不明就先走主路由
+  2. 动工前先 `npx hyperframes skills update product-launch-video` 保鲜，再 `npx hyperframes capture "<URL>" -o ./capture` 抓官网素材，站内文案直接当配音底稿
+  3. 8 步编排：setup（锁 BRIEF.md）→ capture → design system → storyboard/script → audio → visual → frames（每帧一个 sub-agent 并行）→ render 成片
+  4. 三处用户门卡：brief（Step 0）、故事板（Step 3）、成片（Step 6）；音频/BGM 先 `npx hyperframes auth status` 看走 HeyGen 还是本地引擎
+- **安装**：随 Hyperframes 插件安装，`npx hyperframes` 即用；`npx hyperframes skills update product-launch-video` 保鲜
+- **怎么用它搞钱**：给 SaaS / 独立开发者做产品发布视频代工——他们缺这个；自己产品上线时一条推广片全渠道分发
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐61891
+
 ## 文案钩子（5 个）
 
 ### price-anchor
@@ -558,6 +570,6 @@
 
 ## 更新日志
 
-- 2026-10-13：v1.2 追加 2 条（qiaomu-anything-to-notebooklm 内容转播客 6229★、irinabuht12-oss/marketing-skills 广告审计整库 4398★），共 41 个 skills
+- 2026-10-13：v1.2 追加 3 条（qiaomu-anything-to-notebooklm 内容转播客 6229★、irinabuht12-oss/marketing-skills 广告审计整库 4398★、hyperframes product-launch-video 产品发布视频），共 42 个 skills
 - 2026-10-12：v1.1 追加 P0 三套（marketingskills 9 条、Hyperframes 4 条、Remotion 1 条），共 39 个 skills
 - 2026-10-12：v1 首版，25 个 skills（12 个源仓库深读提炼），每日深度比对分析持续收录中
