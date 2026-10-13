@@ -216,6 +216,19 @@
 - **怎么用它搞钱**：接"品牌动态设计/宣传片"单——本地管线成本透明、每阶段可审，交付显得专业；或做模板化短视频代工
 - **来源**：[GTKottman/mortiflix-oss](https://github.com/GTKottman/mortiflix-oss) · ⭐593
 
+### baoyu-design（Claude Design 本地运行）
+
+- **一句话**：把 Anthropic 官方 Claude Design（claude.ai/design 背后的设计引擎）打包成可本地运行的 Agent Skill，在 Cursor/Claude Code/Codex 里直接出 UI 高保真稿、交互原型、落地页、PPT——不用官网、不用另开订阅，@dotey 实测推荐
+- **核心用法**：
+  1. 一条命令装进你的 agent：`npx skills add jimliu/baoyu-design -g`（自动识别 agent，装到 .claude/skills 或 .agents/skills；也可用 --agent 指定）
+  2. 直接说"设计/原型/画个落地页/做个 PPT"即触发——harness-agnostic，Cursor/Claude Code/Codex 及 70+ agents 通用
+  3. 按完整设计方法论干活：需求→设计系统/品牌 token→线框→高保真→交互原型，全是自包含 HTML，留在你自己仓库里
+  4. 交付物广：UI mockup、交互原型、落地页、仪表盘、移动端界面、幻灯片（deck 结构的可导出 PPTX）、HTML 邮件、海报
+  5. 最佳搭配 Claude Opus 4.8；中英双语 README+CHANGELOG，四端同 prompt 截图对比可查
+- **安装**：`npx skills add jimliu/baoyu-design -g`（官方安装方式）
+- **怎么用它搞钱**：接 UI/落地页/原型设计单（"AI 出稿+人工精修"交付，快 10 倍）；给客户做产品演示原型/融资 Deck，按项目收费
+- **来源**：[jimliu/baoyu-design](https://github.com/jimliu/baoyu-design) · ⭐4344
+
 ## 文案钩子（5 个）
 
 ### price-anchor
@@ -554,6 +567,19 @@
 - **怎么用它搞钱**：把私域操盘经验变成可调用工具——帮客户做账号诊断/选品/成交，按次收费；底层有 2.8 万条知识原子+333 概念节点背书
 - **来源**：[xyaz1313/xyskill](https://github.com/xyaz1313/xyskill) · ⭐79
 
+### anatomy（概念可视化演示）
+
+- **一句话**：把"讲清楚一个技术概念"变成"造一台会动的机器"：生成带四色等距渲染、可交互、可动效的精美 SVG/HTML 解释图（悬停拆解、实时读数、WebGL 特效），适合写技术文档、做课程、做产品落地页的人
+- **核心用法**：
+  1. 先定尺寸再动手：Figure（40–80 零件，一个机制）/ Hero（80–150 零件）/ Epic（整车整厂级，只给 Hero 方案不直接做）——命名尺寸再开工
+  2. 真实第一：先收齐要解释对象的真实数值和行为（尺寸、阈值、曲线），所有读数、动效、标注都从同一个模型驱动，绝不编造
+  3. 发明机器：选一台"机制与概念一一对应"的机器（仪表、绘图仪、试车台），一句话说清"什么在动、动代表什么"；自带 8 个完整示例，先翻最接近的再开工
+  4. 按工作流建造：列零件清单（40 起）→ 布世界坐标与相机（默认方位 45°/仰角 30°）→ 几何一次成型 → 从后往前画（painter's order）→ 装卡片框（标题/交互提示/实时读数）→ 加缓动动效
+  5. 像批评家一样验：headless Chrome 截图 + `node build.mjs --audit` 归零 + line check 归零 + 4× 放大看每个接缝，迭代到"一眼是真东西"
+- **安装**：`npx skills add wheresryan22/anatomy -g -a claude-code`（官方安装方式；也支持 OpenCode/Codex）
+- **怎么用它搞钱**：接"技术解释图"定制单（产品落地页/白皮书/课程的可交互演示图，一张图抵十页文档）；或做付费技术课程的配图演示，一套工作流复用
+- **来源**：[wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) · ⭐7762（2026-10-08 开源，5 天破 7000★，中英文社区反复推荐）
+
 ## 去 AI 味（2 个）
 
 > 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用），以下两条均为英文原版技能的人味清单。
@@ -642,7 +668,8 @@
 
 ## 更新日志
 
-- 2026-10-13：v1.3 X 信号轮追加 6 条（mortiflix-oss 本地动态设计 593★、xhs-account-teardown 小红书账号拆解 66★、xhs-product-picker 选品 120★、qiaomu-seo 446★、xyskill 中文商业整库 79★、cangjie-skill 知识蒸馏 11247★），共 48 个 skills；淘汰 genmedia-labs/skills（与 runcomfy 刷量生态关联、27★ 未达双高）、flowkit-labs/skills（16★）、analyze_xhs_blogger_skill（404 无效）
+- 2026-10-13：v1.4 X 信号轮追加 2 条（wheresryan22/anatomy 概念可视化演示 7762★、jimliu/baoyu-design Claude Design 本地运行 4344★），共 50 个 skills；淘汰 vercel-labs/skills（34264★ 基础设施工具、无 SKILL.md，不符合收录标准）、101-skills/superpowers（7★）与 qu-skills/superpowers（3★，榜单高 install 均为刷量嫌疑）、travisvn/BehiSecc awesome-claude-skills（纯链接列表，库内已有两个同类）、Jeffallan/claude-skills·SnailSploit/Claude-Red·SawyerHood/dev-browser·juliusbrussee/caveman·nextlevelbuilder/ui-ux-pro-max·emilkowalski/skills·vercel-labs/agent-skills·obra/superpowers（dev/设计/安全向，与五章节需求不匹配）、designed-by-ai/skills（15★ 未达标）、scrapegraphai/just-scrape（CLI 非 skill 形态）；skillhub.cn 新上新 10 个全无 GitHub 源码不可验证、热榜通用"专家.Skill"需求不匹配，0 收录
+- 2026-10-13：v1.3 X 信号轮追加 6 条（mortiflix-oss 本地动态设计 593★、xhs-account-teardown 小红书账号拆解 66★、xhs-product-picker 选品 120★、qiaomu-seo 446★、xyskill 中文商业操盘 79★、cangjie-skill 知识蒸馏 11247★），共 48 个 skills；淘汰 genmedia-labs/skills（与 runcomfy 刷量生态关联、27★ 未达双高）、flowkit-labs/skills（16★）、analyze_xhs_blogger_skill（404 无效）
 - 2026-10-13：v1.2 追加 3 条（qiaomu-anything-to-notebooklm 内容转播客 6229★、irinabuht12-oss/marketing-skills 广告审计整库 4398★、hyperframes product-launch-video 产品发布视频），共 42 个 skills
 - 2026-10-12：v1.1 追加 P0 三套（marketingskills 9 条、Hyperframes 4 条、Remotion 1 条），共 39 个 skills
 - 2026-10-12：v1 首版，25 个 skills（12 个源仓库深读提炼），每日深度比对分析持续收录中
