@@ -204,6 +204,18 @@
 - **怎么用它搞钱**：给 SaaS / 独立开发者做产品发布视频代工——他们缺这个；自己产品上线时一条推广片全渠道分发
 - **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐61891
 
+### mortiflix-oss（本地动态设计工作室）
+
+- **一句话**：本地 motion design 工作室：brief→脚本→风格帧→转场→动态分镜→配音→音乐→成片，每阶段人工审核，适合要做高质量动态设计/品牌片但不想外包的人
+- **核心用法**：
+  1. `/mortiflix` 进向导：`mortiflix init` 建工作室，`setup status` 按部就班装转场/配音/音乐/素材/发布/3D 六件套（每件可跳过）
+  2. 铁律：每道门卡都要主人亲口确认——approve、改意见、重开都等你说，绝不自动过；Key 永远自己在终端输，不进聊天
+  3. 后端三选一：claude-code（走你的 Claude 订阅）、anthropic-api（按 token 计费）、demo（占位试玩）
+  4. 管线按阶段推进：brief→脚本→风格帧→animatic→音乐→终剪；每阶段 `review` 看产物再决定下一步
+- **安装**：`git clone https://github.com/GTKottman/mortiflix-oss.git ~/mortiflix-oss && cd ~/mortiflix-oss && npm install && npm link`（需 Node 20+、ffmpeg）
+- **怎么用它搞钱**：接"品牌动态设计/宣传片"单——本地管线成本透明、每阶段可审，交付显得专业；或做模板化短视频代工
+- **来源**：[GTKottman/mortiflix-oss](https://github.com/GTKottman/mortiflix-oss) · ⭐593
+
 ## 文案钩子（5 个）
 
 ### price-anchor
@@ -494,6 +506,54 @@
 - **怎么用它搞钱**：接"投放审计"单——一次审计输出可见度评分卡 + 竞品引用源地图 + 修补动作清单，按次收费；AI 可见度是 2026 年新蓝海，信息差大
 - **来源**：[irinabuht12-oss/marketing-skills](https://github.com/irinabuht12-oss/marketing-skills) · ⭐4398
 
+### xhs-account-teardown（小红书账号拆解）
+
+- **一句话**：丢一个小红书账号链接，自动抓主页扒封面逐张识图，按六问框架输出账号拆解报告+9:16 长图，适合做小红书获客/对标拆解的人
+- **核心用法**：
+  1. `python3 scripts/fetch_profile.py "<账号链接>" -o <工作目录>` 抓主页：profile.json + notes_list.json + 每篇笔记封面图（匿名可抓，零登录零 Cookie）
+  2. 用视觉能力逐张识图：封面模板（栏目期号/钩子句/点睛句）、品类、客单价、橱窗销量，登记进封面目录表
+  3. 带 token 的笔记链接可深度拆解：`python3 scripts/fetch_note.py` 拿全文+全部图片；拿不到的数据必须标"未获取"，严禁编造
+  4. 按六问框架出《账号拆解报告.md》：每板块一句"一句话公式"，结尾"能抄的/抄不了的/最大的坑"三段；默认再出一张可分享的 9:16 长图
+- **安装**：`git clone https://github.com/chenjin-cmd/xhs-account-teardown`（需 python3 + curl；宿主要会执行 shell、读图、写文件）
+- **怎么用它搞钱**：接"对标账号拆解"单——别人还在手动截图，你一条命令出报告+长图；或做自己小红书起号前的调研
+- **来源**：[chenjin-cmd/xhs-account-teardown](https://github.com/chenjin-cmd/xhs-account-teardown) · ⭐66
+
+### xhs-product-picker（小红书虚拟产品选品）
+
+- **一句话**：输入你的职业/技能背景，输出完整虚拟产品方案：定位+指南目录+引流款/利润款/旗舰款矩阵+7 天行动计划，适合想在小红书卖虚拟产品的人
+- **核心用法**：
+  1. 把仓库完整文件夹装进 Agent 的 skills 目录（不要只拷 SKILL.md，案例摘要和配置指南是配套）
+  2. 告诉它你的背景：职业、技能、能持续输出什么——它按背景定产品定位
+  3. 拿到三层产品矩阵：引流款（低价拉人）/利润款（主力变现）/旗舰款（高客单），每款给标题和指南目录
+  4. 按 7 天行动计划执行：内容选题→首篇笔记→引流钩子→成交路径，一步步来
+- **安装**：下载仓库 ZIP 解压，把 `xhs-product-picker` 完整文件夹复制到 Agent 的 skills 目录（或用平台的 Skill 导入功能）
+- **怎么用它搞钱**：虚拟产品是小红书最低成本变现——零库存、边际成本为零；用它把自己的经验打包成可卖的指南/模板/课
+- **来源**：[chensongyue10-design/xhs-product-picker](https://github.com/chensongyue10-design/xhs-product-picker) · ⭐120
+
+### qiaomu-seo（SEO 全流程审计）
+
+- **一句话**：网站 SEO 全流程 skill：技术审计、关键词意图、AI 搜索可见度（ChatGPT/Perplexity/AI Overviews），适合做独立站/内容站获客的人
+- **核心用法**：
+  1. 先定工作模式：advisory（只出方案）/ page（单页深挖）/ incident（流量掉了查因）/ migration（改版保权）/ experiment（AB 测 SEO）
+  2. 按模块路由：技术审计读 audit-playbook、关键词读 keyword-content、AI 搜索读 ai-search——一次只读相关的，不全量灌
+  3. 证据铁律：每个结论标"直接观察/合理推断/缺少证据"，绝不编造搜索量排名流量；排名收录 AI 引用一律不承诺
+  4. 实施只做最小安全改动：改前拍快照、改后验证、保留回滚信息
+- **安装**：`npx skills add joeseesun/qiaomu-seo`（同作者的 qiaomu-anything-to-notebooklm 已入库，内容转播客+SEO 成套用）
+- **怎么用它搞钱**：接独立站 SEO 审计单；AI 搜索可见度是 2026 新需求，帮客户在 ChatGPT/Perplexity 里被引用
+- **来源**：[joeseesun/qiaomu-seo](https://github.com/joeseesun/qiaomu-seo) · ⭐446
+
+### xyskill 整库总览（中文商业操盘 48 skills）
+
+- **一句话**：48 个中文商业 skills：私域运营、成交诊断、选品诊断、长内容切片、爆款复刻、公众号排版，一句 `/xy` 点名即用，适合做私域/内容/小生意的人
+- **核心用法**：
+  1. `npx -y skills add xyaz1313/xyskill -g --all` 装完，`/xy 新手入门` 开场
+  2. 直接说事不用记名：`/xy 客户嫌贵不回消息`——路由按意图分发（每个 skill 首行自报家门）
+  3. 获客线：xy-clip（直播逐字稿切短视频方案，零字新增硬约束）/ xy-replica（爆款结构复刻）/ xy-idea-desk（想法变选题）
+  4. 变现线：xy-private-ops（私域运营）/ xy-close（成交诊断）/ xy-selection（选品诊断）/ xy-fde（接单报价）/ xy-biz-scan（商业诊断）
+- **安装**：`npx -y skills add xyaz1313/xyskill -g --all`（支持 Claude Code/Codex/豆包/WorkBuddy）
+- **怎么用它搞钱**：把私域操盘经验变成可调用工具——帮客户做账号诊断/选品/成交，按次收费；底层有 2.8 万条知识原子+333 概念节点背书
+- **来源**：[xyaz1313/xyskill](https://github.com/xyaz1313/xyskill) · ⭐79
+
 ## 去 AI 味（2 个）
 
 > 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用），以下两条均为英文原版技能的人味清单。
@@ -550,6 +610,18 @@
 - **怎么用它搞钱**：把验证过的 skill 打包卖（kk 的 13 视频库就是这么攒出来的）；或给企业做定制 skill 咨询，一个 skill 一份报价
 - **来源**：[anthropics/skills](https://github.com/anthropics/skills) · ⭐180612
 
+### cangjie-skill（书/播客蒸馏成 skills）
+
+- **一句话**：把一本书、长视频转写、播客、课程蒸馏成一组可被 Agent 调用的 skills（方法论/决策框架/清单原子化），适合想把知识变成生产力工具的人
+- **核心用法**：
+  1. 准备文本来源（PDF/EPUB/转写稿）+ 元信息（书名+作者+出版年）；视频/播客先拿转写文本——绝不凭记忆蒸馏
+  2. 确认使用目的：自己学→single 模式；接入工作流/跨书组合→pack 模式
+  3. 跑 RIA-TV++ 五阶段流水线：整书理解→5 agent 并行提取→三重验证→能力卡→压力测试→`cangjie.py compile` 编译交付
+  4. 首次先蒸馏 1 份试点验证流程再批量；确定性脚本需 Python 3.10+ 和 PyYAML
+- **安装**：下载 [v2.5.0 Release 包](https://github.com/kangarooking/cangjie-skill/releases) 解压安装完整目录（或 `git clone https://github.com/kangarooking/cangjie-skill`）
+- **怎么用它搞钱**：把行业经典书/课程蒸馏成专属 skills，打包卖"知识工具箱"；或给企业做知识资产 skill 化咨询
+- **来源**：[kangarooking/cangjie-skill](https://github.com/kangarooking/cangjie-skill) · ⭐11247
+
 ---
 
 ---
@@ -570,6 +642,7 @@
 
 ## 更新日志
 
+- 2026-10-13：v1.3 X 信号轮追加 6 条（mortiflix-oss 本地动态设计 593★、xhs-account-teardown 小红书账号拆解 66★、xhs-product-picker 选品 120★、qiaomu-seo 446★、xyskill 中文商业整库 79★、cangjie-skill 知识蒸馏 11247★），共 48 个 skills；淘汰 genmedia-labs/skills（与 runcomfy 刷量生态关联、27★ 未达双高）、flowkit-labs/skills（16★）、analyze_xhs_blogger_skill（404 无效）
 - 2026-10-13：v1.2 追加 3 条（qiaomu-anything-to-notebooklm 内容转播客 6229★、irinabuht12-oss/marketing-skills 广告审计整库 4398★、hyperframes product-launch-video 产品发布视频），共 42 个 skills
 - 2026-10-12：v1.1 追加 P0 三套（marketingskills 9 条、Hyperframes 4 条、Remotion 1 条），共 39 个 skills
 - 2026-10-12：v1 首版，25 个 skills（12 个源仓库深读提炼），每日深度比对分析持续收录中
