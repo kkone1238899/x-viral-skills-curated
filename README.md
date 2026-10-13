@@ -179,6 +179,19 @@
 - **安装**：`npx skills add remotion-dev/remotion`（官方仓库 skills 目录）
 - **怎么用它搞钱**：React 开发者做视频零学习成本；接数据视频/播客剪辑单，代码复用率高
 - **来源**：[remotion-dev/remotion](https://github.com/remotion-dev/remotion) · skills 目录
+
+### qiaomu-anything-to-notebooklm（内容转播客）
+
+- **一句话**：微信文章 / 网页 / YouTube / 小宇宙 / B站 / PDF 一键喂给 NotebookLM，批量生成播客 / PPT / 思维导图，适合做知识二创和内容矩阵的人
+- **核心用法**：
+  1. 克隆到 `~/.claude/skills/` 跑 `./install.sh` 一键装依赖（自带 `check_env.py` 做 13 项环境检查）
+  2. 按提示配 weixin-read-mcp（微信文章走 MCP 抓取，绕反爬），再 `notebooklm login` 认证
+  3. 自然语言触发：`/qiaomu-anything-to-notebooklm [微信文章链接]`，或"把这个 B 站视频转写传到 NotebookLM"
+  4. 付费墙自动绕过（300+ 站点：UA 伪装 → AMP → archive.today）；小宇宙 / 喜马拉雅 / B 站转写走 Get笔记 API（带时间戳）
+- **安装**：`cd ~/.claude/skills/ && git clone https://github.com/joeseesun/qiaomu-anything-to-notebooklm && cd qiaomu-anything-to-notebooklm && ./install.sh`（需 `notebooklm login`）
+- **怎么用它搞钱**：把爆款文章 / 播客变成自己的播客节目或 PPT 课程素材，一源多用；或接"知识库搭建 / 播客代运营"单
+- **来源**：[joeseesun/qiaomu-anything-to-notebooklm](https://github.com/joeseesun/qiaomu-anything-to-notebooklm) · ⭐6229
+
 ## 文案钩子（5 个）
 
 ### price-anchor
@@ -456,6 +469,19 @@
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill emails`
 - **怎么用它搞钱**：帮客户搭"名单→培育→复购"邮件体系收服务费；自己做私域时，邮件是复购率最高的渠道之一
 - **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+
+### marketing-skills（广告审计整库总览）
+
+- **一句话**：49 个投放审计型 skills：Google / Meta / Reddit / LinkedIn 广告诊断、SEO、AI 可见度审计，适合接投放代运营或做独立站获客的人（与 marketingskills 的文案/转化线互补）
+- **核心用法**：
+  1. `skills/` 下 49 个独立 SKILL.md 按需触发，每个 skill 都列明交付物（先跑 AI Visibility Audit 定基线）
+  2. `ai-visibility-audit`：自动生成 30–50 个品类问句面板，测 ChatGPT / Claude / Gemini / Perplexity 里品牌 vs 竞品被引用率，输出引用源地图和修补清单
+  3. `wasted-spend-finder` / `meta-ads-audit`：抓烧钱广告组的具体问题（频次/出价/创意疲劳），按动作清单逐项修
+  4. 要读实时账户数据时接免费 Ryze MCP：`claude mcp add ryze --transport http https://connector.get-ryze.ai/mcp`
+- **安装**：`cd ~/.claude/skills/ && git clone https://github.com/irinabuht12-oss/marketing-skills`（按 `skills/` 目录名逐个启用）
+- **怎么用它搞钱**：接"投放审计"单——一次审计输出可见度评分卡 + 竞品引用源地图 + 修补动作清单，按次收费；AI 可见度是 2026 年新蓝海，信息差大
+- **来源**：[irinabuht12-oss/marketing-skills](https://github.com/irinabuht12-oss/marketing-skills) · ⭐4398
+
 ## 去 AI 味（2 个）
 
 > 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用），以下两条均为英文原版技能的人味清单。
@@ -532,5 +558,6 @@
 
 ## 更新日志
 
+- 2026-10-13：v1.2 追加 2 条（qiaomu-anything-to-notebooklm 内容转播客 6229★、irinabuht12-oss/marketing-skills 广告审计整库 4398★），共 41 个 skills
 - 2026-10-12：v1.1 追加 P0 三套（marketingskills 9 条、Hyperframes 4 条、Remotion 1 条），共 39 个 skills
 - 2026-10-12：v1 首版，25 个 skills（12 个源仓库深读提炼），每日深度比对分析持续收录中
