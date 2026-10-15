@@ -229,7 +229,95 @@
 - **怎么用它搞钱**：接 UI/落地页/原型设计单（"AI 出稿+人工精修"交付，快 10 倍）；给客户做产品演示原型/融资 Deck，按项目收费
 - **来源**：[jimliu/baoyu-design](https://github.com/jimliu/baoyu-design) · ⭐4344
 
-## 文案钩子（5 个）
+### video-transcribe（视频转文字）
+- **一句话**：视频/音频转文字 + 核心提炼：YouTube / B站 / 本地文件，有字幕直接抓、没字幕用 Gemini 2.5 Flash AI 听写，还能输出结构化要点——适合做二创、知识蒸馏、口播文案复用的人。
+- **核心用法**：
+  1. 字幕优先策略：URL 先抓现有字幕（快、0 API 消耗），无字幕才下音频走转录
+  2. 本地文件：`python3 Tools/transcribe.py --input "video.mp4"`，ffmpeg 自动提音频；URL 直接传 YouTube / B站链接
+  3. 引擎二选一：默认 Gemini 2.5 Flash（有标点、需免费申请的 API Key）；离线用 `--engine mlx`（mlx-whisper，仅 Apple Silicon）
+  4. 两条工作流：`Workflows/Transcribe.md` 只转录，`Workflows/Extract.md` 提炼要点，两者都要就先转再提炼
+  5. 输出默认存 `~/Downloads/transcript_时间戳.txt`，`--output` 可指定路径
+- **安装**：`git clone https://github.com/Jane-xiaoer/claude-skill-video-transcribe`，按 README 装依赖（`pip3 install google-genai` + `brew install yt-dlp ffmpeg` + Gemini 免费 API Key）
+- **怎么用它搞钱**：把爆款视频批量转文字攒"拆解库"，二创脚本 / 课程笔记 / 公众号文章一鱼多吃；或接"视频内容整理 / 会议纪要"单，按分钟收费。
+- **来源**：[Jane-xiaoer/claude-skill-video-transcribe](https://github.com/Jane-xiaoer/claude-skill-video-transcribe) · ⭐231
+
+### faceless-explainer（无脸讲解视频）
+- **一句话**：任意文本（文章 / 笔记 / 话题 / brief）变成无脸讲解视频：视觉逐场景现发明（字体排印 / 抽象图形 / 图表 / 数据可视化），适合做知识号 / 讲解号、真人不出镜的人。
+- **核心用法**：
+  1. 入口固定 `/hyperframes`：意图路由把"讲清楚一个话题但无素材"分流到这个 skill
+  2. 动工前先 `npx hyperframes skills update faceless-explainer` 保鲜；BGM / 音效先走 `/media-use` 解析
+  3. 流程：定设计系统 → 规划教学故事线 → 逐帧建 composition（Step 5 每帧一个 sub-agent 并行）→ render 成片
+  4. 三处用户门卡：brief（Step 0）、故事板（Step 3）、成片（Step 6）；无采集步骤，所有视觉都是下游发明的
+- **安装**：随 Hyperframes 插件安装，`npx hyperframes` 即用
+- **怎么用它搞钱**：批量做"无脸知识视频"矩阵号（读书 / 科普 / 财经解读），一条文本 = 一条视频；或接"文章转视频"代工单。
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐64,282
+
+### talking-head-recut（口播/访谈包装）
+- **一句话**：给现成的口播 / 访谈 / 播客视频加定时设计的图形卡片（动态标题 / 下三分之一 / 数据标注 / 金句卡 / 画中画），按转录文本同步；原片不动，适合做访谈节目 / 播客切片 / 课程包装的人。
+- **核心用法**：
+  1. 准备好本地口播 / 访谈视频（完整播放，16:9 / 9:16 / 4:5 任选画幅）
+  2. Agent 按转录内容设计卡片（时机 + 内容），每张卡的 HTML 直接在对话里写好
+  3. 组装成单个 composition HTML，用 `hyperframes` 渲染成 MP4；纯字幕需求走 embedded-captions
+  4. 无固定卡片模板——卡片从转录实际内容里长出来，按需出现
+- **安装**：随 Hyperframes 插件安装；动工前 `npx hyperframes skills update talking-head-recut` 保鲜
+- **怎么用它搞钱**：接"访谈 / 播客视频包装"单（别人给 raw 片子，你交付带图形包装的成片）；自己做口播号时，卡片包装是完播率杠杆。
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐64,282
+
+### motion-graphics（动态图形短片）
+- **一句话**：10 秒内的设计驱动动态图形：动态字体 / 数字滚动 / 图表打击 / Logo 定格 / 动态地图 / 推文卡片动画，motion 本身就是信息——适合做品牌片头 / 数据可视化 / 营销动效的人。
+- **核心用法**：
+  1. 适用场景：10 秒内、无旁白、无真人主体——长片 / 旁白 / 多场景走 general-video
+  2. 先 `npx hyperframes skills update motion-graphics` 保鲜；Logo / 素材来自 Figma 先跑 `/figma`（带 SVG 清洗和品牌 token 绑定）
+  3. 选类型：kinetic typography / stat count-up / chart hit / logo sting / lower-third / animated map / tweet card / 网页 UI 动画
+  4. 输出 MP4 或透明通道 overlay（可叠到别的视频上用）
+- **安装**：随 Hyperframes 插件安装，`npx hyperframes` 即用
+- **怎么用它搞钱**：接"品牌动态设计 / 数据可视化"单（一条 10 秒动效抵十页 PPT）；或打包"社交媒体动效模板"按套卖。
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐64,282
+
+### music-to-video（音乐卡点视频）
+- **一句话**：一首音乐变成卡点同步的视频：歌词视频 / 幻灯片 / 动感宣传片，音乐定全部节奏；零素材也能出完整片子，适合做音乐号 / 卡点视频 / 歌词视频的人。
+- **核心用法**：
+  1. 输入一首音乐（音频文件 / 从视频提取 / 按情绪 brief 生成），用户图片 / 视频可选——全部按同一 beat 网格剪辑
+  2. 流程：Step 0 落 `hyperframes.json` + `assets/bgm.mp3` → Step 1 音频分析出 `audiomap.json` → Step 2/3 排 STORYBOARD.md → Step 4 每帧一个 sub-agent 并行建 composition → Step 5 组装 → Step 6 渲染
+  3. 两处门卡：Step 3 计划确认、Step 6 渲染确认；无旁白无网站采集，字体和模板是下限
+- **安装**：随 Hyperframes 插件安装；`npx hyperframes skills update music-to-video` 保鲜
+- **怎么用它搞钱**：批量做卡点 / 歌词视频矩阵号；接"音乐人宣传片 / 品牌 BGM 视频"单，beat 网格是专业卖点。
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐64,282
+
+### embedded-captions（特效字幕）
+- **一句话**：给口播视频加字幕：默认"安静字幕轨 + 高潮处嵌入式大字"，另有纯电影感嵌入和 35 套主题风格（含中文"炸 / 特效 / 酷炫字幕"）；转录和人物抠像全本地跑，适合做口播号 / 知识视频的人。
+- **核心用法**：
+  1. 先选视觉身份：CATALOG.md 里 35 套风格按"视觉身份"选，不按后端引擎选；默认 Standard（字幕轨 + 高潮嵌入），要纯电影感选 Cinematic
+  2. 工作流全本地：转录 + 人物抠像都在本地跑；多镜头素材先分段再套字幕
+  3. Theme 模式是完整主题宪法：正文字体范式 × 高潮大字 × 前景特效 × 底板反应，从 themes 注册表组合
+  4. 这是字幕不是包装——要图形卡片叠加走 talking-head-recut
+- **安装**：随 Hyperframes 插件安装；`npx hyperframes skills update embedded-captions` 保鲜
+- **怎么用它搞钱**：接"口播视频字幕包装"单（特效字幕是中文口播号标配）；或做"字幕风格包"卖给 MCN / 代运营团队。
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐64,282
+
+### stickman-video-director（火柴人动画视频）
+- **一句话**：文案 / 话题变成火柴人线条动画讲解视频（默认 60 秒，10 秒倍数可调），4 套视觉风格（含治愈故事风），走 Gemini Omni Flash 分段生成 prompt 包——适合做职场 / 情感解说类短视频、成本趋近于 0 的人。
+- **核心用法**：
+  1. 准备源材料 + 定三要素：画幅（16:9 / 9:16）、时长（10 秒倍数，默认 60s）、视觉风格（4 套：经典极简 / 现代 Zeke / 史前手绘 / 治愈故事风）
+  2. 先读 `references/storyboard-template.md` + `style-catalog.md` + `voice-continuity.md`，按 5 阶段高完播情绪叙事弧结构化
+  3. 输出导演提案确认后，生成 N 个独立 10 秒分镜 prompt（N=时长/10），走 Gemini Omni Flash 逐段生成
+  4. 配剪映热门解说音色 + 口播文案即成片
+- **安装**：`git clone https://github.com/kaomei/stickman-video-director`（`skills/directing-stickman-videos` 为 skill 本体）
+- **怎么用它搞钱**：批量做火柴人解说矩阵号（职场 / 情感 / 故事赛道），"妥妥的爆款预定，成本趋近于 0"；或接"文案转火柴人视频"代工单。
+- **来源**：[kaomei/stickman-video-director](https://github.com/kaomei/stickman-video-director) · ⭐2124（@CrazyKaomei 推荐帖 21K 浏览）
+
+### youtube-clipper（长视频切短视频）
+- **一句话**：YouTube 长视频智能剪辑：下载 + AI 生成精细章节 → 你选片段 → 自动剪辑 + 中英双语字幕烧录 + 总结文案，适合做二创切片、搬运本地化的人。
+- **核心用法**：
+  1. 环境检测：`yt-dlp` + FFmpeg（含 libass，字幕烧录必需）+ `pysrt`
+  2. 下载视频和字幕，AI 分析生成几分钟粒度的精细章节
+  3. 人工选片段 → 自动剪辑、字幕翻译成中英双语并烧录进视频
+  4. 附带生成总结文案（可直接当发布文案）
+- **安装**：`npx skills add https://github.com/op7418/Youtube-clipper-skill`（官方安装方式）
+- **怎么用它搞钱**：把英文长视频批量切成中文双语短视频发抖音 / B站，做"海外精选"类账号；或接"长视频切片"代工单。
+- **来源**：[op7418/Youtube-clipper-skill](https://github.com/op7418/Youtube-clipper-skill) · ⭐2240
+
+## 文案钩子（8 个）
 
 ### price-anchor
 - **一句话**：中高客单价产品被嫌贵、促销缺"超值感"时，用"高价锚点先行"让价格显得划算的定价文案法；源自关健明《爆款文案》第三章。
@@ -396,6 +484,39 @@
 - **安装**：`npx skills add sergebulaev/tiktok-skills`（README 官方安装方式）
 - **怎么用它搞钱**：给品牌/商家做 TikTok 代运营时，每天筛 3 个热点只推 1 个"适配 + 有转折"的蹭法，避免翻车；把"热点日历 + 转折脚本"做成按周交付的服务。
 - **来源**：[sergebulaev/tiktok-skills](https://github.com/sergebulaev/tiktok-skills) · ⭐69
+
+### oh-story-claudecode（网文工具箱）
+- **一句话**：网文写作工具箱（14 个 skills）：长篇 / 短篇的扫榜 → 拆文 → 规划 → 写作 → 审稿 → 封面全流程，扫起点 / 番茄 / 晋江 / 七猫榜单找风口——适合写网文变现的人。
+- **核心用法**：
+  1. 主入口 `/story` 自动路由：`/story-long-scan` 扫榜（看什么火）→ `/story-long-analyze` 拆文（黄金三章 / 灵感库）
+  2. `/story-long-write` 规划长篇结构 / 细纲 / 连载；`/story-short-write` 写短篇（盐言 / 万字）
+  3. `/story-review` 审稿、`/story-cover` 做封面、`/story-import` 导入
+  4. `/story dashboard` 开本地工作台，管作者习惯与连载进度
+- **安装**：`git clone https://github.com/zenstory-ai/oh-story-claudecode` 后按 README 安装（Claude Code / Codex / OpenCode / OpenClaw 均支持）
+- **怎么用它搞钱**：网文是最成熟的 AI 变现赛道之一：扫榜找风口 → 拆文学生产 → 多平台投稿，工具箱把"试错成本"压到最低。
+- **来源**：[zenstory-ai/oh-story-claudecode](https://github.com/zenstory-ai/oh-story-claudecode) · ⭐7605
+
+### khazix-writer（卡兹克公众号长文）
+- **一句话**：数字生命卡兹克的公众号长文写作 skill：以"有见识的普通人在认真聊一件打动他的事"为底色，素材（PDF / brief / 新闻链接 / 语音转文字）→ 长文——适合写公众号深度长文的人。
+- **核心用法**：
+  1. 丢素材（PDF / brief / 新闻链接 / 语音转文字）说"帮我写篇文章"即触发；不用于短内容（小红书 / 推特 / 朋友圈）
+  2. 按卡兹克价值观写：永远对世界保持好奇、讲人话有活人感
+  3. 同仓库另有 aihot（热点引擎）/ hv-analysis 等 skill，按需取用（`khazix-writer` 为写作本体）
+  4. 适用：公众号文章、写稿子、续写扩写、按固定风格出稿
+- **安装**：`git clone https://github.com/KKKKhazix/khazix-skills`（取 `khazix-writer` 目录；或按 README 用 `<skill-name>` 路径安装）
+- **怎么用它搞钱**：接"公众号深度稿代写"单（风格化长文比通用 AI 稿溢价高）；自己做 IP 时，固定风格 = 固定读者预期。
+- **来源**：[KKKKhazix/khazix-skills](https://github.com/KKKKhazix/khazix-skills) · ⭐21427
+
+### notebooklm-skill（NotebookLM 研究转内容）
+- **一句话**：把 Google NotebookLM 变成研究后端：URL / 文本 / 本地文件建笔记本 → 带引用提问 → 深网研究 → 一键生成文章 / 播客 / 视频 / 幻灯片 / 思维导图，适合写深度文 / 行研、做知识付费的人。
+- **核心用法**：
+  1. `notebooklm-auth setup` 登录（走浏览器 session + 非官方 web API，配额 / 稳定性不保证）
+  2. 建笔记本：URL / 文本 / 本地文件 / RSS 都行；带引用问答 + 深网研究，结果可追溯到来源
+  3. 一键生成：文章 / 播客音频 / 视频 / 幻灯片 / 学习指南 / 测验 / 思维导图 / 信息图 / 数据表
+  4. 与库内 qiaomu-anything-to-notebooklm 互补：那个是"内容→多形态"，这个是"研究→内容"
+- **安装**：`git clone https://github.com/claude-world/notebooklm-skill && ./install.sh`（13 个 MCP tools 可选接入）
+- **怎么用它搞钱**：接"行研 / 深度内容代写"单（带引用的研究报告溢价高）；把公开资料变成自己的课程 / 播客 / 专栏，一源多吃。
+- **来源**：[claude-world/notebooklm-skill](https://github.com/claude-world/notebooklm-skill) · ⭐471
 
 ---
 
@@ -580,6 +701,52 @@
 - **怎么用它搞钱**：接"技术解释图"定制单（产品落地页/白皮书/课程的可交互演示图，一张图抵十页文档）；或做付费技术课程的配图演示，一套工作流复用
 - **来源**：[wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) · ⭐7762（2026-10-08 开源，5 天破 7000★，中英文社区反复推荐）
 
+### xiaohongshu-ops-skill（小红书全链路运营）
+- **一句话**：小红书全链路运营 skill：账号定位 → 选题研究 → 内容生产 → 发布执行 → 复盘修复，含 Viral Copy 链路（输爆款 URL 学封面 / 标题 / 正文结构）——适合想系统化做小红书获客的人。
+- **核心用法**：
+  1. 先定账号定位与内容方向，再跑选题产出 + 争议点挖掘
+  2. 竞品 / 同类账号对标：扒爆款的封面 / 标题 / 正文结构
+  3. Viral Copy 链路：输入爆款 URL，高贴合学习其结构并生成可发布近似结构笔记
+  4. 发布后快速复盘：互动结构、评论回复、热点追踪
+  5. 注意：默认走 OpenClaw 内置浏览器流程（profile="openclaw"），其他 agent 按 `references/xhs-runtime-rules.md` 配环境
+- **安装**：`git clone https://github.com/Xiangyu-CAS/xiaohongshu-ops-skill`（含 knowledge-base + references + examples）
+- **怎么用它搞钱**：接"小红书代运营"单：一套流程多账号复用；或自己起号做私域获客，选题 / 复盘环节标准化后边际成本极低。
+- **来源**：[Xiangyu-CAS/xiaohongshu-ops-skill](https://github.com/Xiangyu-CAS/xiaohongshu-ops-skill) · ⭐2428
+
+### guizang-social-card-skill（小红书图文/封面）
+- **一句话**：文字秒变小红书竖版轮播图 + 公众号封面：28 套版式 / 10 套主题，直接转 PNG，还能做 Live Photo 动态卡片——适合做小红书图文号、公众号的人。
+- **核心用法**：
+  1. 输入文章 / 脚本 / 截图 / 产品笔记 / 字幕 / 照片，指定用途（小红书 3:4 轮播 / 公众号封面 / Live Photo）
+  2. 按 28 套版式 × 10 套主题选风格（杂志风 / Swiss Style 可选）
+  3. 输出封面 + 内容页成套卡片，直接转 PNG 发布；视频素材可做 Live Photo 拼图
+  4. 产物放任务文件夹，不污染 skill 根目录
+- **安装**：`git clone https://github.com/op7418/guizang-social-card-skill`
+- **怎么用它搞钱**：接"小红书图文代做"单（封面 + 轮播图成套交付）；自己做图文号时，排版环节从 1 小时压到 5 分钟。
+- **来源**：[op7418/guizang-social-card-skill](https://github.com/op7418/guizang-social-card-skill) · ⭐7540
+
+### guizang-ppt-skill（杂志风演示稿）
+- **一句话**：一句话生成杂志级排版的单文件 HTML 演示稿（横向翻页，含 WebGL 背景 / 演讲者视图 / 讲稿备注）：电子杂志 × 电子墨水 / 瑞士国际主义两套风格，适合做路演 / 方案 / 课程演示的人。
+- **核心用法**：
+  1. 一句话描述需求即生成，两种视觉基调二选一：风格 A 电子杂志 × 电子墨水（衬线 + 流体背景，人文 / 商业发布）、风格 B 瑞士国际主义（无衬线 + 网格点阵，信息驱动）
+  2. 模板在 `assets/template.html`，主题色 / 布局查 `references/themes.md` + `references/layouts.md`
+  3. 自带演讲者视图、观众屏同步、讲稿备注、章节幕封、数据大字报、图片网格
+  4. 输出单 HTML 文件，手机 / 电脑直接打开演讲，不依赖 Office
+- **安装**：`git clone https://github.com/op7418/guizang-ppt-skill`
+- **怎么用它搞钱**：接"路演 PPT / 课程演示稿"单（杂志级排版是差异化卖点）；给自己的课程 / 方案做演示稿，交付质感直接拉高客单价。
+- **来源**：[op7418/guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) · ⭐28013
+
+### wewrite（公众号全流程）
+- **一句话**：公众号写作一条龙 skill 套件（10 个 skills）：选题 → 任务书 → 初稿 → 改写 → 审稿 → 发布 → 数据复盘，带风格人格与质量门，适合做公众号 / 内容 IP 的人。
+- **核心用法**：
+  1. `wewrite-topic` 定选题 → `wewrite-write` 出文章任务书（目标读者 / 核心判断 / 最强反方）+ 主张证据 + 初稿
+  2. `wewrite-rewrite` 改写、`wewrite-review` 过审稿质量门（`artifacts.article` 审稿通过后才生成）
+  3. `wewrite-style` 定风格人格（`style.yaml` + personas，只控制表达偏好不覆盖事实）
+  4. `wewrite-publish` 发布、`wewrite-stats` 数据复盘、`wewrite-visual` 配图
+  5. 全程 `wewrite run` 管理任务状态，CLI 驱动
+- **安装**：`git clone https://github.com/imraywang/wewrite && ./install.sh`
+- **怎么用它搞钱**：接"公众号代运营"单（选题到发布全流程标准化）；自己做 IP 时，一人即编辑部。
+- **来源**：[imraywang/wewrite](https://github.com/imraywang/wewrite) · ⭐3464
+
 ## 去 AI 味（2 个）
 
 > 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用），以下两条均为英文原版技能的人味清单。
@@ -668,6 +835,7 @@
 
 ## 更新日志
 
+- 2026-10-15：v1.5 追加 15 条（视频生产 8 条：Jane-xiaoer/claude-skill-video-transcribe 视频转文字 231★、hyperframes 5 子 skill——faceless-explainer 无脸讲解视频、talking-head-recut 口播/访谈包装、motion-graphics 动态图形短片、music-to-video 音乐卡点视频、embedded-captions 特效字幕（主库 64,282★ 当日更新，双高验证）、kaomei/stickman-video-director 火柴人动画 2124★（@CrazyKaomei 推荐帖 21K 浏览）、op7418/Youtube-clipper-skill 长视频切片 2240★；文案钩子 3 条：zenstory-ai/oh-story-claudecode 网文工具箱 7605★、KKKKhazix/khazix-skills 卡兹克长文写作 21427★、claude-world/notebooklm-skill 研究转内容 471★；营销增长 4 条：Xiangyu-CAS/xiaohongshu-ops-skill 小红书全链路 2428★、op7418/guizang-social-card-skill 小红书图文 7540★、op7418/guizang-ppt-skill 杂志风演示稿 28013★、imraywang/wewrite 公众号全流程 3464★），共 65 个 skills；淘汰 superpowers 系 7 分叉 + prime-skills/runcomfy-agent-skills（skills.sh 数十万 install 对应 GitHub 0–55★，刷量嫌疑再验证）、pr-to-video（GitHub PR 转代码讲解，dev 向）、slideshow（交互式 deck 非视频形态）、hyperframes 技术参考类子 skill（keyframes/animation/creative/audio/studio/registry/media-use/figma/remotion-to-hyperframes，已有 cli/core/general-video 覆盖，不凑数）、feichanggege/pderr-short-video-skill（18★ 未达标）、white0dew/XiaohongshuSkills（3503★，自动发布/评论，SKILL.md 自带封号风险警告）、Weizhena/Deep-Research-skills（2361★，章节不匹配）、gzlliyu/generate_article（92★，纯脚本非 skill）、sansan0/TrendRadar（62924★，独立监控工具非 skill）、freestylefly/awesome-gpt-image-2（提示词库非 skill）、LangGPT/linexjlin/GPTs/lijigang/prompts（提示词合集非 skill）；去重 openakita content-research-writer / qiaomu-anything-to-notebooklm / marketingskills / Humanizer-zh（库内已有）；skillhub.cn 热榜仍为通用"专家.Skill"无 GitHub 可验证，0 收录；X 侧记信号不收录：YouMind youtube skill（平台内无公开仓库）、@HastyRick135248 网盘打包（无具体仓库名）、@densancar 广告仿写 skill（非公开仓库）
 - 2026-10-13：v1.4 X 信号轮追加 2 条（wheresryan22/anatomy 概念可视化演示 7762★、jimliu/baoyu-design Claude Design 本地运行 4344★），共 50 个 skills；淘汰 vercel-labs/skills（34264★ 基础设施工具、无 SKILL.md，不符合收录标准）、101-skills/superpowers（7★）与 qu-skills/superpowers（3★，榜单高 install 均为刷量嫌疑）、travisvn/BehiSecc awesome-claude-skills（纯链接列表，库内已有两个同类）、Jeffallan/claude-skills·SnailSploit/Claude-Red·SawyerHood/dev-browser·juliusbrussee/caveman·nextlevelbuilder/ui-ux-pro-max·emilkowalski/skills·vercel-labs/agent-skills·obra/superpowers（dev/设计/安全向，与五章节需求不匹配）、designed-by-ai/skills（15★ 未达标）、scrapegraphai/just-scrape（CLI 非 skill 形态）；skillhub.cn 新上新 10 个全无 GitHub 源码不可验证、热榜通用"专家.Skill"需求不匹配，0 收录
 - 2026-10-13：v1.3 X 信号轮追加 6 条（mortiflix-oss 本地动态设计 593★、xhs-account-teardown 小红书账号拆解 66★、xhs-product-picker 选品 120★、qiaomu-seo 446★、xyskill 中文商业操盘 79★、cangjie-skill 知识蒸馏 11247★），共 48 个 skills；淘汰 genmedia-labs/skills（与 runcomfy 刷量生态关联、27★ 未达双高）、flowkit-labs/skills（16★）、analyze_xhs_blogger_skill（404 无效）
 - 2026-10-13：v1.2 追加 3 条（qiaomu-anything-to-notebooklm 内容转播客 6229★、irinabuht12-oss/marketing-skills 广告审计整库 4398★、hyperframes product-launch-video 产品发布视频），共 42 个 skills
