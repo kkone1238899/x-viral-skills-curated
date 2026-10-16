@@ -317,7 +317,40 @@
 - **怎么用它搞钱**：把英文长视频批量切成中文双语短视频发抖音 / B站，做"海外精选"类账号；或接"长视频切片"代工单。
 - **来源**：[op7418/Youtube-clipper-skill](https://github.com/op7418/Youtube-clipper-skill) · ⭐2240
 
-## 文案钩子（8 个）
+### dexhunter/seedance2-skill（Seedance 2.0 提示词）
+- **一句话**：字节官方手册整理的 Seedance 2.0 视频提示词 skill（中英双版）：@ 引用语法、运镜词表、12 类场景写法，适合用即梦 Seedance 批量产视频的人
+- **核心用法**：
+  1. `npx skills add dexhunter/seedance2-skill`，中英 SKILL.md 各一份（`zh/SKILL.md` 中文版）
+  2. 先看输入约束：图最多 9 张、视频最多 3 个素材，超了直接报错——先数素材再写提示词
+  3. 用 @ 引用语法指定首帧图 / 运镜参考视频；12 类场景（人物一致性 / 视频延长 / 音乐卡点 / 一镜到底 / 电商展示 / 短剧）照写法套
+  4. 6 个现成模板直接改：产品广告、短剧、舞蹈、风光卡点、仙侠、科普动画
+- **安装**：`npx skills add dexhunter/seedance2-skill`
+- **怎么用它搞钱**：接 AI 短剧 / 广告片代做单：Seedance 2.0 是当前中文社区最热的视频模型，模板化接单报价透明；或批量产竖屏带货视频跑流量分成
+- **来源**：[dexhunter/seedance2-skill](https://github.com/dexhunter/seedance2-skill) · ⭐4322
+
+### Vincentwei1021/video-shotcraft（镜头配方卡）
+- **一句话**：150+ 镜头配方卡 + 200+ 动效在线预览，每个动效对应确定性 Remotion 组件——让 AI 做视频先给"菜谱"再动手，适合不想让 AI 凭空写 CSS 动画的人
+- **核心用法**：
+  1. `npx skills add Vincentwei1021/video-shotcraft`，先从在线 Gallery 挑动效再开工
+  2. 直接点名配方（如 deck-deal-flyin、spotlight-hero-card），AI 调用对应的 Remotion 组件，不自己造轮子
+  3. 交付后用类剪映 Motion Workbench 微调（镜头 / 转场 / 字幕 / 音效轨道），可导出剪映草稿（macOS 剪映专业版 11.2 已验证）
+  4. 中文 README_CN.md 齐全；Ink Press 样片（36 秒、10 镜头、钉好时间点的音效）可照着拆
+- **安装**：`npx skills add Vincentwei1021/video-shotcraft`
+- **怎么用它搞钱**：接"代码视频"定制单（产品演示 / 动态海报 / 数据可视化）：配方卡保证效果下限，改数字重渲染边际成本为零
+- **来源**：[Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) · ⭐12170
+
+### liyupi/ai-promo-video-maker（产品宣传片）
+- **一句话**：一句话描述产品，AI 自动调研、两轮提问、画样帧、配音配乐、剪辑校验，最后交付 4K 商业宣传片——适合要给产品做宣传片但没预算请外包的人
+- **核心用法**：
+  1. `npx skills add liyupi/ai-promo-video-maker -g`（需 Node 18+、Python 3.9+、ffmpeg）
+  2. 一句话告诉 AI 宣传什么，它先调研产品，再两轮提问（画幅时长 / 目标受众 / 风格方向；开场 / 配乐 / 截图来源），每问带推荐选项和理由
+  3. 动手前 AI 画 3-4 张样帧供挑选——风格由你定，不是预设模板
+  4. 有 ElevenLabs key 就配 AI 旁白配乐，否则用免费可商用曲库 + 大字幕
+- **安装**：`npx skills add liyupi/ai-promo-video-maker -g`
+- **怎么用它搞钱**：接产品宣传片单：外包一支几千上万，你用 AI 一天交片，成本主要是时间；或给自己的产品批量做宣传片跑获客
+- **来源**：[liyupi/ai-promo-video-maker](https://github.com/liyupi/ai-promo-video-maker) · ⭐304
+
+## 文案钩子（6 个）
 
 ### price-anchor
 - **一句话**：中高客单价产品被嫌贵、促销缺"超值感"时，用"高价锚点先行"让价格显得划算的定价文案法；源自关健明《爆款文案》第三章。
@@ -383,11 +416,22 @@
 - **怎么用它搞钱**：做短视频代运营的"钩子外包"——按条收钩子脚本费，或给带货账号做钩子诊断（"你的视频死在第一秒"），诊断话术直接来自 skill 的触发场景。
 - **来源**：[sergebulaev/tiktok-skills](https://github.com/sergebulaev/tiktok-skills) · ⭐69
 
+### dontbesilent2025/dbskill（选题与 Hook 诊断）
+- **一句话**：从 16152 条公开推文筛选的 4176 个知识原子，35 个中文 skills 覆盖商业判断 / 选题 Hook / 内容创作——适合做中文内容不知写什么、标题没点击的人
+- **核心用法**：
+  1. 装好后在 Agent 里调 `/dbs` 或具体 skill（如 `/dbs-diagnosis`）
+  2. 选题诊断：把选题丢给它，用知识原子库诊断 Hook 强度（小红书标题 / 封面文字 / 短视频前 3 秒开头）
+  3. 新版逻辑：先用你给的材料推进，只在缺"会改变结论的事实"时才提问，不用来回确认
+  4. 按任务查 skill：商业诊断 / 对标分析 / 执行力诊断 / 概念拆解 / 好问题，各有专精
+- **安装**：`npx skills add dontbesilent2025/dbskill`
+- **怎么用它搞钱**：注意 CC BY-NC 4.0 仅限非商业用途——自用做账号选题诊断提效，等于请了个免费选题军师；拿它接单前先确认授权
+- **来源**：[dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill) · ⭐10708
+
 ---
 
 ## 营销增长
 
-> 8 个 skill：X/Twitter 增长、广告拆解、文案生产、YouTube 研究、TikTok 热点全覆盖。每个条目不点源链接也能拿走 80% 价值。
+> 39 个 skill：X/Twitter 增长、广告拆解、文案生产、YouTube 研究、TikTok 热点、小红书运营、SEO/GEO 获客、封面配图全覆盖。每个条目不点源链接也能拿走 80% 价值。
 
 ### twitter-algorithm-optimizer
 - **一句话**：基于 X 开源算法的四层模型（Real-graph / SimClusters / TwHIN / Tweepcred）诊断并改写推文，让每条推都吃到推荐流量——适合做 X 账号增长的人。
@@ -780,6 +824,72 @@
 - **怎么用它搞钱**：接"AI 搜索可见度优化"新品类单：传统 SEO 公司还没反应过来，GEO 是蓝海；给自己的产品做 GEO，被 ChatGPT / Perplexity 回答引用 = 免费精准流量
 - **来源**：[zubair-trabzada/geo-seo-claude](https://github.com/zubair-trabzada/geo-seo-claude) · ⭐11067
 
+### mvanhorn/last30days-skill（跨平台热源研究）
+- **一句话**：AI agent 主导的跨平台热源搜索引擎（Reddit / X / YouTube / HN / Polymarket），按点赞和真金白银排序——不看编辑推荐、看市场投票，适合找选题、追热点的人
+- **核心用法**：
+  1. `npx skills add mvanhorn/last30days-skill -g`（或 `/plugin marketplace add mvanhorn/last30days-skill`）
+  2. 直接问"过去 30 天 AI 视频领域最火的 10 个话题"，它跨平台抓取按热度排序返回
+  3. 排序依据是 upvote / like / 真钱（Polymarket），不是编辑精选
+  4. v3 pipeline，SKILL.md 是唯一真相源；GitHub Trending 日榜 #1
+- **安装**：`npx skills add mvanhorn/last30days-skill -g`
+- **怎么用它搞钱**：做"热点监测"服务：每天给客户或自己的账号输出热点选题清单；或做爆款选题预警，接单按月收费
+- **来源**：[mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill) · ⭐64489
+
+### helloianneo/ian-xiaohei-illustrations（小黑手绘配图）
+- **一句话**：把中文文章里的判断、流程、隐喻变成"小黑"白底手绘怪诞配图（16:9），适合写中文干货文章需要正文配图、又不想用俗套信息图的人
+- **核心用法**：
+  1. `git clone https://github.com/helloianneo/ian-xiaohei-illustrations.git`，把子目录装到 Codex
+  2. 在 Codex 里说：`Use $ian-xiaohei-illustrations 为这篇中文文章设计并生成 5 张小黑怪诞正文配图`
+  3. 核心不是"配一张图"：先理解文章的认知锚点，再把关键判断 / 流程画出来
+  4. 视觉语言固定：小黑 IP + 纯白手绘 + 少量红橙蓝中文批注，形成个人识别度
+- **安装**：`git clone https://github.com/helloianneo/ian-xiaohei-illustrations.git`（子目录装入 Codex）
+- **怎么用它搞钱**：接公众号 / 小红书配图单：统一视觉 IP 的配图比通用 AI 生图更有辨识度；自己做内容时，怪诞手绘风是天然的点击率加成
+- **来源**：[helloianneo/ian-xiaohei-illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations) · ⭐12607
+
+### rohunvora/x-research-skill（X 调研 agent）
+- **一句话**：把 X API 包成 CLI 的调研 skill：在终端里搜帖、拉 thread、监控账号，适合做竞品监测、热点追踪、选题调研的人
+- **核心用法**：
+  1. `git clone https://github.com/rohunvora/x-research-skill.git x-research` 到 `.claude/skills`（需 X API key）
+  2. 按互动排序搜帖 + 时间过滤 + 噪音去除，一次拿到干净的调研结果
+  3. watchlist 监控指定账号，cache 避免重复烧 API 钱
+  4. 每次搜索显示花费，成本透明
+- **安装**：`git clone https://github.com/rohunvora/x-research-skill.git`（需 X API key）
+- **怎么用它搞钱**：接"竞品 / 舆情监测"单：给客户搭 watchlist，每日输出监测简报按月收费；自己做号时，用它追对标账号的爆款
+- **来源**：[rohunvora/x-research-skill](https://github.com/rohunvora/x-research-skill) · ⭐1244
+
+### sergebulaev/x-skills（X 营销工具集）
+- **一句话**：20 个 X 营销 skills：按指定口吻写推文 / Thread / 回复、剔除 AI 味，适合在 X 上做内容获客的人
+- **核心用法**：
+  1. `/plugin marketplace add sergebulaev/x-skills` 后 `/plugin install x-skills@x-skills`（MIT）
+  2. 20 个 skills 各管一摊：推文写作、Thread 展开、回复、营销话术
+  3. 写出的东西先过"去 AI 味"处理再发，口吻可指定
+  4. 支持 Publora 发布流程；与库内 sergebulaev/tiktok-skills（TikTok 向）是不同 repo，不重复
+- **安装**：`/plugin marketplace add sergebulaev/x-skills` 后 `/plugin install x-skills@x-skills`
+- **怎么用它搞钱**：接 X 代运营单：20 个 skills 就是 SOP，内容生产标准化；自己做英文获客时，一人即小编
+- **来源**：[sergebulaev/x-skills](https://github.com/sergebulaev/x-skills) · ⭐137
+
+### ponyodong2026/ponyo-cover-anchor-system（小红书封面锚点）
+- **一句话**：小红书 / 公众号封面"信息密度 × 视觉锚点"生成系统：3 秒内让用户判断"这条和我有没有关系"，适合封面点击率上不去的人
+- **核心用法**：
+  1. 输入主题、目标人群、内容类型，输出推荐封面模板 + 锚点位置 + 配色 + 字重层级
+  2. 直接生成可用于 ChatGPT Image 2 / DALL-E 的成品封面提示词
+  3. 数字型 / 冲突型 / 情绪型模板按内容类型自动推荐
+  4. 生成的封面不硬塞作者水印，可换自己的账号署名
+- **安装**：`git clone https://github.com/ponyodong2026/ponyo-cover-anchor-system.git`（SKILL.md 喂给 Agent 用）
+- **怎么用它搞钱**：接封面设计单：按"3 秒决策"方法论出封面，比纯美工更有说服力；自己做号时，封面点击率是最便宜的流量杠杆
+- **来源**：[ponyodong2026/ponyo-cover-anchor-system](https://github.com/ponyodong2026/ponyo-cover-anchor-system) · ⭐195
+
+### JimLiu/baoyu-skills（宝玉 20+ 效率 skills）
+- **一句话**：宝玉 (@dotey) 分享的 20+ 日常工作效率 skills（含封面图、文章插画等内容生产向），适合想抄"顶流博主工作流"的人
+- **核心用法**：
+  1. `npx skills add jimliu/baoyu-skills`，但别全装——只装需要的，省 context
+  2. 内容生产向：`baoyu-cover-image` 做封面、`baoyu-article-illustrator` 配文章插画
+  3. 每个 skill 独立目录，可单独拷到项目的 `.agents/skills` 按需用
+  4. 与库内 jimliu/baoyu-design（Claude Design 本地运行）是不同 repo，不重复
+- **安装**：`npx skills add jimliu/baoyu-skills`（按需单装）
+- **怎么用它搞钱**：学顶流的内容生产管线：封面 + 插画 + 效率工具一套，复制到自己的内容业务里降本；或照着它的 skill 结构给自己定制专属 skills
+- **来源**：[JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) · ⭐26716
+
 ## 去 AI 味（4 个）
 
 > 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用）。humanizer 走检查清单路线，tt-humanizer 专攻短视频口播，qu-ai-wei 专攻简体中文改写，humanizer-skill 带检测评分 + 多人声改写。
@@ -890,6 +1000,7 @@
 
 ## 更新日志
 
+- 2026-10-16：v1.7 X 信号轮追加 10 条（视频生产 3 条：dexhunter/seedance2-skill Seedance 2.0 提示词（中英双版）4322★、Vincentwei1021/video-shotcraft 镜头配方卡+Remotion 12170★、liyupi/ai-promo-video-maker 产品宣传片全流程 304★；文案钩子 1 条：dontbesilent2025/dbskill 选题与 Hook 诊断（4176 知识原子，CC BY-NC 4.0）10708★；营销增长 6 条：mvanhorn/last30days-skill 跨平台热源研究 64489★、helloianneo/ian-xiaohei-illustrations 小黑手绘配图 12607★、rohunvora/x-research-skill X 调研 agent 1244★、sergebulaev/x-skills X 营销工具集 137★、ponyodong2026/ponyo-cover-anchor-system 小红书封面锚点 195★、JimLiu/baoyu-skills 宝玉 20+ 效率 skills 26716★），共 80 个 skills；淘汰 aaaronmiller/create-viral-content（75★，star 太弱无热度佐证）、adrianpunk/Punk-Skill（1325★，商业用途需书面付费授权，与搞钱用途冲突）、bobobo2026/explainer-video（0★ 未达标）、TheMattBerman/x-algo-skill（68★，热度弱）、wshuyi/x-article-publisher-skill（873★，纯发布工具无方法论）、LunarXuan/image-prompt-reverse（529★，生图向，章节不匹配）、nexu-io/html-anything（9143★，HTML 生成，dev/设计向）、QianXiguaAI/video-privacy-blur（小众工具，需求弱）；X 信号源：@nicebabycat/@fhwofjow51260/@GitHub_Daily/@voidJan/@starkljm/@superfang119/@kafkaup/@b70670555886391/@Lonely__MH 等 12 帖命中（48h 窗口，宁缺毋滥）；记信号不收录：@Williamsungo 外快清单（链接截断无法验证）、@kaitoxhacker SEO 方法论（无仓库）、@xiaohu Opus 5.5 展示帖（无具体 skill）、@vista8 skill 行业讨论（无推荐）
 - 2026-10-16：v1.6 追加 5 条（营销增长 3 条：vivy-yi/xiaohongshu-skills 小红书 139 技能知识库 492★、AgriciDaniel/claude-seo 全栈 SEO 审计系统（26 子 skill）19053★、zubair-trabzada/geo-seo-claude AI 搜索 GEO 专项 11067★；去 AI 味 2 条：LifelongLazyLearner/qu-ai-wei 简体中文去 AI 味改写 660★、Aboudjem/humanizer-skill 55 模式检测+5 人声 281★），共 70 个 skills；淘汰 autoclaw-cc/xiaohongshu-skills（1974★，真实账号自动发布/互动，封号风险，与 white0dew 同类）、DeliciousBuding/xiaohongshu-skill（42★，同类自动化）、freestylefly/xiaohongshu-skills（97★，付费 API 包装，本体无方法论干货）、crabin/paper-humanizer-skill（127★，学术论文向）、robpalmer99/claude-code-copywriting-skills（41★，库内已有更强同类 ai-copywriter）、jherrodthomas/automotive-skills-suite（3226★，汽车工程向，章节不匹配）、Jakeschincariol/replica-skill（2839★，应用逆向工程向，章节不匹配）；skillhub.cn 全站详情页无 GitHub 源码链接、无法交叉验证，0 收录（但去 AI 味类下载极旺：李白.Skill 88.4万、文章去AI味工具 62.4万，记为需求信号）；skills.sh 榜单仍是老面孔（open.feishu.cn/mattpocock/superpowers 分叉/runcomfy），无新货；X 热度洞察 browser task 进行中，结果另起 v1.7 批次
 - 2026-10-15：v1.5 追加 15 条（视频生产 8 条：Jane-xiaoer/claude-skill-video-transcribe 视频转文字 231★、hyperframes 5 子 skill——faceless-explainer 无脸讲解视频、talking-head-recut 口播/访谈包装、motion-graphics 动态图形短片、music-to-video 音乐卡点视频、embedded-captions 特效字幕（主库 64,282★ 当日更新，双高验证）、kaomei/stickman-video-director 火柴人动画 2124★（@CrazyKaomei 推荐帖 21K 浏览）、op7418/Youtube-clipper-skill 长视频切片 2240★；文案钩子 3 条：zenstory-ai/oh-story-claudecode 网文工具箱 7605★、KKKKhazix/khazix-skills 卡兹克长文写作 21427★、claude-world/notebooklm-skill 研究转内容 471★；营销增长 4 条：Xiangyu-CAS/xiaohongshu-ops-skill 小红书全链路 2428★、op7418/guizang-social-card-skill 小红书图文 7540★、op7418/guizang-ppt-skill 杂志风演示稿 28013★、imraywang/wewrite 公众号全流程 3464★），共 65 个 skills；淘汰 superpowers 系 7 分叉 + prime-skills/runcomfy-agent-skills（skills.sh 数十万 install 对应 GitHub 0–55★，刷量嫌疑再验证）、pr-to-video（GitHub PR 转代码讲解，dev 向）、slideshow（交互式 deck 非视频形态）、hyperframes 技术参考类子 skill（keyframes/animation/creative/audio/studio/registry/media-use/figma/remotion-to-hyperframes，已有 cli/core/general-video 覆盖，不凑数）、feichanggege/pderr-short-video-skill（18★ 未达标）、white0dew/XiaohongshuSkills（3503★，自动发布/评论，SKILL.md 自带封号风险警告）、Weizhena/Deep-Research-skills（2361★，章节不匹配）、gzlliyu/generate_article（92★，纯脚本非 skill）、sansan0/TrendRadar（62924★，独立监控工具非 skill）、freestylefly/awesome-gpt-image-2（提示词库非 skill）、LangGPT/linexjlin/GPTs/lijigang/prompts（提示词合集非 skill）；去重 openakita content-research-writer / qiaomu-anything-to-notebooklm / marketingskills / Humanizer-zh（库内已有）；skillhub.cn 热榜仍为通用"专家.Skill"无 GitHub 可验证，0 收录；X 侧记信号不收录：YouMind youtube skill（平台内无公开仓库）、@HastyRick135248 网盘打包（无具体仓库名）、@densancar 广告仿写 skill（非公开仓库）
 - 2026-10-13：v1.4 X 信号轮追加 2 条（wheresryan22/anatomy 概念可视化演示 7762★、jimliu/baoyu-design Claude Design 本地运行 4344★），共 50 个 skills；淘汰 vercel-labs/skills（34264★ 基础设施工具、无 SKILL.md，不符合收录标准）、101-skills/superpowers（7★）与 qu-skills/superpowers（3★，榜单高 install 均为刷量嫌疑）、travisvn/BehiSecc awesome-claude-skills（纯链接列表，库内已有两个同类）、Jeffallan/claude-skills·SnailSploit/Claude-Red·SawyerHood/dev-browser·juliusbrussee/caveman·nextlevelbuilder/ui-ux-pro-max·emilkowalski/skills·vercel-labs/agent-skills·obra/superpowers（dev/设计/安全向，与五章节需求不匹配）、designed-by-ai/skills（15★ 未达标）、scrapegraphai/just-scrape（CLI 非 skill 形态）；skillhub.cn 新上新 10 个全无 GitHub 源码不可验证、热榜通用"专家.Skill"需求不匹配，0 收录
