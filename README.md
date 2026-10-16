@@ -747,9 +747,42 @@
 - **怎么用它搞钱**：接"公众号代运营"单（选题到发布全流程标准化）；自己做 IP 时，一人即编辑部。
 - **来源**：[imraywang/wewrite](https://github.com/imraywang/wewrite) · ⭐3464
 
-## 去 AI 味（2 个）
+### vivy-yi/xiaohongshu-skills（小红书 139 技能知识库）
+- **一句话**：139 个小红书运营技能的知识库（内容创作 / 账号运营 / 数据分析 / 电商转化 / 平台规则 9 大类全覆盖），适合想系统做小红书起号、带货的人
+- **核心用法**：
+  1. `/plugin marketplace add vivy-yi/xiaohongshu-skills` 后 `/plugin install xiaohongshu-complete-skills@xiaohongshu-skills`，139 个技能一次装好
+  2. 先定目标再进分类：起号走 01-内容创作 + 02-账号运营，带货走 04-电商转化（选品 / 种草 / 销售漏斗 17 个技能）
+  3. 每个技能都是独立 SKILL.md：理论框架 + 操作指南 + 常见错误 + 真实案例，直接照着执行
+  4. 放量阶段用 07-营销推广（KOL / 广告 / 活动 / 预算）+ 08-增长策略（算法 / 变现 / 长期战略）
+- **安装**：`/plugin marketplace add vivy-yi/xiaohongshu-skills` 后 `/plugin install xiaohongshu-complete-skills@xiaohongshu-skills`
+- **怎么用它搞钱**：接小红书代运营 / 起号单：139 个技能就是现成 SOP，定位→内容→转化全链路可交付；自己做带货号，选品 + 种草 + 漏斗一条龙跑通
+- **来源**：[vivy-yi/xiaohongshu-skills](https://github.com/vivy-yi/xiaohongshu-skills) · ⭐492
 
-> 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用），以下两条均为英文原版技能的人味清单。
+### AgriciDaniel/claude-seo（全栈 SEO 审计系统）
+- **一句话**：26 个子 skill + 19 个专家 agent 并行的全栈 SEO 系统（技术 SEO / 内容 E-E-A-T / Schema / GEO / 本地 / 电商 / 国际化），适合做独立站、内容站靠搜索获客的人
+- **核心用法**：
+  1. `/plugin marketplace add AgriciDaniel/claude-seo` 后 `/plugin install claude-seo@agricidaniel-claude-seo`（需 Claude Code 1.0.33+）
+  2. `seo-audit` 起手跑全站体检，输出按优先级排序的行动清单（每条建议都可测试验证）
+  3. 内容线：`seo-content-brief` 按 E-E-A-T 生成内容简报再写；结构化数据走 `seo-schema`
+  4. AI 搜索流量用 `seo-geo`，电商站加 `seo-ecommerce`，多语言站加 `seo-hreflang`
+- **安装**：`/plugin marketplace add AgriciDaniel/claude-seo` 后 `/plugin install claude-seo@agricidaniel-claude-seo`
+- **怎么用它搞钱**：接 SEO 审计 / 代运营单：26 个子 skill 并行出报告，一次审计即交付物，按月收 retainer；自己做利基站，GEO + 传统 SEO 双吃搜索流量
+- **来源**：[AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo) · ⭐19053
+
+### zubair-trabzada/geo-seo-claude（GEO：AI 搜索优化）
+- **一句话**：专攻 AI 搜索（ChatGPT / Claude / Perplexity / Gemini / Google AI Overviews）的 GEO 优化 skill，适合传统 SEO 流量被 AI 搜索分流的人
+- **核心用法**：
+  1. `curl -fsSL https://raw.githubusercontent.com/zubair-trabzada/geo-seo-claude/main/install.sh | bash` 一键安装
+  2. `geo-audit` 先审站点在 AI 搜索里的可见度缺口
+  3. `geo-citability` + `geo-llmstxt` 把内容改成 AI 愿意引用的格式（llms.txt、引用友好结构）
+  4. `geo-brand-mentions` 做品牌提及——在 AI 搜索里品牌提及的相关性是外链的 3 倍
+- **安装**：`curl -fsSL https://raw.githubusercontent.com/zubair-trabzada/geo-seo-claude/main/install.sh | bash`
+- **怎么用它搞钱**：接"AI 搜索可见度优化"新品类单：传统 SEO 公司还没反应过来，GEO 是蓝海；给自己的产品做 GEO，被 ChatGPT / Perplexity 回答引用 = 免费精准流量
+- **来源**：[zubair-trabzada/geo-seo-claude](https://github.com/zubair-trabzada/geo-seo-claude) · ⭐11067
+
+## 去 AI 味（4 个）
+
+> 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用）。humanizer 走检查清单路线，tt-humanizer 专攻短视频口播，qu-ai-wei 专攻简体中文改写，humanizer-skill 带检测评分 + 多人声改写。
 
 ### humanizer
 - **一句话**：把 AI 味文本改得像真人写的（不改意思、不编事实），基于维基百科"AI 写作特征"指南的 26 项可操作检查清单；适合所有要公开发布的文字。
@@ -774,6 +807,28 @@
 - **安装**：npx skills add sergebulaev/tiktok-skills
 - **怎么用它搞钱**：做短视频团队的"拍前质检"外包——客户发口播脚本，你跑 audit 模式出 Blocker/Warning 报告按次收费；或给 MCN 做批量脚本去味，按账号收月费。
 - **来源**：[sergebulaev/tiktok-skills](https://github.com/sergebulaev/tiktok-skills) · ⭐69
+
+### qu-ai-wei（简体中文去 AI 味）
+- **一句话**：专治简体中文 AI 味的改写 skill——删套话、保事实、技术文不降格，适合写公众号 / 小红书 / 视频文案总被说"一看就是 AI 写的"的人
+- **核心用法**：
+  1. `npx skills add https://github.com/LifelongLazyLearner/qu-ai-wei`，对中文说"去 AI 味"即触发（`/qu-ai-wei`）
+  2. 先识别 10 类中文 AI 味结构（"随着…发展""值得一提"等），只改空转、反复出现的套话，单独出现一次不误杀
+  3. 铁律：删空话不丢数字（"发布 3 个版本、修复 17 个问题"原样保留），技术词、因果关系、正式程度保持不变
+  4. 真人味文字（有具体经历 / 自嘲 / 自然节奏）会停手不乱改；输入含密码、key 等敏感信息先过门检
+- **安装**：`npx skills add https://github.com/LifelongLazyLearner/qu-ai-wei`
+- **怎么用它搞钱**：接文案代写单：AI 初稿 + qu-ai-wei 去味，交付"真人感"文案按千字收费；做矩阵号时去味后多平台分发，降低被判营销号 / 限流风险
+- **来源**：[LifelongLazyLearner/qu-ai-wei](https://github.com/LifelongLazyLearner/qu-ai-wei) · ⭐660
+
+### Aboudjem/humanizer-skill（55 模式检测 + 5 人声）
+- **一句话**：55 种 AI 写作模式检测 + 0-100 AI 味评分 + 5 种人声改写，适合发英文博客 / LinkedIn / Newsletter 怕被看出 AI 味的人
+- **核心用法**：
+  1. 三种模式：`detect` 只扫描打分不改写；`rewrite` 按选定人声改写；`edit` 直接改文件（`--mode` 切换）
+  2. 5 种声音按场景选：casual / professional / technical / warm / blunt，`--voice` 指定
+  3. 纯 Markdown、零依赖、不联网，本地跑完；`--iterate N` 多轮改写直到分数满意
+  4. `--purpose` 按用途调（essay / email / marketing / technical），`--score` 输出量化分
+- **安装**：`claude plugin marketplace add Aboudjem/10x && claude plugin install humanizer@10x`
+- **怎么用它搞钱**：接英文内容代写 / 领英代运营单：AI 量产 + humanizer 去味，交付"母语写手"质感收溢价；做英文利基站，内容去味后广告审核、投稿通过率更高
+- **来源**：[Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill) · ⭐281
 
 ---
 
@@ -835,6 +890,7 @@
 
 ## 更新日志
 
+- 2026-10-16：v1.6 追加 5 条（营销增长 3 条：vivy-yi/xiaohongshu-skills 小红书 139 技能知识库 492★、AgriciDaniel/claude-seo 全栈 SEO 审计系统（26 子 skill）19053★、zubair-trabzada/geo-seo-claude AI 搜索 GEO 专项 11067★；去 AI 味 2 条：LifelongLazyLearner/qu-ai-wei 简体中文去 AI 味改写 660★、Aboudjem/humanizer-skill 55 模式检测+5 人声 281★），共 70 个 skills；淘汰 autoclaw-cc/xiaohongshu-skills（1974★，真实账号自动发布/互动，封号风险，与 white0dew 同类）、DeliciousBuding/xiaohongshu-skill（42★，同类自动化）、freestylefly/xiaohongshu-skills（97★，付费 API 包装，本体无方法论干货）、crabin/paper-humanizer-skill（127★，学术论文向）、robpalmer99/claude-code-copywriting-skills（41★，库内已有更强同类 ai-copywriter）、jherrodthomas/automotive-skills-suite（3226★，汽车工程向，章节不匹配）、Jakeschincariol/replica-skill（2839★，应用逆向工程向，章节不匹配）；skillhub.cn 全站详情页无 GitHub 源码链接、无法交叉验证，0 收录（但去 AI 味类下载极旺：李白.Skill 88.4万、文章去AI味工具 62.4万，记为需求信号）；skills.sh 榜单仍是老面孔（open.feishu.cn/mattpocock/superpowers 分叉/runcomfy），无新货；X 热度洞察 browser task 进行中，结果另起 v1.7 批次
 - 2026-10-15：v1.5 追加 15 条（视频生产 8 条：Jane-xiaoer/claude-skill-video-transcribe 视频转文字 231★、hyperframes 5 子 skill——faceless-explainer 无脸讲解视频、talking-head-recut 口播/访谈包装、motion-graphics 动态图形短片、music-to-video 音乐卡点视频、embedded-captions 特效字幕（主库 64,282★ 当日更新，双高验证）、kaomei/stickman-video-director 火柴人动画 2124★（@CrazyKaomei 推荐帖 21K 浏览）、op7418/Youtube-clipper-skill 长视频切片 2240★；文案钩子 3 条：zenstory-ai/oh-story-claudecode 网文工具箱 7605★、KKKKhazix/khazix-skills 卡兹克长文写作 21427★、claude-world/notebooklm-skill 研究转内容 471★；营销增长 4 条：Xiangyu-CAS/xiaohongshu-ops-skill 小红书全链路 2428★、op7418/guizang-social-card-skill 小红书图文 7540★、op7418/guizang-ppt-skill 杂志风演示稿 28013★、imraywang/wewrite 公众号全流程 3464★），共 65 个 skills；淘汰 superpowers 系 7 分叉 + prime-skills/runcomfy-agent-skills（skills.sh 数十万 install 对应 GitHub 0–55★，刷量嫌疑再验证）、pr-to-video（GitHub PR 转代码讲解，dev 向）、slideshow（交互式 deck 非视频形态）、hyperframes 技术参考类子 skill（keyframes/animation/creative/audio/studio/registry/media-use/figma/remotion-to-hyperframes，已有 cli/core/general-video 覆盖，不凑数）、feichanggege/pderr-short-video-skill（18★ 未达标）、white0dew/XiaohongshuSkills（3503★，自动发布/评论，SKILL.md 自带封号风险警告）、Weizhena/Deep-Research-skills（2361★，章节不匹配）、gzlliyu/generate_article（92★，纯脚本非 skill）、sansan0/TrendRadar（62924★，独立监控工具非 skill）、freestylefly/awesome-gpt-image-2（提示词库非 skill）、LangGPT/linexjlin/GPTs/lijigang/prompts（提示词合集非 skill）；去重 openakita content-research-writer / qiaomu-anything-to-notebooklm / marketingskills / Humanizer-zh（库内已有）；skillhub.cn 热榜仍为通用"专家.Skill"无 GitHub 可验证，0 收录；X 侧记信号不收录：YouMind youtube skill（平台内无公开仓库）、@HastyRick135248 网盘打包（无具体仓库名）、@densancar 广告仿写 skill（非公开仓库）
 - 2026-10-13：v1.4 X 信号轮追加 2 条（wheresryan22/anatomy 概念可视化演示 7762★、jimliu/baoyu-design Claude Design 本地运行 4344★），共 50 个 skills；淘汰 vercel-labs/skills（34264★ 基础设施工具、无 SKILL.md，不符合收录标准）、101-skills/superpowers（7★）与 qu-skills/superpowers（3★，榜单高 install 均为刷量嫌疑）、travisvn/BehiSecc awesome-claude-skills（纯链接列表，库内已有两个同类）、Jeffallan/claude-skills·SnailSploit/Claude-Red·SawyerHood/dev-browser·juliusbrussee/caveman·nextlevelbuilder/ui-ux-pro-max·emilkowalski/skills·vercel-labs/agent-skills·obra/superpowers（dev/设计/安全向，与五章节需求不匹配）、designed-by-ai/skills（15★ 未达标）、scrapegraphai/just-scrape（CLI 非 skill 形态）；skillhub.cn 新上新 10 个全无 GitHub 源码不可验证、热榜通用"专家.Skill"需求不匹配，0 收录
 - 2026-10-13：v1.3 X 信号轮追加 6 条（mortiflix-oss 本地动态设计 593★、xhs-account-teardown 小红书账号拆解 66★、xhs-product-picker 选品 120★、qiaomu-seo 446★、xyskill 中文商业操盘 79★、cangjie-skill 知识蒸馏 11247★），共 48 个 skills；淘汰 genmedia-labs/skills（与 runcomfy 刷量生态关联、27★ 未达双高）、flowkit-labs/skills（16★）、analyze_xhs_blogger_skill（404 无效）
