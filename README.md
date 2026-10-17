@@ -350,6 +350,41 @@
 - **怎么用它搞钱**：接产品宣传片单：外包一支几千上万，你用 AI 一天交片，成本主要是时间；或给自己的产品批量做宣传片跑获客
 - **来源**：[liyupi/ai-promo-video-maker](https://github.com/liyupi/ai-promo-video-maker) · ⭐304
 
+### Jakeschincariol/youtube-agent-skill（YouTube 频道全链路）
+- **一句话**：11 个 skill 承包一个 YouTube 频道的全部活：按 21 个钩子公式写脚本并打分、标题+缩略图打包质检、剪辑决策清单、评论区分类回帖、周计划、爆款研究、留存分析——适合做 YouTube 广告分成 / 出海获客的人
+- **核心用法**：
+  1. 先花 10 分钟填 `templates/voice.md`（或丢 3 条自己的视频让 AI 提炼），所有 skill 都读它——口播场景"人声"比什么都重要
+  2. `/yt-script`：给一个想法，AI 按 21 个钩子公式写 5 个钩子并打分，选最高分的再写带留存节拍标记的完整口播稿
+  3. `/yt-package`：标题和缩略图文字当成一个组合写，自动查截断、重复、模糊
+  4. `/yt-edit`：录制 transcript 丢进去，输出带时间码的剪辑决策清单（冷场/废话/重录段）
+  5. `/yt-viral`：找本赛道爆款，按"超出该频道自身均值倍数"排名——抄公式不抄大号
+- **安装**：`git clone https://github.com/Jakeschincariol/youtube-agent-skill.git && cp -r youtube-agent-skill/skills/yt-* ~/.claude/skills/`（或 Claude Code 里 `/plugin marketplace add Jakeschincariol/youtube-agent-skill`）
+- **怎么用它搞钱**：YouTube 广告分成——一个人跑 N 个频道做矩阵；或接"YouTube 频道代运营"单：脚本+封面+剪辑清单一套交付，比请剪辑师便宜一个数量级
+- **来源**：[Jakeschincariol/youtube-agent-skill](https://github.com/Jakeschincariol/youtube-agent-skill) · ⭐1583
+
+### AirsupHQ/machine-skill（工程机械 3D 动画）
+- **一句话**：一句话描述一台机器，Claude 按真实尺寸和物理原理在浏览器里造出一台可交互的 3D 机器（three.js，无需构建），再一键转成可发的短片——适合做工业品演示、产品技术展示的人
+- **核心用法**：
+  1. `npx skills add AirsupHQ/machine-skill -g -a claude-code`
+  2. 一句话描述：`/machine a turbofan jet engine, the kind that pushes a widebody off the runway`
+  3. Claude 先研究真实机器的尺寸与物理，造出可交互 3D 场景（拉油门真的出推力、剖开真是实心金属）
+  4. 一条命令转成短片（`scripts/record.mjs` 录制），直接发 feed
+  5. 改参数重跑即可换机器——有多少产品就能产多少演示片
+- **安装**：`npx skills add AirsupHQ/machine-skill -g -a claude-code`
+- **怎么用它搞钱**：工业品/设备商的产品演示片：传统三维外包贵且慢，这个一句话一条片；或做"AI 工业演示"代做单，按产品收费
+- **来源**：[AirsupHQ/machine-skill](https://github.com/AirsupHQ/machine-skill) · ⭐286
+
+### lhlGitHub/hand-drawn-storybook-animation-skill（手绘水彩动态绘本）
+- **一句话**：在浏览器里做"会自己画画的"手绘水彩动态绘本：分层场景、设计镜头、翻页/笔刷/撕纸转场、豆包配音+中英双语字幕——适合做儿童故事/治愈系账号起号的人（X 中文社区 48h 互动最高的 skills 帖，32.9K 浏览）
+- **核心用法**：
+  1. `git clone https://github.com/lhlGitHub/hand-drawn-storybook-animation-skill.git && cp -r hand-drawn-storybook-animation-skill/hand-drawn-storybook-animation ~/.claude/skills/`
+  2. 一句话开工："做一本会自己画画的绘本"——画面在浏览器实时画出，不是预渲染视频
+  3. 加章节/换配音："给绘本加一章，用豆包配音"（豆包 TTS 需自己的火山引擎 API Key，放项目 `.env`，不提交）
+  4. 跑通后按 README 的验证流程检查转场与字幕，再录屏发布
+- **安装**：`git clone https://github.com/lhlGitHub/hand-drawn-storybook-animation-skill.git && cp -r hand-drawn-storybook-animation-skill/hand-drawn-storybook-animation ~/.claude/skills/`
+- **怎么用它搞钱**：儿童故事/睡前故事账号起号：手绘水彩风差异化强；或接"动态绘本定制"单（品牌 IP、电子绘本系列），按本收费。注：仓库暂无 LICENSE 文件声明，商用前建议与作者确认授权
+- **来源**：[lhlGitHub/hand-drawn-storybook-animation-skill](https://github.com/lhlGitHub/hand-drawn-storybook-animation-skill) · ⭐36
+
 ## 文案钩子（6 个）
 
 ### price-anchor
@@ -890,6 +925,30 @@
 - **怎么用它搞钱**：学顶流的内容生产管线：封面 + 插画 + 效率工具一套，复制到自己的内容业务里降本；或照着它的 skill 结构给自己定制专属 skills
 - **来源**：[JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) · ⭐26716
 
+### Jakeschincariol/instagram-agent-skill（Instagram 账号全链路）
+- **一句话**：13 个 skill 运营 Instagram 账号：按 26 个钩子公式写 Reels 并打分、找本赛道真爆款 Reels、主页 100 分制诊断改写、周计划，还自带去 AI 味 humanizer——适合做 IG 引流/带货/出海获客的人
+- **核心用法**：
+  1. `git clone https://github.com/Jakeschincariol/instagram-agent-skill.git && cp -r instagram-agent-skill/skills/ig-* ~/.claude/skills/`
+  2. 先跑主页诊断 skill：0-100 打分，逐项改写 bio 和置顶——主页是转化页
+  3. 写 Reels 脚本：给主题，AI 按 26 个钩子公式写并打分，烂钩子不开拍
+  4. 文案先过自带 humanizer：去破折号、去 AI 味词汇、去隐形水印字符，再过 5 项检查
+  5. 每周跑一遍周计划 skill：固定节奏出 Reels，不断更
+- **安装**：`git clone https://github.com/Jakeschincariol/instagram-agent-skill.git && cp -r instagram-agent-skill/skills/ig-* ~/.claude/skills/`
+- **怎么用它搞钱**：IG 带货/引流：Reels 钩子公式+主页诊断是涨粉两件套；或接"IG 账号代运营"，周计划+文案流水线化交付
+- **来源**：[Jakeschincariol/instagram-agent-skill](https://github.com/Jakeschincariol/instagram-agent-skill) · ⭐1724
+
+### Jakeschincariol/founder-skill（创业想法验证）
+- **一句话**：11 个 skill 在花大钱之前验证生意：董事会（Hormozi/Thiel/Jobs 框架）挑刺、营销总监定打法、CFO 算真实利润率、100 个买家代理跑购买场景——适合想搞副业/创业但怕踩坑的人
+- **核心用法**：
+  1. Claude Code 里 `/plugin marketplace add Jakeschincariol/founder-skill` 再 `/plugin install founder-skill@founder-skill`
+  2. founder-board：把商业想法丢给"董事会"，按三位大佬的框架挑刺
+  3. founder-consumer：起 100 个目标客户画像的买家代理，跑 100 个购买场景，看真实付费意愿
+  4. founder-cfo + founder-pricing：算真实利润率和定价，不赚钱的当场毙掉
+  5. 通过验证的才进 founder-launch 流程——省下几万块试错费
+- **安装**：Claude Code 里 `/plugin marketplace add Jakeschincariol/founder-skill` 后 `/plugin install founder-skill@founder-skill`
+- **怎么用它搞钱**：副业立项前先验证——100 买家代理≈免费用户访谈；或做"商业 idea 验证"咨询，按项目收费帮人省试错钱
+- **来源**：[Jakeschincariol/founder-skill](https://github.com/Jakeschincariol/founder-skill) · ⭐906
+
 ## 去 AI 味（4 个）
 
 > 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用）。humanizer 走检查清单路线，tt-humanizer 专攻短视频口播，qu-ai-wei 专攻简体中文改写，humanizer-skill 带检测评分 + 多人声改写。
@@ -1000,6 +1059,7 @@
 
 ## 更新日志
 
+- 2026-10-17：v1.8 追加 5 条（视频生产 3 条：Jakeschincariol/youtube-agent-skill YouTube 频道全链路（11 skills+6 个 Python 工具：21 钩子公式写脚本打分/标题缩略图质检/剪辑决策清单/留存分析）1583★、AirsupHQ/machine-skill 工程机械 3D 动画（一句话描述→可交互 3D→一键成片）286★、lhlGitHub/hand-drawn-storybook-animation-skill 手绘水彩动态绘本（浏览器实时作画+豆包配音+双语字幕）36★；营销增长 2 条：Jakeschincariol/instagram-agent-skill IG 账号全链路（26 钩子公式+主页诊断+自带 humanizer）1724★、Jakeschincariol/founder-skill 创业想法验证（董事会框架挑刺+100 买家代理跑购买场景）906★），共 85 个 skills；淘汰 AirsupHQ/factory-skill（20★ 未达硬线）、howardz27/poster-generator-skill（19★ 未达硬线）、Jakeschincariol/linkedin-agent-skill（2251★，LinkedIn 场景与中文搞钱人群不匹配，与 sergebulaev/linkedin-skills 一致性淘汰）、master-skills/trader-skill/promptmaster-skill（75/40/39★ 未达标）、arena-skill（702★，AI 对打 dev 玩向）；去重 @dontbesilent dbs-title-cover-intro（dbskill 库内已有）、@xl_lottie 视频动画制作（即 wheresryan22/anatomy 库内已有）；skillhub.cn 最近上新 12 个全无 GitHub 源码链接、无法做 star+更新时间交叉验证，0 收录；skills.sh 榜单仍是老面孔（vercel-labs/mattpocock/hyperframes/superpowers 系刷量嫌疑/runcomfy/open.feishu.cn/microsoft-azure），无新货；X 信号源 7 帖命中（48h 窗口，宁缺毋滥）：@HaileyAILabs 手绘绘本 32.9K 浏览（全场最高）→收录、@cywcycw machine-skill 帖→收录、@CY160909 7 设计 skills（仅 poster-generator-skill 有仓库但 19★ 淘汰）；记信号不收录：@7998l201 贴图风格包（t.co 短链截断无法验证仓库）、@krikwangcy 闲鱼 CAD skills（无公开仓库，需私信）、@xiaohu 自研视频 skill（无 skill 名/公开链接）；指定账号 10 个（@dotey/@xiaohu/@Barret_China/@jesselaunz/@rowancheung/@CrazyKaomei/@lewangx/@mranti/@op7418/@wlzh）近 48h 无 skills 推荐帖
 - 2026-10-16：v1.7 X 信号轮追加 10 条（视频生产 3 条：dexhunter/seedance2-skill Seedance 2.0 提示词（中英双版）4322★、Vincentwei1021/video-shotcraft 镜头配方卡+Remotion 12170★、liyupi/ai-promo-video-maker 产品宣传片全流程 304★；文案钩子 1 条：dontbesilent2025/dbskill 选题与 Hook 诊断（4176 知识原子，CC BY-NC 4.0）10708★；营销增长 6 条：mvanhorn/last30days-skill 跨平台热源研究 64489★、helloianneo/ian-xiaohei-illustrations 小黑手绘配图 12607★、rohunvora/x-research-skill X 调研 agent 1244★、sergebulaev/x-skills X 营销工具集 137★、ponyodong2026/ponyo-cover-anchor-system 小红书封面锚点 195★、JimLiu/baoyu-skills 宝玉 20+ 效率 skills 26716★），共 80 个 skills；淘汰 aaaronmiller/create-viral-content（75★，star 太弱无热度佐证）、adrianpunk/Punk-Skill（1325★，商业用途需书面付费授权，与搞钱用途冲突）、bobobo2026/explainer-video（0★ 未达标）、TheMattBerman/x-algo-skill（68★，热度弱）、wshuyi/x-article-publisher-skill（873★，纯发布工具无方法论）、LunarXuan/image-prompt-reverse（529★，生图向，章节不匹配）、nexu-io/html-anything（9143★，HTML 生成，dev/设计向）、QianXiguaAI/video-privacy-blur（小众工具，需求弱）；X 信号源：@nicebabycat/@fhwofjow51260/@GitHub_Daily/@voidJan/@starkljm/@superfang119/@kafkaup/@b70670555886391/@Lonely__MH 等 12 帖命中（48h 窗口，宁缺毋滥）；记信号不收录：@Williamsungo 外快清单（链接截断无法验证）、@kaitoxhacker SEO 方法论（无仓库）、@xiaohu Opus 5.5 展示帖（无具体 skill）、@vista8 skill 行业讨论（无推荐）
 - 2026-10-16：v1.6 追加 5 条（营销增长 3 条：vivy-yi/xiaohongshu-skills 小红书 139 技能知识库 492★、AgriciDaniel/claude-seo 全栈 SEO 审计系统（26 子 skill）19053★、zubair-trabzada/geo-seo-claude AI 搜索 GEO 专项 11067★；去 AI 味 2 条：LifelongLazyLearner/qu-ai-wei 简体中文去 AI 味改写 660★、Aboudjem/humanizer-skill 55 模式检测+5 人声 281★），共 70 个 skills；淘汰 autoclaw-cc/xiaohongshu-skills（1974★，真实账号自动发布/互动，封号风险，与 white0dew 同类）、DeliciousBuding/xiaohongshu-skill（42★，同类自动化）、freestylefly/xiaohongshu-skills（97★，付费 API 包装，本体无方法论干货）、crabin/paper-humanizer-skill（127★，学术论文向）、robpalmer99/claude-code-copywriting-skills（41★，库内已有更强同类 ai-copywriter）、jherrodthomas/automotive-skills-suite（3226★，汽车工程向，章节不匹配）、Jakeschincariol/replica-skill（2839★，应用逆向工程向，章节不匹配）；skillhub.cn 全站详情页无 GitHub 源码链接、无法交叉验证，0 收录（但去 AI 味类下载极旺：李白.Skill 88.4万、文章去AI味工具 62.4万，记为需求信号）；skills.sh 榜单仍是老面孔（open.feishu.cn/mattpocock/superpowers 分叉/runcomfy），无新货；X 热度洞察 browser task 进行中，结果另起 v1.7 批次
 - 2026-10-15：v1.5 追加 15 条（视频生产 8 条：Jane-xiaoer/claude-skill-video-transcribe 视频转文字 231★、hyperframes 5 子 skill——faceless-explainer 无脸讲解视频、talking-head-recut 口播/访谈包装、motion-graphics 动态图形短片、music-to-video 音乐卡点视频、embedded-captions 特效字幕（主库 64,282★ 当日更新，双高验证）、kaomei/stickman-video-director 火柴人动画 2124★（@CrazyKaomei 推荐帖 21K 浏览）、op7418/Youtube-clipper-skill 长视频切片 2240★；文案钩子 3 条：zenstory-ai/oh-story-claudecode 网文工具箱 7605★、KKKKhazix/khazix-skills 卡兹克长文写作 21427★、claude-world/notebooklm-skill 研究转内容 471★；营销增长 4 条：Xiangyu-CAS/xiaohongshu-ops-skill 小红书全链路 2428★、op7418/guizang-social-card-skill 小红书图文 7540★、op7418/guizang-ppt-skill 杂志风演示稿 28013★、imraywang/wewrite 公众号全流程 3464★），共 65 个 skills；淘汰 superpowers 系 7 分叉 + prime-skills/runcomfy-agent-skills（skills.sh 数十万 install 对应 GitHub 0–55★，刷量嫌疑再验证）、pr-to-video（GitHub PR 转代码讲解，dev 向）、slideshow（交互式 deck 非视频形态）、hyperframes 技术参考类子 skill（keyframes/animation/creative/audio/studio/registry/media-use/figma/remotion-to-hyperframes，已有 cli/core/general-video 覆盖，不凑数）、feichanggege/pderr-short-video-skill（18★ 未达标）、white0dew/XiaohongshuSkills（3503★，自动发布/评论，SKILL.md 自带封号风险警告）、Weizhena/Deep-Research-skills（2361★，章节不匹配）、gzlliyu/generate_article（92★，纯脚本非 skill）、sansan0/TrendRadar（62924★，独立监控工具非 skill）、freestylefly/awesome-gpt-image-2（提示词库非 skill）、LangGPT/linexjlin/GPTs/lijigang/prompts（提示词合集非 skill）；去重 openakita content-research-writer / qiaomu-anything-to-notebooklm / marketingskills / Humanizer-zh（库内已有）；skillhub.cn 热榜仍为通用"专家.Skill"无 GitHub 可验证，0 收录；X 侧记信号不收录：YouMind youtube skill（平台内无公开仓库）、@HastyRick135248 网盘打包（无具体仓库名）、@densancar 广告仿写 skill（非公开仓库）
