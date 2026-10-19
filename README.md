@@ -385,6 +385,42 @@
 - **怎么用它搞钱**：儿童故事/睡前故事账号起号：手绘水彩风差异化强；或接"动态绘本定制"单（品牌 IP、电子绘本系列），按本收费。注：仓库暂无 LICENSE 文件声明，商用前建议与作者确认授权
 - **来源**：[lhlGitHub/hand-drawn-storybook-animation-skill](https://github.com/lhlGitHub/hand-drawn-storybook-animation-skill) · ⭐36
 
+### alchaincyf/huashu-art-motion（艺术动画：代码逐镜做片）
+- **一句话**：中文艺术动画 skill：36 种实做风格＋16 种可迁移研究配方、9 种解说动画语法，用代码逐镜渲染讲解视频——适合做知识科普动画、接"AI 动画代做"单的人
+- **核心用法**：
+  1. 先写镜头表：照 `references/镜头表模板.md` 每行一镜（时间段｜画面里的物｜它在做什么｜镜头｜屏上字≤8 字｜做法）；先锁画风+色板，开头 3 秒必须是一个具体小场景，不能是标题
+  2. 过 lint：`uv run scripts/storyboard_lint.py <项目>/镜头表.md`，红灯不清不许开工（有口播稿加 `--script` 查屏上数字和口播是否一致）
+  3. 逐镜渲染：参数化片段 `render.py --spec 镜NN.json`（单个片段最多撑 8 秒，超了拆镜）；艺术风格画面写 `scenes/<id>.js` 登记进 `eras.js`；全片一套色板、最多 2 种片段语法
+  4. 拼接：`ffmpeg -f concat` 硬切成片，有口播再混音；每镜抽帧排成一排对着镜头表看，哪一镜像从别的片子拿来的就按画风重做
+  5. QA+交付：`qa.py` 逐镜自查"六种做坏方式"，`deliver.py` 红灯不交付、黄灯逐条写理由
+- **安装**：`npx skills add alchaincyf/huashu-art-motion`（需 uv、ffmpeg、Playwright Chromium）
+- **怎么用它搞钱**：接知识科普/教育机构动画定制单：镜头表+lint+逐镜渲染是标准化交付流程，一套模板复用多单；或做"艺术史速览"类账号，36 种风格配方是护城河
+- **来源**：[alchaincyf/huashu-art-motion](https://github.com/alchaincyf/huashu-art-motion) · ⭐4381
+
+### lemomo-ai/lemo-opuscar（51 种影片风格提示词）
+- **一句话**：51 种影片风格、每种配一支"纯代码做出来"的样片（含 OPUSCAR 98 奥斯卡百年风格库）：不用视频生成模型，agent 写代码逐帧画——适合要风格化短片、想零成本试风格的人
+- **核心用法**：
+  1. 先逛在线画廊选风格：51 种风格每种有样片+可复用的 style prompt，风格与内容解耦，同一风格换题材即出新片
+  2. 讲自己的故事：拿 style prompt 喂自己的题材，agent 按 DIRECTOR.md/TECHNIQUE.md 写代码导演
+  3. 画面 canvas/WebGL 逐帧渲染、配乐用免费采样库、旁白 TTS，全链路零视频模型成本
+  4. 新增「实证影像」8 种风格：拍真实素材、每个数字有出处，适合要"看起来像真的"的纪实风
+  5. 一支片子约 30–60 分钟 agent 时间，注意 token 成本；默认 1920×1080@24fps
+- **安装**：`claude plugin marketplace add lemomo-ai/lemo-opuscar && claude plugin install lemo-opuscar@lemolab`（需 Node 20+、ffmpeg、Python 3.11+）
+- **怎么用它搞钱**：风格化短片定制（婚礼/品牌故事/产品发布）：风格库是现成菜单，客户点风格你出片；或做"一镜一世界"系列账号，51 种风格=51 期内容不断更
+- **来源**：[lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) · ⭐3064（注：风格为 Claude Opus 5.5 调优，其他模型效果可能打折）
+
+### echris6/motion-video-kit（商业级动态影片）
+- **一句话**：商业级 AI 辅助视频 skill kit：从 28 部 SaaS 产品发布片提炼的动效语法＋独立 critic 评审循环＋可测量的质量门，专做"看起来贵"的商业宣传片——适合接 B 端宣传片/发布会视频单的人
+- **核心用法**：
+  1. 走 Gauntlet 评审循环：builder ≠ judge，用现成的 critic prompts 让"新鲜评审"逐项验片，ledger 记账，不达标不交付
+  2. 动效按 6 规则+16 种可复用机制选（motion-grammar.md），不凭感觉加特效；节奏数字有出处
+  3. 质量门可测量：frozen time、响度、对比度、品牌色，脚本一键跑（scripts/ 里有现成工具）
+  4. 声音设计单独一环：配乐按买家画像选、卡点踩在 end card 上，每个小动效配干净音效，混音有目标值
+  5. 报价直接套 business-offers.md：垂直行业+购买证据+价格锚点+pilot offer 模板
+- **安装**：`git clone https://github.com/echris6/motion-video-kit.git && cp -r motion-video-kit/business-motion-film ~/.claude/skills/`（脚本需 ffmpeg/ffprobe）
+- **怎么用它搞钱**：接 B 端商业宣传片/产品发布视频：critic loop+质量门是"贵"的证据，报价时把品控流程写进方案；28 部发布片的动效原理是谈单话术
+- **来源**：[echris6/motion-video-kit](https://github.com/echris6/motion-video-kit) · ⭐1139
+
 ## 文案钩子（6 个）
 
 ### price-anchor
@@ -963,7 +999,7 @@
   5. 误杀保护：有作者真实样稿时，样稿优先级高于去 AI 规则（作者真用破折号就按作者频率保留）；学术/技术/法律文本中性平实就是"人味"，不强加观点。
 - **安装**：npx skills add blader/humanizer
 - **怎么用它搞钱**：做公众号/小红书代运营的"去 AI 味润色"增值服务——客户用 AI 写初稿，你按 26 项清单人工过一遍再发布，按千字收费；或打包卖"AI 代写 + 去味"两道工序，做差异化接单。
-- **来源**：[blader/humanizer](https://github.com/blader/humanizer) · ⭐55953
+- **来源**：[blader/humanizer](https://github.com/blader/humanizer) · ⭐58140（10-19 复核，持续上涨）
 
 
 ### tt-humanizer
@@ -1058,6 +1094,8 @@
 - 两边互补，互链不合并
 
 ## 更新日志
+
+- 2026-10-18：v1.9 追加 3 条（视频生产 3 条：alchaincyf/huashu-art-motion 中文艺术动画（36 实做风格+16 研究配方+9 种解说动画语法：镜头表→lint→逐镜渲染→拼接→QA→交付全链路）4381★、lemomo-ai/lemo-opuscar 51 种影片风格提示词（每种配纯代码样片+OPUSCAR 98 奥斯卡百年风格库，零视频模型成本；风格为 Opus 5.5 调优已注明）3064★、echris6/motion-video-kit 商业级动态影片（28 部 SaaS 发布片提炼的动效语法+独立 critic 评审循环+可测量质量门）1139★），共 88 个 skills；star 复核：blader/humanizer 55953→58140（去AI味英文原版，持续上涨）；淘汰/去重：wheresryan22/anatomy（16094★，库内已有）、rehan-remade/universal-modder（8356★，游戏 mod 向）、QingYunA/answer-me-with-html（3704★，dev 向）、kaankiziltug/logo-design-skill（3697★，设计向）、nanaism/yomiyasu（2232★，日语改写）、oil-oil/oil-ui（1768★，UI 设计向）、mikehasa/golive-skill（1300★，部署工具）、Arekejoker/qwen21-nsfw-pose-skill（2945★，NSFW 调性不符）、alirezarezvani/claude-skills 整库（28372★，marketing 子 skills 与库内 coreyhaines31 同源重叠、video-content-strategist 为空壳）；skillhub.cn 飙升榜可读（编程专家 518万/搜索引擎 294万/视频全能创作 102.4万/视频号爆款拆解 57.5万），视频创作类下载仍旺记为需求信号，但全站无 GitHub 源码链接无法交叉验证，0 收录；skills.sh 榜单仍是老面孔（mattpocock/superpowers 分叉/runcomfy/open.feishu.cn/microsoft-azure），无新货；X 侧：2026-10-18 23:58 起浏览器环境被 X/Google 风控拦截，kk 指令 DRAFT-ONLY、禁用 browser task，本轮 X 信号缺席，改用公开网页搜索补市场洞察——近 48h 中文社区无新的 skills 推荐帖信号，站外 AI 副业文章（内容接单/AI 短剧/数字人口播/GEO 咨询）佐证"去AI味+内容生产流水线"仍是搞钱人群核心需求
 
 - 2026-10-17：v1.8 追加 5 条（视频生产 3 条：Jakeschincariol/youtube-agent-skill YouTube 频道全链路（11 skills+6 个 Python 工具：21 钩子公式写脚本打分/标题缩略图质检/剪辑决策清单/留存分析）1583★、AirsupHQ/machine-skill 工程机械 3D 动画（一句话描述→可交互 3D→一键成片）286★、lhlGitHub/hand-drawn-storybook-animation-skill 手绘水彩动态绘本（浏览器实时作画+豆包配音+双语字幕）36★；营销增长 2 条：Jakeschincariol/instagram-agent-skill IG 账号全链路（26 钩子公式+主页诊断+自带 humanizer）1724★、Jakeschincariol/founder-skill 创业想法验证（董事会框架挑刺+100 买家代理跑购买场景）906★），共 85 个 skills；淘汰 AirsupHQ/factory-skill（20★ 未达硬线）、howardz27/poster-generator-skill（19★ 未达硬线）、Jakeschincariol/linkedin-agent-skill（2251★，LinkedIn 场景与中文搞钱人群不匹配，与 sergebulaev/linkedin-skills 一致性淘汰）、master-skills/trader-skill/promptmaster-skill（75/40/39★ 未达标）、arena-skill（702★，AI 对打 dev 玩向）；去重 @dontbesilent dbs-title-cover-intro（dbskill 库内已有）、@xl_lottie 视频动画制作（即 wheresryan22/anatomy 库内已有）；skillhub.cn 最近上新 12 个全无 GitHub 源码链接、无法做 star+更新时间交叉验证，0 收录；skills.sh 榜单仍是老面孔（vercel-labs/mattpocock/hyperframes/superpowers 系刷量嫌疑/runcomfy/open.feishu.cn/microsoft-azure），无新货；X 信号源 7 帖命中（48h 窗口，宁缺毋滥）：@HaileyAILabs 手绘绘本 32.9K 浏览（全场最高）→收录、@cywcycw machine-skill 帖→收录、@CY160909 7 设计 skills（仅 poster-generator-skill 有仓库但 19★ 淘汰）；记信号不收录：@7998l201 贴图风格包（t.co 短链截断无法验证仓库）、@krikwangcy 闲鱼 CAD skills（无公开仓库，需私信）、@xiaohu 自研视频 skill（无 skill 名/公开链接）；指定账号 10 个（@dotey/@xiaohu/@Barret_China/@jesselaunz/@rowancheung/@CrazyKaomei/@lewangx/@mranti/@op7418/@wlzh）近 48h 无 skills 推荐帖
 - 2026-10-16：v1.7 X 信号轮追加 10 条（视频生产 3 条：dexhunter/seedance2-skill Seedance 2.0 提示词（中英双版）4322★、Vincentwei1021/video-shotcraft 镜头配方卡+Remotion 12170★、liyupi/ai-promo-video-maker 产品宣传片全流程 304★；文案钩子 1 条：dontbesilent2025/dbskill 选题与 Hook 诊断（4176 知识原子，CC BY-NC 4.0）10708★；营销增长 6 条：mvanhorn/last30days-skill 跨平台热源研究 64489★、helloianneo/ian-xiaohei-illustrations 小黑手绘配图 12607★、rohunvora/x-research-skill X 调研 agent 1244★、sergebulaev/x-skills X 营销工具集 137★、ponyodong2026/ponyo-cover-anchor-system 小红书封面锚点 195★、JimLiu/baoyu-skills 宝玉 20+ 效率 skills 26716★），共 80 个 skills；淘汰 aaaronmiller/create-viral-content（75★，star 太弱无热度佐证）、adrianpunk/Punk-Skill（1325★，商业用途需书面付费授权，与搞钱用途冲突）、bobobo2026/explainer-video（0★ 未达标）、TheMattBerman/x-algo-skill（68★，热度弱）、wshuyi/x-article-publisher-skill（873★，纯发布工具无方法论）、LunarXuan/image-prompt-reverse（529★，生图向，章节不匹配）、nexu-io/html-anything（9143★，HTML 生成，dev/设计向）、QianXiguaAI/video-privacy-blur（小众工具，需求弱）；X 信号源：@nicebabycat/@fhwofjow51260/@GitHub_Daily/@voidJan/@starkljm/@superfang119/@kafkaup/@b70670555886391/@Lonely__MH 等 12 帖命中（48h 窗口，宁缺毋滥）；记信号不收录：@Williamsungo 外快清单（链接截断无法验证）、@kaitoxhacker SEO 方法论（无仓库）、@xiaohu Opus 5.5 展示帖（无具体 skill）、@vista8 skill 行业讨论（无推荐）
