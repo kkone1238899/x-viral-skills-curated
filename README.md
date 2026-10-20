@@ -469,6 +469,65 @@
 - **怎么用它搞钱**：接"运镜必须准"的单：产品 3D 演示、建筑漫游、电商场景视频——几何体检是"一次过"的谈单证据；或做白模控制教程，差异化明显
 - **来源**：[alchaincyf/seedance-skill](https://github.com/alchaincyf/seedance-skill) · ⭐41
 
+### HeyChengC/wallstreet-explainer（华尔街式财经解读短片）
+- **一句话**：复刻"华尔街式"财经解读短片的 skill：真实素材（发布会/采访抠人）+数字可视化 B-roll+克制转场，代码逐帧渲染——适合做财经/科技解读视频的人（@Daveyang1916 推荐："开头还会出几个钩子让你挑"）
+- **核心用法**：
+  1. `git clone` 到 `~/.claude/skills/wallstreet-explainer`，装好 pip/npm 依赖+ffmpeg+Playwright
+  2. 给选题（自己定或让它出）：开头 5–7 秒抛反差钩子，结尾收成一句判断——钩子可自选，AI 也会备几个让你挑
+  3. 素材按优先级自动找：主流视频网站找合适片段裁剪，人物从发布会/采访一帧帧抠出来站大字前讲
+  4. 数字表达是 B-roll 重点：数据怎么放、关系怎么画、图表怎么呈现，控制整片风格
+  5. 转场铁律：克制——同一对象挂镜头运动，禁 PPT 式渐入渐出、禁连续硬切；配乐平稳底乐+人声自动压低
+- **安装**：`git clone https://github.com/HeyChengC/wallstreet-explainer.git ~/.claude/skills/wallstreet-explainer`（再装 requirements.txt/npm 依赖+ffmpeg；抠人需 rembg）
+- **怎么用它搞钱**：做财经/科技解读账号：77 秒样片《AI 到底有多烧钱》是可直接抄的作业；或接"高级感"商业解读视频单，素材+数字表达+转场三件套是报价依据
+- **来源**：[HeyChengC/wallstreet-explainer](https://github.com/HeyChengC/wallstreet-explainer) · ⭐172（注：仓库未声明 LICENSE，商用前请确认授权）
+
+### threerocks/sweety-handdraw-video（手绘口播视频）
+- **一句话**：给主题/文章/故事，做出"边画边讲"的有声手绘视频：逐笔描线、填色、手写文字、配音对齐全自动——适合做知识/故事类口播账号的人（@leo_xiaolei 长文 25K 浏览：黄金 5 秒开场钩子+自动配音+v1.4 变现盘点）
+- **核心用法**：
+  1. `npx skills add threerocks/sweety-handdraw-video --skill sweety-handdraw-video --agent claude-code codex --global --copy --yes` 一行装好（macOS/Linux）
+  2. 丢主题/文章/完整故事：Agent 写口播、设计分镜、生成插画，本地工具负责描线填色手写配音
+  3. 画什么、什么画风、讲多久按内容定：淡彩叙事/冷色棱角等插画风格+毛笔/女性手部可选
+  4. 默认竖屏 9:16，导演 `presentation.mode` 控单页疏密；样片《那条死于愤怒的蛇》49 秒可先看叙事密度
+  5. 版本固定：releases 页有 v1.4.1 安装包+SHA256 校验，更新仓库不会自动动已安装副本
+- **安装**：`npx skills add threerocks/sweety-handdraw-video --skill sweety-handdraw-video --agent claude-code codex --global --copy --yes`
+- **怎么用它搞钱**：做手绘故事/知识账号：小红书《AI 替我说》500 亿流量激励、YouTube CPM $3–5、Faceless 频道月入 $5000（@leo_xiaolei 变现盘点）；或接"手绘讲解"定制单，描线+配音是标准化交付
+- **来源**：[threerocks/sweety-handdraw-video](https://github.com/threerocks/sweety-handdraw-video) · ⭐742
+
+### Kianzzz/xilo-opus-video（Opus 5.5 写代码做视频：三方案竞标）
+- **一句话**：让 Opus 5.5"竞标式"做视频的 skill：先给三个拉开差别的方案+预览，你挑一个，它再写成 brief.md 逐镜渲染——适合要风格化短片、怕"一句话丢过去靠运气"的人（@growaiskills 8 skills 选型指南收录对比）
+- **核心用法**：
+  1. 给想法/文章/产品网址/代码库/参考视频：先问你要做什么
+  2. 收三个方案：风格、技术组合、逐镜头画面概括、声音、预计渲染时间，刻意拉开差别
+  3. 每个方案看预览：一张关键帧或 2–4 秒小样，再决定
+  4. 确认后写成 `brief.md`（结构化提示词，可复用），逐个镜头制作+静帧自检，最后渲染 MP4
+  5. 技术栈：Canvas/HTML·CSS·SVG/WebGL 着色器/Three.js/Remotion/HyperFrames/Manim，配乐代码合成
+- **安装**：`npx skills add Kianzzz/xilo-opus-video`（skills/ 目录，Claude Code skill）
+- **怎么用它搞钱**：接产品宣传片/知识讲解/数据故事单：三方案竞标是"专业感"的谈单流程，brief.md 可复用=边际成本递减；或照着参考视频的结构手法做同款（README 明确支持）
+- **来源**：[Kianzzz/xilo-opus-video](https://github.com/Kianzzz/xilo-opus-video) · ⭐207
+
+### chuspeeism/dashi-animationstyle（7 套风格中文知识口播动画）
+- **一句话**：把 15–60 秒中文知识口播做成 7 种画风讲解动画的 skill：1920×1080/30fps，画面全由 Claude 写 HTML/Canvas 代码画、不用生图模型——适合做中文知识口播账号的人（@growaiskills 选型指南收录）
+- **核心用法**：
+  1. `git clone` 到 `~/.claude/skills/dashi-animationstyle`（macOS Apple 芯片实测，Node 22+/ffmpeg/Chrome）
+  2. 交一段口播+选风格：立体卡通/黑底科技/超现实拼贴/复古剪纸/复古报刊/扁平流程图/手绘笔记，7 套各有适配场景
+  3. Claude 转写字幕→写分镜给你确认→画 3 张静帧给你确认→出整段（也可一句话描述新风格，查 27 种风格词典出方向）
+  4. 成片带口播和字幕，可直接拖进剪映接着剪；每套风格卡（配色/字体/动效）在 `styles/<风格>/风格卡.md`
+  5. 先跑自检：装好后说"检查一下风格动画的环境"，Claude 会渲一段 21 秒例子验环境
+- **安装**：`git clone https://github.com/chuspeeism/dashi-animationstyle.git ~/.claude/skills/dashi-animationstyle`（需 Node 22+/ffmpeg/Chrome；macOS）
+- **怎么用它搞钱**：做中文知识口播矩阵号：7 套风格=7 个账号定位，一套口播多风格复用；或接"讲解动画"单，风格卡是现成菜单
+- **来源**：[chuspeeism/dashi-animationstyle](https://github.com/chuspeeism/dashi-animationstyle) · ⭐100（注：仓库未声明 LICENSE，商用前请确认授权）
+
+### op7418/guizang-product-video-skill（软件更新宣传片：复用真实产品组件）
+- **一句话**：给 AI 你的产品代码库，它整理卖点、写文案、接入你原来的组件做动画、写配乐配音效，输出"看起来像你产品"的更新宣传片——适合独立开发者/小团队发版时用（@YuGuo936066 早报视频 skill 栈实战验证）
+- **核心用法**：
+  1. `npx skills add https://github.com/op7418/guizang-product-video-skill --skill guizang-product-video-skill`
+  2. 打开你的产品代码库，告诉它这次更新了什么（或介绍整个产品）
+  3. 三件事是重点：看起来像你的产品（复用真实组件和设计语言）、听得懂在讲什么、看完不觉得拖沓
+  4. 输出视频+可继续修改的工程：分镜文案、原创配乐都在工程里，改文案不用重做
+- **安装**：`npx skills add https://github.com/op7418/guizang-product-video-skill --skill guizang-product-video-skill`
+- **怎么用它搞钱**：给独立开发者/小商家做"发版宣传片"接单：复用真实组件是差异化卖点；或自己每次发版都出一支，保持产品声量
+- **来源**：[op7418/guizang-product-video-skill](https://github.com/op7418/guizang-product-video-skill) · ⭐831（注：AGPL-3.0，商用/二次分发注意开源义务）
+
 ## 文案钩子（6 个）
 
 ### price-anchor
@@ -1033,6 +1092,18 @@
 - **怎么用它搞钱**：副业立项前先验证——100 买家代理≈免费用户访谈；或做"商业 idea 验证"咨询，按项目收费帮人省试错钱
 - **来源**：[Jakeschincariol/founder-skill](https://github.com/Jakeschincariol/founder-skill) · ⭐906
 
+### marswaveai/skills（一稿多发：ListenHub 内容复用包）
+- **一句话**：ListenHub.ai/ColaOS 官方 skill 包：一稿多发是核心用法——一个链接拆成播客/解说视频/幻灯片/TTS 配音/图文成套出，外加声音克隆/AI 配乐——适合做小红书起号、多平台分发的人（@xoyif63862452《小红书起号：7 个 Skill 搞定运营流水线》推荐的一稿多发环节）
+- **核心用法**：
+  1. `npx skills add marswaveai/skills` 一行装好（MIT）
+  2. 一稿多发：长图文/链接→小红书图文+短视频口播稿+播客+封面成套出，注意按平台调性调长度（小红书要短）
+  3. `/podcast` 做单人/对谈/辩论播客，`/explainer` 做解说视频，`/slides` 出幻灯片
+  4. `/voice-clone` 克隆自己音色成 reusable speaker，多条内容同一声音
+  5. 先跑通"找资料→一稿多发→去 AI 味"最小闭环，再叠自动化（@xoyif63862452 方法论：别一次装七个）
+- **安装**：`npx skills add marswaveai/skills`（需 ListenHub.ai 账号）
+- **怎么用它搞钱**：做小红书/多平台起号代运营：一稿多发把"一篇稿磨三小时"压到"三十分钟量级"+多平台铺（@xoyif63862452）；或做播客/解说代做单，声音克隆是复购钩子
+- **来源**：[marswaveai/skills](https://github.com/marswaveai/skills) · ⭐79
+
 ## 去 AI 味（4 个）
 
 > 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用）。humanizer 走检查清单路线，tt-humanizer 专攻短视频口播，qu-ai-wei 专攻简体中文改写，humanizer-skill 带检测评分 + 多人声改写。
@@ -1143,6 +1214,7 @@
 
 ## 更新日志
 
+- 2026-10-19：v2.1 X 信号轮追加 6 条（视频生产 5 条：HeyChengC/wallstreet-explainer 华尔街式财经解读短片（真实素材+数字可视化+钩子自选）172★、threerocks/sweety-handdraw-video 手绘口播视频（逐笔描线+配音对齐，v1.4.1）742★、Kianzzz/xilo-opus-video Opus 5.5 写代码做视频（三方案竞标+brief.md 复用）207★、chuspeeism/dashi-animationstyle 7 套风格中文知识口播动画 100★、op7418/guizang-product-video-skill 软件更新宣传片（复用真实产品组件）831★；营销增长 1 条：marswaveai/skills ListenHub 一稿多发内容复用包 79★），共 98 个 skills；淘汰/记信号：feicaiclub/ad-storyboarder（3★ 未达硬线，广告成本账方法论记信号）、LearnPrompt/ai-news-radar（1785★，SKILL.md 为项目维护用、本体是监控工具，TrendRadar 先例，记早报新闻雷达需求信号）、Vincentwei1021/mg-styles-15（1336★，风格画廊无 SKILL.md、非 skill 形态）、threeaus/creator-style-kit（2★）、maobidao/douyin-oral-script-writer（0★）、ceoniuer/liuren-writing-skills（0★，刘韧去 AI 味写作 skill 记工具化信号）、wtt-code-animation-studio/archival-doc（无相关仓库）、bojieli/agentreach（181★，SSH 远程执行工具、章节不匹配）；@boz_wave 短剧 83 仓库帖（截图无仓库链接不可验证，盲测"10 个编剧 skill 仅 5 个三局全赢"记需求信号）、@xoyif63862452 小红书 7 skills（NotebookLM/Remotion/Humanizer-zh/baoyu 库内已有，AgentReach/openCLI 无仓库，流水线方法论记信号）、Answer me with HTML（dev 向，10-18 已淘汰）、@bkdgiffug Seedance Skill OS（库内已有，去重）；指定账号 6 个近 48h 无 skills 推荐帖；X 全程只读无互动、未遇真人验证
 - 2026-10-19：v2.0 追加 4 条（视频生产 4 条：higgsfield-ai/skills Higgsfield 官方 8 件套（30+ 模型生成+Marketing Studio 品牌广告+Virality Predictor 爆款打分）1326★、robonuggets/seedance-skill App/SaaS 液态玻璃宣传片（截图→成片，成本透明 $3/10秒）107★、LeoYeAI/seedance-skills 导演级 Seedance prompt OS（28 模块化 skills+6 国语言）47★、alchaincyf/seedance-skill 白模驱动几何级精确运镜（渲染前几何体检+提示词从实测几何生成）41★），共 92 个 skills；淘汰/去重：cv-cat/XhsSkills（228★，小红书爬虫 API 封装，与 white0dew/autoclaw 自动发布类同属封号风险，按一致性未收）、gencraft-labs/skills（skills.sh 24h trending 15.4K install 对应 GitHub 0★，刷量嫌疑）、autonnel/autonnel-skills（5★ 未达标）、mbfinotti/sales-skills（1★ 未达标）、noahneancy-byte/create-xiaohongshu-ai-explainers（24★，仅一句 README、无 SKILL.md）、zhangpeicheng8788-ux/xhs-skill（46★，自动发布类）、11Yuxuanyang/seedance-viral-forge（20★ 未达硬线）、zhouwei713/fpv-immersive-video-prompting（94★，同作者 seedance-prompt 已收不堆作者，先例延续）；skills.sh Trending(24h) 新面孔交叉验证：higgsfield-ai 真热门收录、gencraft-labs 刷量嫌疑淘汰；skillhub.cn 最近上新 10 条（WorkBuddy 指南 13.8万/搜索引擎 406.3万下载等）与下载热榜 10 条（编程类 400万+）均无 GitHub 源码链接、无法交叉验证，0 收录；X 热度洞察 browser task 进行中，结果另起 v2.1 批次
 - 2026-10-18：v1.9 追加 3 条（视频生产 3 条：alchaincyf/huashu-art-motion 中文艺术动画（36 实做风格+16 研究配方+9 种解说动画语法：镜头表→lint→逐镜渲染→拼接→QA→交付全链路）4381★、lemomo-ai/lemo-opuscar 51 种影片风格提示词（每种配纯代码样片+OPUSCAR 98 奥斯卡百年风格库，零视频模型成本；风格为 Opus 5.5 调优已注明）3064★、echris6/motion-video-kit 商业级动态影片（28 部 SaaS 发布片提炼的动效语法+独立 critic 评审循环+可测量质量门）1139★），共 88 个 skills；star 复核：blader/humanizer 55953→58140（去AI味英文原版，持续上涨）；淘汰/去重：wheresryan22/anatomy（16094★，库内已有）、rehan-remade/universal-modder（8356★，游戏 mod 向）、QingYunA/answer-me-with-html（3704★，dev 向）、kaankiziltug/logo-design-skill（3697★，设计向）、nanaism/yomiyasu（2232★，日语改写）、oil-oil/oil-ui（1768★，UI 设计向）、mikehasa/golive-skill（1300★，部署工具）、Arekejoker/qwen21-nsfw-pose-skill（2945★，NSFW 调性不符）、alirezarezvani/claude-skills 整库（28372★，marketing 子 skills 与库内 coreyhaines31 同源重叠、video-content-strategist 为空壳）；skillhub.cn 飙升榜可读（编程专家 518万/搜索引擎 294万/视频全能创作 102.4万/视频号爆款拆解 57.5万），视频创作类下载仍旺记为需求信号，但全站无 GitHub 源码链接无法交叉验证，0 收录；skills.sh 榜单仍是老面孔（mattpocock/superpowers 分叉/runcomfy/open.feishu.cn/microsoft-azure），无新货；X 侧：2026-10-18 23:58 起浏览器环境被 X/Google 风控拦截，kk 指令 DRAFT-ONLY、禁用 browser task，本轮 X 信号缺席，改用公开网页搜索补市场洞察——近 48h 中文社区无新的 skills 推荐帖信号，站外 AI 副业文章（内容接单/AI 短剧/数字人口播/GEO 咨询）佐证"去AI味+内容生产流水线"仍是搞钱人群核心需求
 
