@@ -528,6 +528,19 @@
 - **怎么用它搞钱**：给独立开发者/小商家做"发版宣传片"接单：复用真实组件是差异化卖点；或自己每次发版都出一支，保持产品声量
 - **来源**：[op7418/guizang-product-video-skill](https://github.com/op7418/guizang-product-video-skill) · ⭐831（注：AGPL-3.0，商用/二次分发注意开源义务）
 
+### calesthio/OpenMontage（AI 剪辑工作室：12 条制片流水线）
+- **一句话**：把 Claude Code/Cursor 变成完整视频制片工作室：12 条制片流水线（AI 成片/真实素材混剪/口播/动画/换脸配音等）、49 个 skills，一句"给我做个 60 秒讲解视频"就开工——适合想批量产视频、不想学剪辑的人。
+- **核心用法**：
+  1. `git clone https://github.com/calesthio/OpenMontage.git && cd OpenMontage && make setup`（需 Python 3.10+、FFmpeg、Node 18+；各模型走自己 API key）
+  2. AI 成片流：`create-video`（HeyGen Video Agent：提示词→脚本/形象/配音/字幕全自动）、`ai-video-gen` 调各家文生视频模型
+  3. 代码成片流：`remotion-best-practices`（React 视频）+ `manim-composer`（数据动画），字幕走 rules/subtitles.md 的规格
+  4. 数字人流：`avatar-video`（HeyGen）+ `faceswap`，配音用 `elevenlabs`/`azure-text-to-speech`
+  5. 真实素材流：直接说"只用真实素材"——agent 联网找素材、写脚本、配播客级配音、自动找 BGM 混音
+  6. MCP 优先：每个 skill 的 Tool Selection 表列了 MCP 工具和 curl 兜底，有 MCP 就走 MCP，不用手拼请求
+- **安装**：`git clone https://github.com/calesthio/OpenMontage.git && cd OpenMontage && make setup`
+- **怎么用它搞钱**：批量产 AI 短视频跑流量分成（多流水线=多账号多风格不重复）；接"AI 视频代做"单：选题→成片一条龙，按条收费
+- **来源**：[calesthio/OpenMontage](https://github.com/calesthio/OpenMontage) · ⭐70348
+
 ## 文案钩子（6 个）
 
 ### price-anchor
@@ -1214,6 +1227,7 @@
 
 ## 更新日志
 
+- 2026-10-20：v2.2 追加 1 条（视频生产：calesthio/OpenMontage AI 剪辑工作室（12 条制片流水线、49 个 skills：HeyGen 一键成片/Remotion 代码成片/数字人/真实素材混剪，9K fork 13% fork 比有机验证）70348★），共 99 个 skills；淘汰/去重：sergebulaev/linkedin-skills（5007★，三维中需求匹配不过——LinkedIn 场景与中文搞钱人群不匹配，10-17 一致性先例延续）、davepoon/buildwithclaude（3661★，纯目录平台、无自有 SKILL.md）、addyosmani/agent-skills（109011★）、Leonxlnx/taste-skill（99921★）、tt-a1i/archify（86516★）、obra/superpowers（302645★）、Jakeschincariol/replica-skill（3757★）、aldegad/sprite-gen（2943★，均为 dev/coding-agent 向、与五章节不匹配；星数暴涨但场景错配）；skills.sh 榜单仍是老面孔（superpowers 分叉系/runcomfy/open.feishu.cn/microsoft-azure），无新货；skillhub.cn 热榜（视频号爆款短视频拆解 69.3万/视频号挂车爆单脚本 40.3万/文章去AI味 72.2万）仍全站内无 GitHub 源码、无法交叉验证，0 收录；X 信号 9 帖命中（只读无互动）：@leo_xiaolei sweety-handdraw-video v1.4 重大更新 571赞/5.5万浏览（库内已有，覆盖领先）、@xoyif63862452 小红书起号 7 skills 流水线（AgentReach/openCLI 无仓库、其余库内已有）、@ClaudeCodeBase（日文）视频 AI 5 选含 OpenMontage→收录；X 热度洞察一句话：中文搞钱人群此刻要的是"装上就能产出内容、吃到视频/图文补贴"的交付型 skill
 - 2026-10-19：v2.1 X 信号轮追加 6 条（视频生产 5 条：HeyChengC/wallstreet-explainer 华尔街式财经解读短片（真实素材+数字可视化+钩子自选）172★、threerocks/sweety-handdraw-video 手绘口播视频（逐笔描线+配音对齐，v1.4.1）742★、Kianzzz/xilo-opus-video Opus 5.5 写代码做视频（三方案竞标+brief.md 复用）207★、chuspeeism/dashi-animationstyle 7 套风格中文知识口播动画 100★、op7418/guizang-product-video-skill 软件更新宣传片（复用真实产品组件）831★；营销增长 1 条：marswaveai/skills ListenHub 一稿多发内容复用包 79★），共 98 个 skills；淘汰/记信号：feicaiclub/ad-storyboarder（3★ 未达硬线，广告成本账方法论记信号）、LearnPrompt/ai-news-radar（1785★，SKILL.md 为项目维护用、本体是监控工具，TrendRadar 先例，记早报新闻雷达需求信号）、Vincentwei1021/mg-styles-15（1336★，风格画廊无 SKILL.md、非 skill 形态）、threeaus/creator-style-kit（2★）、maobidao/douyin-oral-script-writer（0★）、ceoniuer/liuren-writing-skills（0★，刘韧去 AI 味写作 skill 记工具化信号）、wtt-code-animation-studio/archival-doc（无相关仓库）、bojieli/agentreach（181★，SSH 远程执行工具、章节不匹配）；@boz_wave 短剧 83 仓库帖（截图无仓库链接不可验证，盲测"10 个编剧 skill 仅 5 个三局全赢"记需求信号）、@xoyif63862452 小红书 7 skills（NotebookLM/Remotion/Humanizer-zh/baoyu 库内已有，AgentReach/openCLI 无仓库，流水线方法论记信号）、Answer me with HTML（dev 向，10-18 已淘汰）、@bkdgiffug Seedance Skill OS（库内已有，去重）；指定账号 6 个近 48h 无 skills 推荐帖；X 全程只读无互动、未遇真人验证
 - 2026-10-19：v2.0 追加 4 条（视频生产 4 条：higgsfield-ai/skills Higgsfield 官方 8 件套（30+ 模型生成+Marketing Studio 品牌广告+Virality Predictor 爆款打分）1326★、robonuggets/seedance-skill App/SaaS 液态玻璃宣传片（截图→成片，成本透明 $3/10秒）107★、LeoYeAI/seedance-skills 导演级 Seedance prompt OS（28 模块化 skills+6 国语言）47★、alchaincyf/seedance-skill 白模驱动几何级精确运镜（渲染前几何体检+提示词从实测几何生成）41★），共 92 个 skills；淘汰/去重：cv-cat/XhsSkills（228★，小红书爬虫 API 封装，与 white0dew/autoclaw 自动发布类同属封号风险，按一致性未收）、gencraft-labs/skills（skills.sh 24h trending 15.4K install 对应 GitHub 0★，刷量嫌疑）、autonnel/autonnel-skills（5★ 未达标）、mbfinotti/sales-skills（1★ 未达标）、noahneancy-byte/create-xiaohongshu-ai-explainers（24★，仅一句 README、无 SKILL.md）、zhangpeicheng8788-ux/xhs-skill（46★，自动发布类）、11Yuxuanyang/seedance-viral-forge（20★ 未达硬线）、zhouwei713/fpv-immersive-video-prompting（94★，同作者 seedance-prompt 已收不堆作者，先例延续）；skills.sh Trending(24h) 新面孔交叉验证：higgsfield-ai 真热门收录、gencraft-labs 刷量嫌疑淘汰；skillhub.cn 最近上新 10 条（WorkBuddy 指南 13.8万/搜索引擎 406.3万下载等）与下载热榜 10 条（编程类 400万+）均无 GitHub 源码链接、无法交叉验证，0 收录；X 热度洞察 browser task 进行中，结果另起 v2.1 批次
 - 2026-10-18：v1.9 追加 3 条（视频生产 3 条：alchaincyf/huashu-art-motion 中文艺术动画（36 实做风格+16 研究配方+9 种解说动画语法：镜头表→lint→逐镜渲染→拼接→QA→交付全链路）4381★、lemomo-ai/lemo-opuscar 51 种影片风格提示词（每种配纯代码样片+OPUSCAR 98 奥斯卡百年风格库，零视频模型成本；风格为 Opus 5.5 调优已注明）3064★、echris6/motion-video-kit 商业级动态影片（28 部 SaaS 发布片提炼的动效语法+独立 critic 评审循环+可测量质量门）1139★），共 88 个 skills；star 复核：blader/humanizer 55953→58140（去AI味英文原版，持续上涨）；淘汰/去重：wheresryan22/anatomy（16094★，库内已有）、rehan-remade/universal-modder（8356★，游戏 mod 向）、QingYunA/answer-me-with-html（3704★，dev 向）、kaankiziltug/logo-design-skill（3697★，设计向）、nanaism/yomiyasu（2232★，日语改写）、oil-oil/oil-ui（1768★，UI 设计向）、mikehasa/golive-skill（1300★，部署工具）、Arekejoker/qwen21-nsfw-pose-skill（2945★，NSFW 调性不符）、alirezarezvani/claude-skills 整库（28372★，marketing 子 skills 与库内 coreyhaines31 同源重叠、video-content-strategist 为空壳）；skillhub.cn 飙升榜可读（编程专家 518万/搜索引擎 294万/视频全能创作 102.4万/视频号爆款拆解 57.5万），视频创作类下载仍旺记为需求信号，但全站无 GitHub 源码链接无法交叉验证，0 收录；skills.sh 榜单仍是老面孔（mattpocock/superpowers 分叉/runcomfy/open.feishu.cn/microsoft-azure），无新货；X 侧：2026-10-18 23:58 起浏览器环境被 X/Google 风控拦截，kk 指令 DRAFT-ONLY、禁用 browser task，本轮 X 信号缺席，改用公开网页搜索补市场洞察——近 48h 中文社区无新的 skills 推荐帖信号，站外 AI 副业文章（内容接单/AI 短剧/数字人口播/GEO 咨询）佐证"去AI味+内容生产流水线"仍是搞钱人群核心需求
