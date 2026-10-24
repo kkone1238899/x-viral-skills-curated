@@ -585,6 +585,18 @@
 - **怎么用它搞钱**：做"AI 剪辑代工"：口播/知识视频的批量剪辑按条收费，本地 FFmpeg 零边际成本
 - **来源**：[kajisho5/ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill) · ⭐2048（2026-10-23；MIT）
 
+### sugarforever/boring-video-studio（视频策划全链路：选题到成片）
+- **一句话**：一套视频策划 Agent Skill 组合：boring-video 把选题变成可执行方案（选题研究→成文→节拍→口播稿→分镜→故事板），再交给 HyperFrames 做生产渲染；另含 verysmallwoods-video 完整发布工作流（封面/平台文案/博客/社媒）——适合做知识/口播类视频、想把"选题到发布"装进终端的人。
+- **核心用法**：
+  1. 一行安装：`npx skills add sugarforever/boring-video-studio --skill setup-boring-video-skills boring-video develop-topic to-article to-spec-beats to-narration to-scenes to-storyboard to-video record-terminal`
+  2. 喊 `$boring-video` 丢选题或源文档：先定论点论据边界（develop-topic），再写内容母稿（to-article），每一步都要你点头才往下走
+  3. 节拍→口播→分镜→故事板：to-spec-beats 定学习节奏，to-narration 写口播稿（不加新料），to-scenes/to-storyboard 出可执行的镜头方案
+  4. 交给 HyperFrames 成片：`npx hyperframes doctor` 先验环境；配 ListenHub TTS 可顺手出配音+字幕
+  5. 发活用 verysmallwoods-video：视频、封面、平台文案、博客、社媒帖一条龙
+- **安装**：`npx skills add sugarforever/boring-video-studio --skill setup-boring-video-skills boring-video develop-topic to-article to-spec-beats to-narration to-scenes to-storyboard to-video record-terminal`
+- **怎么用它搞钱**：接"知识视频代策划"单：选题→成片方案一条龙；或自己批量产口播视频跑流量，口播稿调教是差异化卖点
+- **来源**：[sugarforever/boring-video-studio](https://github.com/sugarforever/boring-video-studio) · ⭐184（2026-10-24；MIT，@verysmallwoods 日常在用、口播稿去 AI 味调教实证）
+
 ## 文案钩子（7 个）
 
 ### shangdan-post-skill
@@ -1216,6 +1228,29 @@
 - **怎么用它搞钱**：接电商出图单：随手拍→全套 Listing 图，一单多图；跨境卖家多国站点复用同一套流程
 - **来源**：[xianyu110/ecommerce-image-skills](https://github.com/xianyu110/ecommerce-image-skills) · ⭐108（2026-10-22；MIT，仓库有真实出图画廊）
 
+### kiki-lgtm-dot/light-retro-collage-xiaohongshu-skill（轻复古拼贴风小红书知识图文）
+- **一句话**：把关键词/文章/截图/文档变成一套 4–12 页 3:4 小红书知识图文：选题澄清→联网查证→写文案→生成轻复古拼贴插画→动态排版→四维质检，全链路半自动——适合做小红书知识号、想批量出图文的人。
+- **核心用法**：
+  1. 定选题：说清主题和受众；有歧义先澄清，不带着模糊选题开工
+  2. 先查证再写：每个核心观点配两个独立来源，时效/专业内容不许凭记忆写
+  3. 批计划：给出 4–12 页、每页一句话目的，确认页数和版式（文字中心/插画中心）
+  4. 写文案：每页一个主论点，配文+话题≤200 字；禁用"赋能/颠覆"类 AI 腔
+  5. 出图排版：1080×1440 画布，暖象牙纸+低饱和包豪斯色+钴蓝点缀；文案先定稿，插画不抢字
+- **安装**：`git clone https://github.com/kiki-lgtm-dot/light-retro-collage-xiaohongshu-skill.git "$HOME/.agents/skills/generate-light-retro-collage-xhs-notes" && cd "$HOME/.agents/skills/generate-light-retro-collage-xhs-notes" && python3 -m pip install -r scripts/requirements.txt && python3 scripts/self_test.py`
+- **怎么用它搞钱**：接小红书知识图文代做单（选题到成图一条龙，按套收费）；或自己起知识号批量产图文吃平台流量
+- **来源**：[kiki-lgtm-dot/light-retro-collage-xiaohongshu-skill](https://github.com/kiki-lgtm-dot/light-retro-collage-xiaohongshu-skill) · ⭐25（2026-10-24；Apache-2.0，README+SKILL.md+scripts/tests 全套）
+
+### Irixil/xiaohongshu-skill（小红书知识图解+长文排版发布）
+- **一句话**：两种模式：①把杂乱素材变成选题严选的小红书知识图解（Gate 0–5 流程）；②把已确认的长文完整排版成小红书长文（封面/原生分页/原创与 AI 声明/话题 Tag/发布核验），母稿保护不被反向覆盖——适合有长文要发小红书、做知识图解的人。
+- **核心用法**：
+  1. 先选模式：新做图解走 Gate 0–5；已有文章直接走长文排版发布流
+  2. 选题严选：从素材里挑最小可用的一个 idea，给出 3 个可发布角度并推荐最优
+  3. 母稿保护：用户确认过的文字稿是唯一母稿，排版只改派生文件，不改标题正文标点
+  4. 发布有门：排版只许保存草稿；"审核后再发"必须等批准；明确说"直接发布"才提交
+- **安装**：`git clone https://github.com/Irixil/xiaohongshu-skill.git`，把目录加入 Codex/agent 的 Skills 目录
+- **怎么用它搞钱**：接"公众号/知乎长文转小红书"代发单；知识图解模式适合做科普号批量出卡片
+- **来源**：[Irixil/xiaohongshu-skill](https://github.com/Irixil/xiaohongshu-skill) · ⭐22（2026-10-24；⚠️ 仓库无 LICENSE 声明，商用前先确认授权）
+
 ## 去 AI 味（5 个）
 
 > 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用）。humanizer 走检查清单路线，tt-humanizer 专攻短视频口播，qu-ai-wei 专攻简体中文改写，humanizer-skill 带检测评分 + 多人声改写。kill-ai-slop 专攻 vibe-coded 网页的视觉+文案双重去味（带扫描器）。
@@ -1337,6 +1372,7 @@
 
 ## 更新日志
 
+- 2026-10-24：v2.4 追加 3 条（视频生产 1 条：sugarforever/boring-video-studio 视频策划全链路（选题研究→成文→节拍→口播稿→分镜→故事板→HyperFrames 成片，@verysmallwoods 日常在用、口播稿去 AI 味调教实证）184★；营销增长 2 条：kiki-lgtm-dot/light-retro-collage-xiaohongshu-skill 轻复古拼贴风小红书知识图文（选题→查证→文案→插画→动态排版→质检）25★、Irixil/xiaohongshu-skill 小红书知识图解+长文排版发布（Gate 0–5 选题严选+母稿保护+发布门）22★（无 LICENSE，已警告）），共 112 个 skills；淘汰/去重/记信号：ibreez3/xiaohongshu-skill（21★，自动发布/评论/点赞类，与 white0dew/autoclaw 同属封号风险，按一致性未收）、500bitcoins/recast（0★ 当日新建，Seedance 2.5 改视频 skill、SKILL.md 方法论真实，但零 star 按 video-close-reading 先例记观察）、kiki-lgtm-dot/xiaohongshu-skill（21★，同作者 light-retro 已收不堆作者，记信号）、Haseebi-khan/Claude-Skills（6★ 未达标）；skills.sh All Time/Trending 均为老面孔（vercel-labs/mattpocock/hyperframes/superpowers 分叉系/runcomfy/open.feishu.cn），autonnel/mbfinotti 销售类 trending 但 GitHub 仅 5★/1★（10-19 已淘汰），无新货；skillhub.cn 飙升榜（搜索引擎 799.6万/编程专家Pro 526.0万/视频全能创作 114.8万/文章去AI味 77.8万）全站内无 GitHub 源码、无法交叉验证，0 收录（新需求信号：标书写作专家 37.1万、DKnownAI Guard 10.1万）；GitHub `claude skills` 前 15 全已入库或 dev/安全/汽车向不匹配，`xiaohongshu skill` 关键词命中今日 2 条收录；X 信号 11 帖命中（只读无互动，@Hjn8899 登录态正常、未遇验证）：Seedance 2.5 改图/改视频 edit 类 skill 48h 内出现 3 个独立实现（@500altcoins 开源版、scenario.com 版、Dola 版）成最热视频趋势；中文口播稿去 AI 味是视频圈真实痛点（@verysmallwoods）；@CrazyKaomei 火柴人 skill 目标冲击 1w star（库内已有）；指定账号 9 个近 3 天无 skills 推荐帖；X 热度洞察一句话：视频制作类 skill 正在从"生成"转向"改"——Seedance 2.5 edit 让"改一个细节、其余不动"成为新刚需，而中文搞钱人群要的是"选题到发布"的完整中文流水线
 - 2026-10-22：v2.3 X 信号轮追加 10 条（视频生产 4 条：rossark0/rossark-motion-skill SVG 转 60 帧专业动画方法论+小引擎 296★、Vincentwei1021/anything2explainer 黑底 MG 科普讲解视频全流程（Remotion+QC）2687★（无 LICENSE，授权警告）、garycaogan/pixel-diary 像素日记爆款复刻引擎（B 站 3 天 100 万播放实证）10★、kajisho5/ffmpeg-skill 本地视频剪辑 42 工具+MCP 2048★；文案钩子 1 条：modengsir/shangdan-post-skill 商单前置质检员（Brief 拆解+钩子）1★ 新库待观察；营销增长 4 条：dreammis/social-auto-upload 多平台一键分发 18 skills 15731★、isjiamu/gzh-design-skill 公众号排版引擎 4119★（AGPL-3.0 已声明）、geekjourneyx/md2wechat-skill 公众号创作发布 CLI 3753★（Source-Available/BSL 变体，已警告非 OSI 开源）、xianyu110/ecommerce-image-skills 12 电商出图 skills 108★；去 AI 味 1 条：yetone/kill-ai-slop vibe-coded 网页去 AI 味扫描器+field guide 1377★），共 109 个 skills；淘汰/去重/记信号：Kianzzz/xilo-opus-video（库内已有 v2.1，去重）、luongnv89/claude-howto（43348★，Claude Code 实战指南、dev 向不匹配）、perryyang/hn-ai-slop·codetips/avoid-ai-writing（404 无效）、mcncarl/jianying-headless（剪映自动化热点，但律师函存续风险，hold）、Agentchengfeng/chengfeng-videocut-skills（3119★，公开 Runtime 仍不满足新 Skill 要求、装上不能用，hold）、travisvn/awesome-claude-skills（纯目录平台，buildwithclaude 先例）、HarleyCoops/Math-To-Manim（2799★，数学动画垂类过窄，记观察）、xiaolu-ai26/video-close-reading（0★ 自荐新库，方法论真实，记观察）；skills.sh All Time/Trending 均为老面孔（mattpocock/hyperframes/superpowers 分叉系/runcomfy/open.feishu.cn），无新货；skillhub.cn 热榜仍全站内无 GitHub 源码（搜索引擎 709.7万/编程专家 521.2万/视频号爆款拆解 70.5万/文章去AI味 76.3万），无法交叉验证，0 收录；GitHub `claude skills` 前 15 全已入库或 dev/安全/汽车向不匹配，新建仓（9-10 月）最高仅 7★；X 信号 40 帖全开原帖核实（只读无互动）：内容分发/获客类 skill 成新热点（social-auto-upload/gzh-design/md2wechat/ecommerce-image）、Opus 5.5 代码渲染视频路线成体系（@yaohongan2025 长文 5 路 10 skill）、去 AI 味成独立热门品类（三帖共推）、Lemo-Opuscar 史诗级更新带动多人实测（库内已有）；X 热度洞察一句话：中文搞钱人群此刻要的是"装上就能产出内容、吃到分发红利"的交付型 skill，分发环节（上传/排版/出图）比生产环节更缺
 - 2026-10-20：v2.2 追加 1 条（视频生产：calesthio/OpenMontage AI 剪辑工作室（12 条制片流水线、49 个 skills：HeyGen 一键成片/Remotion 代码成片/数字人/真实素材混剪，9K fork 13% fork 比有机验证）70348★），共 99 个 skills；淘汰/去重：sergebulaev/linkedin-skills（5007★，三维中需求匹配不过——LinkedIn 场景与中文搞钱人群不匹配，10-17 一致性先例延续）、davepoon/buildwithclaude（3661★，纯目录平台、无自有 SKILL.md）、addyosmani/agent-skills（109011★）、Leonxlnx/taste-skill（99921★）、tt-a1i/archify（86516★）、obra/superpowers（302645★）、Jakeschincariol/replica-skill（3757★）、aldegad/sprite-gen（2943★，均为 dev/coding-agent 向、与五章节不匹配；星数暴涨但场景错配）；skills.sh 榜单仍是老面孔（superpowers 分叉系/runcomfy/open.feishu.cn/microsoft-azure），无新货；skillhub.cn 热榜（视频号爆款短视频拆解 69.3万/视频号挂车爆单脚本 40.3万/文章去AI味 72.2万）仍全站内无 GitHub 源码、无法交叉验证，0 收录；X 信号 9 帖命中（只读无互动）：@leo_xiaolei sweety-handdraw-video v1.4 重大更新 571赞/5.5万浏览（库内已有，覆盖领先）、@xoyif63862452 小红书起号 7 skills 流水线（AgentReach/openCLI 无仓库、其余库内已有）、@ClaudeCodeBase（日文）视频 AI 5 选含 OpenMontage→收录；X 热度洞察一句话：中文搞钱人群此刻要的是"装上就能产出内容、吃到视频/图文补贴"的交付型 skill
 - 2026-10-19：v2.1 X 信号轮追加 6 条（视频生产 5 条：HeyChengC/wallstreet-explainer 华尔街式财经解读短片（真实素材+数字可视化+钩子自选）172★、threerocks/sweety-handdraw-video 手绘口播视频（逐笔描线+配音对齐，v1.4.1）742★、Kianzzz/xilo-opus-video Opus 5.5 写代码做视频（三方案竞标+brief.md 复用）207★、chuspeeism/dashi-animationstyle 7 套风格中文知识口播动画 100★、op7418/guizang-product-video-skill 软件更新宣传片（复用真实产品组件）831★；营销增长 1 条：marswaveai/skills ListenHub 一稿多发内容复用包 79★），共 98 个 skills；淘汰/记信号：feicaiclub/ad-storyboarder（3★ 未达硬线，广告成本账方法论记信号）、LearnPrompt/ai-news-radar（1785★，SKILL.md 为项目维护用、本体是监控工具，TrendRadar 先例，记早报新闻雷达需求信号）、Vincentwei1021/mg-styles-15（1336★，风格画廊无 SKILL.md、非 skill 形态）、threeaus/creator-style-kit（2★）、maobidao/douyin-oral-script-writer（0★）、ceoniuer/liuren-writing-skills（0★，刘韧去 AI 味写作 skill 记工具化信号）、wtt-code-animation-studio/archival-doc（无相关仓库）、bojieli/agentreach（181★，SSH 远程执行工具、章节不匹配）；@boz_wave 短剧 83 仓库帖（截图无仓库链接不可验证，盲测"10 个编剧 skill 仅 5 个三局全赢"记需求信号）、@xoyif63862452 小红书 7 skills（NotebookLM/Remotion/Humanizer-zh/baoyu 库内已有，AgentReach/openCLI 无仓库，流水线方法论记信号）、Answer me with HTML（dev 向，10-18 已淘汰）、@bkdgiffug Seedance Skill OS（库内已有，去重）；指定账号 6 个近 48h 无 skills 推荐帖；X 全程只读无互动、未遇真人验证
