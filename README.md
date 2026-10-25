@@ -690,7 +690,6 @@
 - **怎么用它搞钱**：做带货文案代写——给客户写短视频/朋友圈文案时套用"惊喜优惠标题"公式，让中高客单价产品在标题里直接制造价格冲击，按篇收费卖差异化。
 - **来源**：[kangarooking/viral-copywriting-skill](https://github.com/kangarooking/viral-copywriting-skill) · ⭐67
 
-
 ### fear-appeal
 - **一句话**：痛点产品（电动牙刷、保险、净水器）读者不够重视时，用"痛苦场景 + 严重后果"两步法激发紧迫购买欲；源自《爆款文案》第一章。
 - **核心用法**：
@@ -702,7 +701,6 @@
 - **安装**：git clone https://github.com/kangarooking/viral-copywriting-skill.git
 - **怎么用它搞钱**：接牙科/体检/课程机构的公众号推文单——用恐惧诉求结构替换干巴巴的功能介绍，接单话术直接用书中案例（"电动牙刷 24 小时卖光 1 万支"）。
 - **来源**：[kangarooking/viral-copywriting-skill](https://github.com/kangarooking/viral-copywriting-skill) · ⭐67
-
 
 ### friend-chat-title
 - **一句话**：朋友圈、私域、个人 IP 需要"像朋友聊天一样"的亲切标题时用的三步改写法；源自《爆款文案》第四章。
@@ -716,7 +714,6 @@
 - **怎么用它搞钱**：做微商/私域代运营的起手服务——把客户原有硬广标题批量改成好友对话体，案例句式"赚了 1173 万元，愿意手把手教你"，按账号收月费。
 - **来源**：[kangarooking/viral-copywriting-skill](https://github.com/kangarooking/viral-copywriting-skill) · ⭐67
 
-
 ### ai-copywriter
 - **一句话**：英文双技能——写转化文案时先"以读者为先"摸准需求再动笔，写完再过一遍 33 项 AI 味检查；适合做跨境文案和英文内容的人。
 - **核心用法**：
@@ -728,7 +725,6 @@
 - **安装**：npx skills add mikiarlo3/ai-copywriter --global
 - **怎么用它搞钱**：接英文跨境文案单——给独立站/SaaS 写落地页和 LinkedIn 帖，卖点是"读起来像真人写的转化文案"，可打包卖"文案 + 去 AI 味审核"两道工序。
 - **来源**：[mikiarlo3/ai-copywriter](https://github.com/mikiarlo3/ai-copywriter) · ⭐1207
-
 
 ### tt-hook-scripter
 - **一句话**：给 TikTok/短视频写前 1–3 秒钩子——口播台词 + 屏幕文案 + 首帧画面三层一起定，目标就是让人刷不走；钩子是全平台最大留存杠杆。
@@ -1331,7 +1327,31 @@
 - **怎么用它搞钱**：接 X 账号代运营/推文代写单（选题→成稿→草稿箱一条龙，按周交付）；或自己做 X 矩阵号，选题库与反馈闭环越用越准
 - **来源**：[kangarooking/x-skills](https://github.com/kangarooking/x-skills) · ⭐340
 
-## 去 AI 味（7 个）
+### sharbelxyz/x-bookmarks（X 收藏夹变行动清单）
+- **一句话**：把 X 收藏夹从“存了不看”变成可执行的工作：拉取最新收藏→按话题分类→每条给可执行的行动建议，还能定期出摘要
+- **核心用法**：
+  1. 装成 OpenClaw skill：`openclaw skill install x-bookmarks`（拉取需 bird CLI 或 X API v2）
+  2. 直接说“check my bookmarks”：自动拉取最新收藏，按话题分类（crypto/AI/marketing/tools 等）
+  3. 每条不止给摘要，给行动：如“克隆这个仓库实测并搭好”这类 agent 可直接干的事
+  4. 常用口令：bookmark digest 出分类摘要、what did I bookmark this week 按时间过滤、find patterns 找反复收藏的方向、clean up old bookmarks 清理过期收藏
+  5. 定时摘要：设每日/每周 cron，自动查新收藏、分类并投递摘要
+- **安装**：`openclaw skill install x-bookmarks`（需 bird CLI 或 X API v2 拉取收藏）
+- **怎么用它搞钱**：接“信息整理/选题挖掘”服务：客户的收藏夹定期变成选题库+行动清单；或自己用收藏夹养选题，收藏方向就是市场信号
+- **来源**：[sharbelxyz/x-bookmarks](https://github.com/sharbelxyz/x-bookmarks) · ⭐290
+
+### Jakeschincariol/x-agent-skill（X 账号全流程：21 钩子公式+分析审计）
+- **一句话**：11 个 Claude skills 跑通一个 X 账号：21 钩子公式写帖、线程、回复、主页评分、周计划、分析审计，另带 9 个实测工具，写完必须你点头才发
+- **核心用法**：
+  1. `git clone https://github.com/Jakeschincariol/x-agent-skill.git`，把 skills/x-* 复制到 ~/.claude/skills/（或在 Claude 里粘贴仓库链接安装，确认 /x-post 可用）
+  2. 创作走 virality skill：找 niche 里真正跑赢的帖子，拆成钩子/结构/形式，再按你的声音和受众复刻赢家
+  3. 9 个工具兜底：按 X 的计数法数字符（链接算 23、emoji 算 2）、发前给首句打分、长稿切成合规线程、读 X 公开排序代码看本周奖励什么
+  4. 分析审计读你的 Analytics 导出：按内容类型比曝光/互动/回复/分享，每个结论都标样本量，不凭一两篇爆款下结论
+  5. 铁律：Nothing is posted until you approve it——skills 只写，你发
+- **安装**：`git clone https://github.com/Jakeschincariol/x-agent-skill.git` 后 `cp -r x-agent-skill/skills/x-* ~/.claude/skills/`（README 官方安装方式）
+- **怎么用它搞钱**：接 X 账号代运营单（钩子+线程+周计划+复盘一条龙）；或用分析审计给客户出“什么内容真有效”的复盘报告，按次收费
+- **来源**：[Jakeschincariol/x-agent-skill](https://github.com/Jakeschincariol/x-agent-skill) · ⭐41
+
+## 去 AI 味（12 个）
 
 > 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用）。humanizer 走检查清单路线，tt-humanizer 专攻短视频口播，qu-ai-wei 专攻简体中文改写，humanizer-skill 带检测评分 + 多人声改写。kill-ai-slop 专攻 vibe-coded 网页的视觉+文案双重去味（带扫描器）。
 
@@ -1357,7 +1377,6 @@
 - **安装**：npx skills add blader/humanizer
 - **怎么用它搞钱**：做公众号/小红书代运营的"去 AI 味润色"增值服务——客户用 AI 写初稿，你按 26 项清单人工过一遍再发布，按千字收费；或打包卖"AI 代写 + 去味"两道工序，做差异化接单。
 - **来源**：[blader/humanizer](https://github.com/blader/humanizer) · ⭐58140（10-19 复核，持续上涨）
-
 
 ### tt-humanizer
 - **一句话**：专给短视频口播脚本/字幕去 AI 味——纸上读着顺、嘴上说出来像机器人的问题，用四道工序逐个修；注意它不保证过 AI 检测器，目标是观众听着像真人。
@@ -1414,6 +1433,63 @@
 - **怎么用它搞钱**：接多语言内容代写单（英/西/德/意/北欧语），5 遍流程+声音指纹是按账号收月费的卖点；检测报告当交付凭证，减少返工扯皮
 - **来源**：[numen-tech/slopornot](https://github.com/numen-tech/slopornot) · ⭐56
 
+### hardikpandya/stop-slop（删 AI 痕迹：短语+结构+范例三件套）
+- **一句话**：专门删 AI 写作痕迹的 skill：短语库+结构模式+前后对照范例三件套，教 Claude 抓住并去掉那些可预测的 AI 腔
+- **核心用法**：
+  1. 把 stop-slop 文件夹作为 skill 加入（Claude Code），或把 SKILL.md 及 references 上传到项目知识库（Claude Projects）
+  2. 对照 phrases.md 删可预测短语，对照 structures.md 避开结构套路，对照 examples.md 看前后 transformation 怎么改
+  3. API 调用时把 SKILL.md 放进 system prompt，references 按需加载
+  4. 改完自查：是不是还留着 AI 的节奏、结构和短语——有就再过一遍
+- **安装**：`git clone https://github.com/hardikpandya/stop-slop.git`，把 stop-slop 文件夹作为 skill 加入（README 官方用法）
+- **怎么用它搞钱**：接英文内容去味/润色单（博客/Newsletter/落地页文案按篇收费）；或嵌进自己的英文内容工作流当质检关
+- **来源**：[hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop) · ⭐18315
+
+### MrGeDiao/shuorenhua（中文优先说人话：删套话保事实保口气）
+- **一句话**：中文优先的去 AI 味改写 skill：删套话、重复铺垫和生硬句式，数字、条件、承诺和你的口气原样留下，改完可直接发
+- **核心用法**：
+  1. `npx skills add MrGeDiao/shuorenhua`，Claude Code/Codex/Cursor 都能用
+  2. 把写好的文字交给它：删开头的招呼和预告、重复的一句、结尾的致谢这类套话
+  3. 铁律：数字、条件、承诺和口气保持原样；本来就没问题的文字不动，不硬改
+  4. 适用场景：工作同步、公众号/小红书/视频文案，改完直接发不用二次加工
+- **安装**：`npx skills add MrGeDiao/shuorenhua`
+- **怎么用它搞钱**：接中文文案去味单（按千字收费）；或给矩阵号批量去味后多平台分发，降低被判营销号/限流风险
+- **来源**：[MrGeDiao/shuorenhua](https://github.com/MrGeDiao/shuorenhua) · ⭐2257
+
+### jzOcb/writing-style-skill（文风自动学习模板：越用越像你）
+- **一句话**：可复用的写作风格 skill 模板，内置自动学习：AI 按 SKILL.md 写初稿→你改到满意→diff 两版提规则→SKILL.md 越用越准
+- **核心用法**：
+  1. `git clone https://github.com/jzOcb/writing-style-skill.git`，复制到 ~/.claude/skills/my-writing-style（或 `npx clawhub@latest install jz-writing-style-skill`）
+  2. 先把模板里的风格规则改成你自己的（或留空，让自动学习帮你填）
+  3. 让 AI 用这个 skill 写内容，你改到满意
+  4. 记录两版：`python3 scripts/observe.py record-original draft.md` → 改完 → `record-final final.md`，脚本 diff 提规则更新 SKILL.md
+  5. 只要 original 和 final 两个数据点，中间改了多少轮不管；下次写就更像你
+- **安装**：`git clone https://github.com/jzOcb/writing-style-skill.git` 后 `cp -r writing-style-skill ~/.claude/skills/my-writing-style`（README 官方安装方式）
+- **怎么用它搞钱**：接“品牌文风定制”单：给客户训一套越用越准的专属写作 skill，按账号收月费；或自己养多个账号人设，一套模板多套风格
+- **来源**：[jzOcb/writing-style-skill](https://github.com/jzOcb/writing-style-skill) · ⭐273
+
+### Anbeeld/WRITING.md（人味规则集：具体锚点+体裁校准+自审计）
+- **一句话**：Anbeeld 的 AI 写作规则集：用具体锚点代替空泛表述、按体裁校准声音、自审计改写循环，不靠造假式“人味” tricks（不编 typo、不硬造口语）
+- **核心用法**：
+  1. 把 skills/writing 目录作为 skill 加入（或直接把 WRITING.md 交给 AI 按规则应用）
+  2. 先定上下文：体裁、受众、读者需求、这段文字的任务；再动手写
+  3. 规则要点：无可核查细节的段落必须改写；引言、数字、日期、因果、署名都要有依据；删 keynote 腔、客服腔、仪式化开头结尾
+  4. 改写循环：先按规则出初稿→按 required checks 审计→按审计结果重写，大稿重复一两轮即可
+  5. 红线：不编造 typo、不硬插俚语、不搞程序化句长变化、不做 staged messiness
+- **安装**：把 skills/writing 目录作为 skill 加入（或直接把 WRITING.md 交给 AI 按规则应用）
+- **怎么用它搞钱**：接英文写作润色/审校单（文档、博客、发布稿按篇收费）；或把规则集嵌进团队写作 SOP，当审稿标准
+- **来源**：[Anbeeld/WRITING.md](https://github.com/Anbeeld/WRITING.md) · ⭐381
+
+### adewale/anti-slop-writing（具体细节胜过 inflated significance）
+- **一句话**：面向 README/文章/DevRel 写作的去 AI 味 skill，核心规则就一句：具体细节胜过 inflated significance，给的是一套可执行的编辑测试而非空泛建议
+- **核心用法**：
+  1. 只装 skill 目录：skills/anti-slop-writing/（SKILL.md + references）
+  2. 按编辑测试改：把含糊的重要性表述换成具体机制；揪“not just X but Y”式装饰对比和套路节奏
+  3. 段落流转按因果/对比/依赖/推断/层级变化命名，不靠空话衔接
+  4. 结尾回到具体载体，不以泛泛结论收束；压缩有用信息的同时去掉假装判断的腔调
+- **安装**：`git clone https://github.com/adewale/anti-slop-writing.git`，只取 skills/anti-slop-writing/ 目录作 skill 用（README 官方安装方式）
+- **怎么用它搞钱**：接技术文档/DevRel 写作润色单（README/发布稿/技术博客按篇收费）；或给技术团队做写作审校，腔调统一就是交付标准
+- **来源**：[adewale/anti-slop-writing](https://github.com/adewale/anti-slop-writing) · ⭐21
+
 ---
 
 ## 提示词
@@ -1454,6 +1530,17 @@
 - **怎么用它搞钱**：把行业经典书/课程蒸馏成专属 skills，打包卖"知识工具箱"；或给企业做知识资产 skill 化咨询
 - **来源**：[kangarooking/cangjie-skill](https://github.com/kangarooking/cangjie-skill) · ⭐11247
 
+### alchaincyf/nuwa-skill（蒸馏任何人的思维方式：心智模型+决策启发式+表达 DNA）
+- **一句话**：蒸馏任何人的思维方式：输入一个名字，自动调研、提炼、验证，产出带心智模型、决策启发式和表达 DNA 的 skill，让乔布斯、芒格、费曼都给你打工
+- **核心用法**：
+  1. `npx skills add alchaincyf/nuwa-skill`（自动识别 runtime；或告诉 agent“帮我安装这个 skill：https://github.com/alchaincyf/nuwa-skill”）
+  2. 输入一个名字：女娲自动完成调研→提炼→验证全流程
+  3. 蒸馏产物：心智模型、决策启发式、表达 DNA，可直接作为 agent 的思维方式调用
+  4. 适用：向名人/专家学决策和表达，或把某个人的工作方式固化成可复用的 skill 资产
+- **安装**：`npx skills add alchaincyf/nuwa-skill`
+- **怎么用它搞钱**：接“专家思维蒸馏”咨询：给企业/创作者把创始人或专家的决策方式做成 agent skill，按人收费；或把蒸馏出的名人思维包做成课程/模板卖
+- **来源**：[alchaincyf/nuwa-skill](https://github.com/alchaincyf/nuwa-skill) · ⭐35832
+
 ---
 
 ---
@@ -1474,6 +1561,7 @@
 
 ## 更新日志
 
+- 2026-10-25：v2.7 原帖复核轮追加 8 条（营销增长 2 条：sharbelxyz/x-bookmarks X 收藏夹变行动清单（拉取→分类→行动建议→定期摘要）290★（无 LICENSE，已警告）、Jakeschincariol/x-agent-skill X 账号全流程（21 钩子公式+线程+回复+主页评分+周计划+分析审计，批准后才发）41★；去 AI 味 5 条：hardikpandya/stop-slop 删 AI 痕迹三件套 18315★、MrGeDiao/shuorenhua 中文优先说人话 2257★、jzOcb/writing-style-skill 文风自动学习模板 273★（无 LICENSE，已警告）、Anbeeld/WRITING.md 人味规则集 381★、adewale/anti-slop-writing 具体细节编辑测试 21★（刚过硬线）；提示词 1 条：alchaincyf/nuwa-skill 蒸馏任何人的思维方式 35832★），共 129 个 skills；去重/淘汰/记信号：水哥AI 8 skill 对应 7 链接（X Viral 与 X Audit 同仓 Jakeschincariol/x-agent-skill），其中 rohunvora/x-research-skill 与 sergebulaev/x-skills（Humanizer 子 skill）库内已有，tweet-md/skill 1★ 与 ceoguy/x-algorithm-skill 1★ 未达硬线（库内 twitter-algorithm-optimizer 条目源自 ComposioHQ awesome 合集，非 ceoguy），alberduris/skills x-twitter 为整仓 21★ 且 X API 发布/互动管理自动化风险 + 与库内两套 X 创作包重叠，未收；Haosen 去 AI 味清单 22 名（19 附链接、3 未附链接）：stop-slop-zh 6★ 未达硬线，chatgpt-comparison-detection（HC3 语料/检测器）与 AIGC_text_detector（ICLR 论文代码）非 skill 形态，baibanbao/qu-ai-wei 73★ 同名已有更强条目（LifelongLazyLearner 690★，原帖已提醒勿混淆）不堆同名分叉，hylarucoder/ai-flavor-remover 1189★ 但仅 README 内一段 prompt、无 SKILL.md、无 LICENSE、仅 Gemini 2.5 Pro 测试，yzhao062/agent-style 725★ 为 RULES.md 通用写作规则、非打包 skill 且无 LICENSE，dongbeixiaohuo/writing-agent 439★ 为独立 Windows 写作客户端（harness，RC 版）非 skill，iniwap/AIWriteX 2143★ 为公众号全自动工具（非 skill）+ 洗稿/多账号自动发布风险；已入库去重：blader/humanizer、op7418/Humanizer-zh（已有独立 skill 在用）、zenstory-ai/oh-story-claudecode、Leonxlnx/taste-skill（v2.2 已淘汰：前端设计向，原帖亦提醒非中文改稿工具）；未附链接无法核验 3 项：openai-detector、humanize-text、De-AI-Prompt-Enhancer（仅名称线索，不认定与库内 OUBIGFA 条目同一）；Marvin Grok Bot 10 工作流属另一管线，不入本库；X 热度洞察一句话：去 AI 味已从单点改写卷成“检测→改写→文风学习”全链条，而 X 运营 skill 的分水岭是“批准后才发”——带人工点头的才配进库
 - 2026-10-25 补记（skillhub.cn 热榜轮）：下载热榜前 15 + 最近更新排序第一页 24 条共 39 条，详情页均无 GitHub 源码链接（ClawHub 来源链接不等于 GitHub 源码，已区分），无法做 star + 更新时间交叉验证，0 收录；需求信号：编程类仍占榜首（编程大神 900.7 万、搜索引擎 856.8 万、编程专家Pro 526.5 万），视频全能创作（短视频/图片/音乐/音频/配音/口播/数字人）117.2 万；最近更新页 humanizer-zh 同名不同作者出现 6 条（1.2 万–24.3 万，含 1 条 Pay Skill），中文去 AI 味是站内高频新上类目，与 X 侧去 AI 味信号一致；“最近上新”实际为按更新时间排序，非严格首发
 - 2026-10-25：v2.6 X 信号轮追加 1 条（营销增长：kangarooking/x-skills X 推文创作全链路（收集→筛选→创作→草稿箱，人工点头后才真发）340★），共 121 个 skills；星数刷新：qu-ai-wei 660→690、calesthio/OpenMontage 70348→71617；X 信号 10 帖命中（只读无互动，@Hjn8899 登录态正常、未遇验证）比对：MarketerHub Vox 风格工作流（/skill-creator 库内已有 + Higgsfield Seedance 2.5，已覆盖）、Seanvon OpenMontage 帖（库内已有，仅刷新星数）、Haosen Anatomy × OpenMAIC（Anatomy 库内已有；OpenMAIC 本体为清华多智能体互动课堂教育平台、章节不匹配，未收）、Haosen 去 AI 味 3 步法（方法帖无新增可核验仓库，记需求信号）、luogo 双 skill 帖（x-create 即本次收录的 kangarooking/x-skills，qu-ai-wei 库内已有仅刷新）、月明抖音文案抓取系列（zzyong24/moonlit-douyin-transcribe 等 4 仓均 0–2★，未达硬线，未收，但记抖音文案抓取拆解需求信号）、水哥AI X 运营 8 skill 帖与 Marvin Grok Bot 10 工作流（原帖复核进行中，结果另起批次）、陈大黄变现风险讨论（skill 文件纯 Markdown 无防复制、闲鱼 1 元打包，记市场信号：卖文件难跑通，价值在装上能用的服务）、农夫求推荐帖（superpowers 系 dev 向先例，未收）；skillhub.cn 热榜轮仍进行中，结果另起批次；X 热度洞察一句话：中文搞钱人群此刻要的是“选题→成稿→草稿箱”这种人工点头的完整运营流水线，而不是单点提示词
 - 2026-10-25：v2.5 追加 8 条（视频生产 6 条：xixihhhh/ai-short-drama-skill Dramake 文字到 AI 短剧成片（故事诊断→剧本→角色母版→分镜→模型与费用路线→配音→质检，父段验收门禁）71★、muxia0396/novel-to-ai-short-drama-skill 小说改编导演台本（时长账本逐镜秒数闭合）31★、YvonneMovingon/short-drama-skills 短剧 prompt 规则 7 件套（叙事拆解/情绪/动态/连贯拆分/三档润色，LuxReal 管线沉淀）95★、gnipbao/codex-whiteboard-video-skill 本地白板手绘视频（30 风格，Codex 适配本地引擎）343★、tuzhechen2005/opus-video-skills Opus 5.5 纯代码视频（水彩动画+动态字体，零生成模型）320★（LICENSE 文件存在但 SPDX 未识别，已警告）、makevoid/motion-graphics-music-video-skill Opus 5.5 音乐 MV 全流程（GPT 生图+MiniMax H3 动画，成本约 $30 Fal + 3M tokens / 3 分钟歌已注明）184★；去 AI 味 2 条：ilien-dev/quiron 量得出来的英文去 AI 味（对照人类写作实测基线测量，博客/小说/西班牙语语体）60★（AGPL-3.0 已声明）、numen-tech/slopornot 5 遍去味+声音指纹+本机检测（7 语）56★），共 120 个 skills；星数刷新：sergebulaev/tiktok-skills 69→90（库内已分拆 tt-hook-scripter / tt-trend-mapper / tt-humanizer 三条同步刷新，其余子 skill 与库内已有文案/营销条目重叠不另立）；淘汰/去重/记信号：GitHub `claude skills` 前 15 全已入库或 dev/安全/汽车向不匹配；`xiaohongshu skill` 关键词 white0dew/autoclaw（封号风险先例）/ freestylefly（付费 API 包装）/ DeliciousBuding（自动发布类）/ ibreez3（已淘汰）均未收，kiki-lgtm-dot/xiaohongshu-skill（21★，同作者 light-retro 已收不堆作者），Angiin 19★ / OnePieceLwc 18★ 未达硬线；seedance 关键词 robonuggets/LeoYeAI/alchaincyf 均已入库；营销整库大包 nowork-studio/notfair-plugin（4056★）/ ericosiu/ai-marketing-skills（3724★）/ aaron-he-zhu/aaron-marketing-skills（3012★）/ zubair-trabzada/ai-marketing-claude（2795★）/ kostja94/marketing-skills（1061★）/ LeoYeAI/openclaw-marketing-skills（1049★，LICENSE 未识别）与库内 marketingskills / irinabuht 整库重叠，不另立；zJay26/douyin-skills（59★，MIT，含发布/点赞/评论互动动作，按 white0dew/autoclaw 封号风险一致性未收）；mediastormDev/dream-to-video-skill（373★，解梦视频赛道窄+即梦网页登录自动化链路脆弱，暂缓记观察）；Agentchengfeng/chengfeng-videocut-skills（3128★，官方 README 当日仍声明公开 Runtime v0.4.11 不满足新 Skill ≥0.5.9 要求、装上不能用新工作台命令，v2.3 hold 延续）；wshuyi/remotion-video-skill（430★，无 LICENSE，与库内 Remotion 官方路由 + video-shotcraft 重叠，未收）；UnderleveledBuilder/awesome-short-drama-skills（772★，纯目录形态，按目录先例未收，但记短剧需求信号）；LearnPrompt/awesome-seedance（2266★）/ zhuyansen/awesome-claude-video-skills（886★，提示词/导航合集形态，未收）；zczjyq/de-AIGC-skill（32★）/ crabin/paper-humanizer-skill（128★，学术论文向，按 crabin 先例未收）；500bitcoins/recast 仍 0★（10-24 更新，继续记观察）、xiaolu-ai26/video-close-reading 仍 0★（继续记观察）、mcncarl/jianying-headless 已 404；skills.sh All Time/Trending 均为老面孔（vercel-labs/mattpocock/hyperframes 已入库/superpowers 分叉系/open.feishu.cn），gencraft-labs 15.2K trending 对应 GitHub 0★（刷量嫌疑再验证）、flowkit 20★ 未达 >20 硬线、autonnel 5★ / mbfinotti 3★ 未达标、antibrow 反检测浏览器 20★ 未达硬线且属规避工具；skillhub.cn 热榜轮与 X 信号轮进行中（browser task 已派，只读），结果另起批次补记；热度洞察一句话（GitHub 侧）：AI 短剧生产成套出现（Dramake/小说改编/短剧 prompt 规则三连发）+ Opus 5.5 纯代码视频路线成型，视频 skill 的主攻方向从单点生成转向“成套生产线”
