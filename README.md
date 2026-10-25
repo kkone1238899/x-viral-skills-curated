@@ -539,7 +539,7 @@
   6. MCP 优先：每个 skill 的 Tool Selection 表列了 MCP 工具和 curl 兜底，有 MCP 就走 MCP，不用手拼请求
 - **安装**：`git clone https://github.com/calesthio/OpenMontage.git && cd OpenMontage && make setup`
 - **怎么用它搞钱**：批量产 AI 短视频跑流量分成（多流水线=多账号多风格不重复）；接"AI 视频代做"单：选题→成片一条龙，按条收费
-- **来源**：[calesthio/OpenMontage](https://github.com/calesthio/OpenMontage) · ⭐70348
+- **来源**：[calesthio/OpenMontage](https://github.com/calesthio/OpenMontage) · ⭐71617
 
 ### rossark-motion-skill
 - **一句话**：把任意 SVG 变成 60 帧专业动画的方法论+小引擎：人物微动、身体表演、植物火焰水光天气全覆盖，React Native/SwiftUI 双模板，离线渲染成视频——适合要做 App 开屏、吉祥物、产品演示动画的人。
@@ -1319,6 +1319,18 @@
 - **怎么用它搞钱**：接"公众号/知乎长文转小红书"代发单；知识图解模式适合做科普号批量出卡片
 - **来源**：[Irixil/xiaohongshu-skill](https://github.com/Irixil/xiaohongshu-skill) · ⭐22（2026-10-24；⚠️ 仓库无 LICENSE 声明，商用前先确认授权）
 
+### kangarooking/x-skills（X 推文创作全链路：收集→筛选→创作→草稿箱）
+- **一句话**：中文 X 账号的内容创作流水线：4 轮搜索收集素材→多维打分筛选选题→意图路由写推文→只发到草稿箱等你点头，适合做 X 账号、想把推文变成固定流程的人
+- **核心用法**：
+  1. 克隆后把 x-collect/x-filter/x-create/x-publish 复制或软链到 ~/.claude/skills/
+  2. 首次跑 /x-create 建人设档案：领域、目标受众（中文/英文/双语）、人设风格
+  3. /x-collect [话题] 4 轮深度搜索收集素材，/x-filter 多维加权打分 + 负样本过滤 + 多样性衰减筛选题
+  4. /x-create 按意图路由（收藏/转发/讨论）选创作模式，默认出 A/B 两个版本 + Critic 自检，低于阈值自动重写一次，并强制过一遍 humanize 去 AI 味
+  5. /x-publish 只发到 X 草稿箱 + 事件记录（JSONL），人工点头后才真发；正/负样本库做反馈闭环
+- **安装**：`git clone https://github.com/kangarooking/x-skills.git`，把 x-collect/x-filter/x-create/x-publish 复制或软链到 ~/.claude/skills/（README 官方安装方式）
+- **怎么用它搞钱**：接 X 账号代运营/推文代写单（选题→成稿→草稿箱一条龙，按周交付）；或自己做 X 矩阵号，选题库与反馈闭环越用越准
+- **来源**：[kangarooking/x-skills](https://github.com/kangarooking/x-skills) · ⭐340
+
 ## 去 AI 味（7 个）
 
 > 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用）。humanizer 走检查清单路线，tt-humanizer 专攻短视频口播，qu-ai-wei 专攻简体中文改写，humanizer-skill 带检测评分 + 多人声改写。kill-ai-slop 专攻 vibe-coded 网页的视觉+文案双重去味（带扫描器）。
@@ -1367,7 +1379,7 @@
   4. 真人味文字（有具体经历 / 自嘲 / 自然节奏）会停手不乱改；输入含密码、key 等敏感信息先过门检
 - **安装**：`npx skills add https://github.com/LifelongLazyLearner/qu-ai-wei`
 - **怎么用它搞钱**：接文案代写单：AI 初稿 + qu-ai-wei 去味，交付"真人感"文案按千字收费；做矩阵号时去味后多平台分发，降低被判营销号 / 限流风险
-- **来源**：[LifelongLazyLearner/qu-ai-wei](https://github.com/LifelongLazyLearner/qu-ai-wei) · ⭐660
+- **来源**：[LifelongLazyLearner/qu-ai-wei](https://github.com/LifelongLazyLearner/qu-ai-wei) · ⭐690
 
 ### Aboudjem/humanizer-skill（55 模式检测 + 5 人声）
 - **一句话**：55 种 AI 写作模式检测 + 0-100 AI 味评分 + 5 种人声改写，适合发英文博客 / LinkedIn / Newsletter 怕被看出 AI 味的人
@@ -1462,6 +1474,7 @@
 
 ## 更新日志
 
+- 2026-10-25：v2.6 X 信号轮追加 1 条（营销增长：kangarooking/x-skills X 推文创作全链路（收集→筛选→创作→草稿箱，人工点头后才真发）340★），共 121 个 skills；星数刷新：qu-ai-wei 660→690、calesthio/OpenMontage 70348→71617；X 信号 10 帖命中（只读无互动，@Hjn8899 登录态正常、未遇验证）比对：MarketerHub Vox 风格工作流（/skill-creator 库内已有 + Higgsfield Seedance 2.5，已覆盖）、Seanvon OpenMontage 帖（库内已有，仅刷新星数）、Haosen Anatomy × OpenMAIC（Anatomy 库内已有；OpenMAIC 本体为清华多智能体互动课堂教育平台、章节不匹配，未收）、Haosen 去 AI 味 3 步法（方法帖无新增可核验仓库，记需求信号）、luogo 双 skill 帖（x-create 即本次收录的 kangarooking/x-skills，qu-ai-wei 库内已有仅刷新）、月明抖音文案抓取系列（zzyong24/moonlit-douyin-transcribe 等 4 仓均 0–2★，未达硬线，未收，但记抖音文案抓取拆解需求信号）、水哥AI X 运营 8 skill 帖与 Marvin Grok Bot 10 工作流（原帖复核进行中，结果另起批次）、陈大黄变现风险讨论（skill 文件纯 Markdown 无防复制、闲鱼 1 元打包，记市场信号：卖文件难跑通，价值在装上能用的服务）、农夫求推荐帖（superpowers 系 dev 向先例，未收）；skillhub.cn 热榜轮仍进行中，结果另起批次；X 热度洞察一句话：中文搞钱人群此刻要的是“选题→成稿→草稿箱”这种人工点头的完整运营流水线，而不是单点提示词
 - 2026-10-25：v2.5 追加 8 条（视频生产 6 条：xixihhhh/ai-short-drama-skill Dramake 文字到 AI 短剧成片（故事诊断→剧本→角色母版→分镜→模型与费用路线→配音→质检，父段验收门禁）71★、muxia0396/novel-to-ai-short-drama-skill 小说改编导演台本（时长账本逐镜秒数闭合）31★、YvonneMovingon/short-drama-skills 短剧 prompt 规则 7 件套（叙事拆解/情绪/动态/连贯拆分/三档润色，LuxReal 管线沉淀）95★、gnipbao/codex-whiteboard-video-skill 本地白板手绘视频（30 风格，Codex 适配本地引擎）343★、tuzhechen2005/opus-video-skills Opus 5.5 纯代码视频（水彩动画+动态字体，零生成模型）320★（LICENSE 文件存在但 SPDX 未识别，已警告）、makevoid/motion-graphics-music-video-skill Opus 5.5 音乐 MV 全流程（GPT 生图+MiniMax H3 动画，成本约 $30 Fal + 3M tokens / 3 分钟歌已注明）184★；去 AI 味 2 条：ilien-dev/quiron 量得出来的英文去 AI 味（对照人类写作实测基线测量，博客/小说/西班牙语语体）60★（AGPL-3.0 已声明）、numen-tech/slopornot 5 遍去味+声音指纹+本机检测（7 语）56★），共 120 个 skills；星数刷新：sergebulaev/tiktok-skills 69→90（库内已分拆 tt-hook-scripter / tt-trend-mapper / tt-humanizer 三条同步刷新，其余子 skill 与库内已有文案/营销条目重叠不另立）；淘汰/去重/记信号：GitHub `claude skills` 前 15 全已入库或 dev/安全/汽车向不匹配；`xiaohongshu skill` 关键词 white0dew/autoclaw（封号风险先例）/ freestylefly（付费 API 包装）/ DeliciousBuding（自动发布类）/ ibreez3（已淘汰）均未收，kiki-lgtm-dot/xiaohongshu-skill（21★，同作者 light-retro 已收不堆作者），Angiin 19★ / OnePieceLwc 18★ 未达硬线；seedance 关键词 robonuggets/LeoYeAI/alchaincyf 均已入库；营销整库大包 nowork-studio/notfair-plugin（4056★）/ ericosiu/ai-marketing-skills（3724★）/ aaron-he-zhu/aaron-marketing-skills（3012★）/ zubair-trabzada/ai-marketing-claude（2795★）/ kostja94/marketing-skills（1061★）/ LeoYeAI/openclaw-marketing-skills（1049★，LICENSE 未识别）与库内 marketingskills / irinabuht 整库重叠，不另立；zJay26/douyin-skills（59★，MIT，含发布/点赞/评论互动动作，按 white0dew/autoclaw 封号风险一致性未收）；mediastormDev/dream-to-video-skill（373★，解梦视频赛道窄+即梦网页登录自动化链路脆弱，暂缓记观察）；Agentchengfeng/chengfeng-videocut-skills（3128★，官方 README 当日仍声明公开 Runtime v0.4.11 不满足新 Skill ≥0.5.9 要求、装上不能用新工作台命令，v2.3 hold 延续）；wshuyi/remotion-video-skill（430★，无 LICENSE，与库内 Remotion 官方路由 + video-shotcraft 重叠，未收）；UnderleveledBuilder/awesome-short-drama-skills（772★，纯目录形态，按目录先例未收，但记短剧需求信号）；LearnPrompt/awesome-seedance（2266★）/ zhuyansen/awesome-claude-video-skills（886★，提示词/导航合集形态，未收）；zczjyq/de-AIGC-skill（32★）/ crabin/paper-humanizer-skill（128★，学术论文向，按 crabin 先例未收）；500bitcoins/recast 仍 0★（10-24 更新，继续记观察）、xiaolu-ai26/video-close-reading 仍 0★（继续记观察）、mcncarl/jianying-headless 已 404；skills.sh All Time/Trending 均为老面孔（vercel-labs/mattpocock/hyperframes 已入库/superpowers 分叉系/open.feishu.cn），gencraft-labs 15.2K trending 对应 GitHub 0★（刷量嫌疑再验证）、flowkit 20★ 未达 >20 硬线、autonnel 5★ / mbfinotti 3★ 未达标、antibrow 反检测浏览器 20★ 未达硬线且属规避工具；skillhub.cn 热榜轮与 X 信号轮进行中（browser task 已派，只读），结果另起批次补记；热度洞察一句话（GitHub 侧）：AI 短剧生产成套出现（Dramake/小说改编/短剧 prompt 规则三连发）+ Opus 5.5 纯代码视频路线成型，视频 skill 的主攻方向从单点生成转向“成套生产线”
 - 2026-10-24：v2.4 追加 3 条（视频生产 1 条：sugarforever/boring-video-studio 视频策划全链路（选题研究→成文→节拍→口播稿→分镜→故事板→HyperFrames 成片，@verysmallwoods 日常在用、口播稿去 AI 味调教实证）184★；营销增长 2 条：kiki-lgtm-dot/light-retro-collage-xiaohongshu-skill 轻复古拼贴风小红书知识图文（选题→查证→文案→插画→动态排版→质检）25★、Irixil/xiaohongshu-skill 小红书知识图解+长文排版发布（Gate 0–5 选题严选+母稿保护+发布门）22★（无 LICENSE，已警告）），共 112 个 skills；淘汰/去重/记信号：ibreez3/xiaohongshu-skill（21★，自动发布/评论/点赞类，与 white0dew/autoclaw 同属封号风险，按一致性未收）、500bitcoins/recast（0★ 当日新建，Seedance 2.5 改视频 skill、SKILL.md 方法论真实，但零 star 按 video-close-reading 先例记观察）、kiki-lgtm-dot/xiaohongshu-skill（21★，同作者 light-retro 已收不堆作者，记信号）、Haseebi-khan/Claude-Skills（6★ 未达标）；skills.sh All Time/Trending 均为老面孔（vercel-labs/mattpocock/hyperframes/superpowers 分叉系/runcomfy/open.feishu.cn），autonnel/mbfinotti 销售类 trending 但 GitHub 仅 5★/1★（10-19 已淘汰），无新货；skillhub.cn 飙升榜（搜索引擎 799.6万/编程专家Pro 526.0万/视频全能创作 114.8万/文章去AI味 77.8万）全站内无 GitHub 源码、无法交叉验证，0 收录（新需求信号：标书写作专家 37.1万、DKnownAI Guard 10.1万）；GitHub `claude skills` 前 15 全已入库或 dev/安全/汽车向不匹配，`xiaohongshu skill` 关键词命中今日 2 条收录；X 信号 11 帖命中（只读无互动，@Hjn8899 登录态正常、未遇验证）：Seedance 2.5 改图/改视频 edit 类 skill 48h 内出现 3 个独立实现（@500altcoins 开源版、scenario.com 版、Dola 版）成最热视频趋势；中文口播稿去 AI 味是视频圈真实痛点（@verysmallwoods）；@CrazyKaomei 火柴人 skill 目标冲击 1w star（库内已有）；指定账号 9 个近 3 天无 skills 推荐帖；X 热度洞察一句话：视频制作类 skill 正在从"生成"转向"改"——Seedance 2.5 edit 让"改一个细节、其余不动"成为新刚需，而中文搞钱人群要的是"选题到发布"的完整中文流水线
 - 2026-10-22：v2.3 X 信号轮追加 10 条（视频生产 4 条：rossark0/rossark-motion-skill SVG 转 60 帧专业动画方法论+小引擎 296★、Vincentwei1021/anything2explainer 黑底 MG 科普讲解视频全流程（Remotion+QC）2687★（无 LICENSE，授权警告）、garycaogan/pixel-diary 像素日记爆款复刻引擎（B 站 3 天 100 万播放实证）10★、kajisho5/ffmpeg-skill 本地视频剪辑 42 工具+MCP 2048★；文案钩子 1 条：modengsir/shangdan-post-skill 商单前置质检员（Brief 拆解+钩子）1★ 新库待观察；营销增长 4 条：dreammis/social-auto-upload 多平台一键分发 18 skills 15731★、isjiamu/gzh-design-skill 公众号排版引擎 4119★（AGPL-3.0 已声明）、geekjourneyx/md2wechat-skill 公众号创作发布 CLI 3753★（Source-Available/BSL 变体，已警告非 OSI 开源）、xianyu110/ecommerce-image-skills 12 电商出图 skills 108★；去 AI 味 1 条：yetone/kill-ai-slop vibe-coded 网页去 AI 味扫描器+field guide 1377★），共 109 个 skills；淘汰/去重/记信号：Kianzzz/xilo-opus-video（库内已有 v2.1，去重）、luongnv89/claude-howto（43348★，Claude Code 实战指南、dev 向不匹配）、perryyang/hn-ai-slop·codetips/avoid-ai-writing（404 无效）、mcncarl/jianying-headless（剪映自动化热点，但律师函存续风险，hold）、Agentchengfeng/chengfeng-videocut-skills（3119★，公开 Runtime 仍不满足新 Skill 要求、装上不能用，hold）、travisvn/awesome-claude-skills（纯目录平台，buildwithclaude 先例）、HarleyCoops/Math-To-Manim（2799★，数学动画垂类过窄，记观察）、xiaolu-ai26/video-close-reading（0★ 自荐新库，方法论真实，记观察）；skills.sh All Time/Trending 均为老面孔（mattpocock/hyperframes/superpowers 分叉系/runcomfy/open.feishu.cn），无新货；skillhub.cn 热榜仍全站内无 GitHub 源码（搜索引擎 709.7万/编程专家 521.2万/视频号爆款拆解 70.5万/文章去AI味 76.3万），无法交叉验证，0 收录；GitHub `claude skills` 前 15 全已入库或 dev/安全/汽车向不匹配，新建仓（9-10 月）最高仅 7★；X 信号 40 帖全开原帖核实（只读无互动）：内容分发/获客类 skill 成新热点（social-auto-upload/gzh-design/md2wechat/ecommerce-image）、Opus 5.5 代码渲染视频路线成体系（@yaohongan2025 长文 5 路 10 skill）、去 AI 味成独立热门品类（三帖共推）、Lemo-Opuscar 史诗级更新带动多人实测（库内已有）；X 热度洞察一句话：中文搞钱人群此刻要的是"装上就能产出内容、吃到分发红利"的交付型 skill，分发环节（上传/排版/出图）比生产环节更缺
