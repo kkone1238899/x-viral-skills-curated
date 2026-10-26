@@ -176,9 +176,9 @@
   2. 原则：用户说"做个视频"先开 Studio 预览，别直接渲染；保持预览开着让用户边看边指挥
   3. 用户在外部改了代码别覆盖，先确认
   4. 和 Hyperframes 的关系：Remotion 是 React 范式，Hyperframes 是 HTML 范式；已有 Remotion 工程可走 remotion-to-hyperframes 迁移
-- **安装**：`npx skills add remotion-dev/remotion`（官方仓库 skills 目录）
+- **安装**：`npx skills add remotion-dev/skills`（官方独立 skills 仓，含 create/markup/captions/maps/studio/render 等 12 个 skills）
 - **怎么用它搞钱**：React 开发者做视频零学习成本；接数据视频/播客剪辑单，代码复用率高
-- **来源**：[remotion-dev/remotion](https://github.com/remotion-dev/remotion) · skills 目录
+- **来源**：[remotion-dev/skills](https://github.com/remotion-dev/skills) · ⭐5703（2026-10-22 更新；⚠️ 该独立仓暂无 LICENSE 文件，商用前请确认授权）
 
 ### qiaomu-anything-to-notebooklm（内容转播客）
 
@@ -664,6 +664,65 @@
 - **安装**：`claude plugin marketplace add makevoid/motion-graphics-music-video-skill` 后 `claude plugin install motion-graphics-music-video@makevoid-music-video --scope user`（需 Fal API key）
 - **怎么用它搞钱**：接音乐人 MV 代工单（独立音乐人/翻唱号按支收费，成本透明好报价）；或自己做 MV 矩阵号吃音乐流量
 - **来源**：[makevoid/motion-graphics-music-video-skill](https://github.com/makevoid/motion-graphics-music-video-skill) · ⭐184
+
+### video-use（对话剪片：素材丢进去，聊着剪出成片）
+- **一句话**：把原始素材丢给 Claude Code，用对话剪片：去口头禅/死区、自动调色、烧字幕、并行动画叠加，剪完自检才交片——适合有口播/教程/访谈素材但不想自己剪的人
+- **核心用法**：
+  1. 素材丢进文件夹，用仓库 setup prompt 让 Agent 按 install.md 装好 ffmpeg、注册 skill、配 ElevenLabs key
+  2. 先聊后剪：Agent 从逐词转写稿（takes_packed.md）出发，按说话边界和静音断点给出剪辑策略，你点头后才动手，绝不先斩后奏
+  3. 剪辑全包：删嗯啊/假起头和空隙、每段自动调色、每个切点 30ms 音频淡入淡出防爆音、按你的风格烧字幕（默认双词大写分块）
+  4. 动画并行做：HyperFrames/Remotion/Manim/PIL 四路子 Agent 各做一种叠加动画，最后拼进成片
+  5. 交片前自检：每个切点边界都渲染自查一遍，会话记忆存 project.md，下周接着剪不用重讲
+- **安装**：把仓库 setup prompt 粘贴给 Claude Code（按 install.md 装 ffmpeg、注册 skill、配 ElevenLabs key）
+- **怎么用它搞钱**：接口播/课程/播客切片剪辑单：按条收费；或给客户做周更剪辑包，project.md 记忆让续单零磨合
+- **来源**：[browser-use/video-use](https://github.com/browser-use/video-use) · ⭐29832（2026-10-08 更新，MIT；X 8 视频 Skill 合集推荐）
+
+### BaoCut（可编辑视频：转录/双语字幕/翻译配音/剪辑一条龙）
+- **一句话**：以“可编辑视频”为中心的剪辑 Agent：转录、字幕、翻译、配音、剪口播、切短视频都在同一条时间线上改，改完再导出——适合做双语视频、翻译视频、口播剪辑的人
+- **核心用法**：
+  1. 先装 BaoCut App（macOS/Windows），再把仓库 skills/baocut 交给 Agent；经命令行 baocut 或 MCP 操作同一套目录
+  2. 建可编辑视频：转写后建原文字幕层，译文/双语字幕逐句另起一层，词的时间戳不动，校对只改错字术语标点
+  3. 翻译配音：先自己逐句翻译，再按译文逐句合成放上配音轨；说话人按声纹区分，凭证据起真名、你确认后写回
+  4. 剪辑成片：剪口播、切短视频、分章、总结写稿、从链接下载、压缩转码都在时间线上做，文件（字幕/文稿/音频/成片）都从视频导出
+  5. 人机共编：你和 Agent 共用同一编辑器，你随时可手工改，编辑器状态会同步给 Agent
+- **安装**：下载 BaoCut App（https://baocut.com，macOS/Windows）+ 把仓库 skills/baocut/SKILL.md 交给 Agent（README 官方方式）
+- **怎么用它搞钱**：接双语视频/翻译视频单（老演讲、课程、访谈翻成双语画报是 X 上已验证的需求）；或做“一句话出双语视频画报”服务，按条收费
+- **来源**：[JimLiu/baocut](https://github.com/JimLiu/baocut) · ⭐1471（2026-10-26 更新；⚠️ LICENSE 文件存在但 SPDX 未识别，商用前请确认授权；X @huangyun_122 实测推荐，需装 BaoCut App）
+
+### html-video（HTML 写代码出视频：文章/仓库链接一键成片）
+- **一句话**：把 HTML/CSS/数据变成真实 MP4 的本机渲染器：粘贴文章或仓库链接、或一句话描述，Agent 选模板、逐帧改文案、加 AI 配乐，本地出片不按次收费——适合不会剪辑、想用代码批量做知识/产品视频的人
+- **核心用法**：
+  1. 本机装好：pnpm install + pnpm -r build，起 studio（http://127.0.0.1:3071），先 `npx playwright install chromium` 装浏览器引擎
+  2. 选输入：直接描述、或粘贴文章链接/GitHub 仓库，Agent 按意图搜模板（search-templates --intent），21 个模板覆盖数据图/产品/时间线等
+  3. 逐帧改：在 studio 里改每帧文案、换模板、加配乐，14 种 Agent 后端自动识别（Claude Code/Cursor/Codex/Gemini 等）
+  4. 本地渲染：无头 Chromium 逐帧录制 + ffmpeg（libx264）编码成 MP4，无按次费用、无厂商锁定
+  5. 可选 AI 配乐：AI 音乐 + 旁白，成片直接导出
+- **安装**：`git clone https://github.com/nexu-io/html-video.git && pnpm install && pnpm -r build` 后 `node packages/cli/dist/bin.js studio`（README 官方方式；需先 `npx playwright install chromium`）
+- **怎么用它搞钱**：接知识视频/产品介绍批量单：文章转视频、仓库转演示视频，改字就重渲染，边际成本为零；或卖“链接→视频”月包
+- **来源**：[nexu-io/html-video](https://github.com/nexu-io/html-video) · ⭐4754（2026-06-21 更新，Apache-2.0）
+
+### agent-caption（本地精准字幕：强制对齐时间轴，绝不漂移）
+- **一句话**：本机给任何视频/音频加精准字幕：词来自语音识别、时间来自波形强制对齐，字幕永不早晚漂移，多语言、支持 Hinglish/中英混说——适合做口播、课程、播客切片的人
+- **核心用法**：
+  1. 本机装好：Python 3.10+、ffmpeg，python setup.py 一键建虚拟环境装 WhisperX（large-v3）
+  2. 识别与对齐分开：先语音识别出词，再用强制对齐定每个词在波形上的准确时间，转写有错字也不影响时间轴
+  3. 多语言：默认英文，任何语言都可做，语音和歌声都支持，Hinglish/中英混说一流
+  4. 全平台：Windows/macOS/Linux 都能跑，100% 本地，素材不上传云端
+- **安装**：`git clone https://github.com/ahkamboh/agent-caption.git && python setup.py`（需 Python 3.10+、ffmpeg）
+- **怎么用它搞钱**：接字幕外包单：口播/课程/播客切片的字幕按分钟收费，时间轴精准是卖点；或打包进剪辑服务里提价
+- **来源**：[ahkamboh/agent-caption](https://github.com/ahkamboh/agent-caption) · ⭐38（2026-10-21 更新，MIT；X 8 视频 Skill 合集推荐）
+
+### classical-poem-silk-video（古诗国风竖屏：逐句一景+毛笔字逐字题写）
+- **一句话**：把整首古诗做成 1080×1920 国风动态竖屏：逐句或两句一景分镜、中国画风格分化、画中物象真实运动、毛笔字逐字题写、原环境声+BGM、成片质检——适合做国风/古诗短视频账号的人
+- **核心用法**：
+  1. 先读 runtime-contract 并跑 check_prerequisites.sh（装好 ImageGen、Docker 版 Gemini I2V 等前置）
+  2. 读全诗定意象：标题/诗人/时代/地点/季节/时间/显性意象/情感弧线，四句以内一行一景、四句以上两句一景
+  3. 分镜分化：中国画风格按场景分（水墨山水/工笔花鸟/青绿山水/绢本等），不用同一套古绸模板套全诗
+  4. 运动真实化：用静态锚点限制图生视频重画，让水纹/飞鸟/马蹄/柳枝/衣袍真正动起来，保留每段原环境声
+  5. 题写与质检：毛笔字逐字出现、本地 BGM 混音可选、最后整片质检后交付 MP4
+- **安装**：把 README 的一句话安装提示粘贴给 Agent（自动装 skill 并校验 SKILL.md/agents/references/scripts/字体资产）
+- **怎么用它搞钱**：做国风古诗账号：逐诗成片、系列化更新跑流量分成；或接“一首诗一条片”定制单，按诗收费
+- **来源**：[Mr-funny/hbg-classical-poem-silk-video](https://github.com/Mr-funny/hbg-classical-poem-silk-video) · ⭐373（2026-08-03 更新，MIT；需 Docker + Gemini I2V 前置）
 
 ## 文案钩子（7 个）
 
@@ -1351,6 +1410,18 @@
 - **怎么用它搞钱**：接 X 账号代运营单（钩子+线程+周计划+复盘一条龙）；或用分析审计给客户出“什么内容真有效”的复盘报告，按次收费
 - **来源**：[Jakeschincariol/x-agent-skill](https://github.com/Jakeschincariol/x-agent-skill) · ⭐41
 
+### sergebulaev/linkedin-skills（LinkedIn 营销全链路：12 skills+批准后才发）
+- **一句话**：12 个 LinkedIn skills 跑通 B2B 获客全链路：20 个 2026 钩子公式写帖、7 天内容计划、去 AI 味、评论/回复/转发复用、互动分析，写完必须你点头才发——适合做英文获客、出海、B2B 的人
+- **核心用法**：
+  1. 先排周计划：content-planner 按主题+受众+支柱（权威 40-50%/个人叙事 30-40%/社区 20-30%）排 7 天，每天给支柱、格式、钩子类型、CTA、发布时间和评论目标
+  2. 写帖选钩子：post-writer 从 20 个 2026 钩子公式里按目标（评论/转发/收藏）挑一个，如数字账本体、R.I.P. 讣告体，每个公式附真实互动倍数参考；看到爆款先用 hook-extractor 反推它的公式和空白模板再套用
+  3. 过 humanizer：按 2026 语料校准的去 AI 味重写（词汇密度、em dash 上限、断裂句式等），已有草稿用 --mode audit 先审后改；不宣称绕过检测器
+  4. 批准后才发：所有内容经你点头后走 Publora 排期；评论、回复、旧帖转发复用 comment-drafter、reply-handler、repurposer
+  5. 复盘跟进：engager-analytics 看互动、thread-monitor 跟进帖子后续，profile-optimizer 持续调主页
+- **安装**：`npx skills add sergebulaev/linkedin-skills`（README 官方安装方式；Codex 另可用 plugin marketplace 方式）
+- **怎么用它搞钱**：接 LinkedIn/出海 B2B 代运营单（周计划+写帖+互动复盘一条龙）；或给自己做出海获客号，英文内容生产标准化，一人即小编
+- **来源**：[sergebulaev/linkedin-skills](https://github.com/sergebulaev/linkedin-skills) · ⭐5187（2026-10-22 更新，MIT；与库内同作者 sergebulaev/x-skills、tiktok-skills 是不同平台包，不重复）
+
 ## 去 AI 味（12 个）
 
 > 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用）。humanizer 走检查清单路线，tt-humanizer 专攻短视频口播，qu-ai-wei 专攻简体中文改写，humanizer-skill 带检测评分 + 多人声改写。kill-ai-slop 专攻 vibe-coded 网页的视觉+文案双重去味（带扫描器）。
@@ -1561,6 +1632,7 @@
 
 ## 更新日志
 
+- 2026-10-25 晚：v2.8 追加 6 条（视频生产 5 条：browser-use/video-use 对话剪片（转写稿出发+点头后剪+切点自检+project.md 记忆）29832★、JimLiu/baocut 可编辑视频（转录/双语字幕/翻译配音/剪辑一条龙，需装 App）1471★（LICENSE 文件存在但 SPDX 未识别，已警告）、nexu-io/html-video HTML 写代码出视频（文章/仓库链接→模板→本地渲染，21 模板）4754★、ahkamboh/agent-caption 本地精准字幕（强制对齐时间轴绝不漂移）38★、Mr-funny/hbg-classical-poem-silk-video 古诗国风竖屏（逐句一景+毛笔字逐字题写，需 Docker + Gemini I2V）373★；营销增长 1 条：sergebulaev/linkedin-skills LinkedIn 全链路（20 钩子公式+7 天计划+批准后才发）5187★），Remotion 条目安装源更新为独立仓 remotion-dev/skills（5703★，⚠️ 该仓暂无 LICENSE，已警告），共 135 个 skills；去重/淘汰/记信号：X 信号 17 帖命中（只读无互动，@Hjn8899 登录态正常、未遇验证）：代码做视频成竞争主线（Remotion 官方 skills 独立仓、ffmpeg-skill、8 视频 Skill 合集、火柴人更新、BaoCut、Lemo-Opuscar、Seedance 2.5+即梦流程、video-shotcraft 均已覆盖或已入库）；合集内 ahkamboh/inkling 仅 2★、ahkamboh/scrolltape 仅 4★ 未达硬线未收；Jakeschincariol/replica-skill 5505★ 与 SawyerHood/dev-browser 6698★ 为开发向、与本库搞钱+视频受众不匹配未收；Bomx/super-video-maker-skill 322★（无 LICENSE）为跨工具编排大包，与库内 Hyperframes/Remotion/ffmpeg 覆盖重叠，按整库大包先例不另立；wx4766/html-to-video 109★ 为渲染原语、与 nexu-io/html-video 重叠不堆；enesozturk/dimensional-drawing 为 UI 尺寸图设计工具、非五章优先类未收；TermiX 赚钱 Skills 平台叙事无已验证订单证据未收；小红书起号 10 Skill 合集未列具体名字无法核验、Muse 全自动运营小红书讨论记封号风险信号；skills.sh All Time/Trending 仍为老面孔，trending 冒头的 mbfinotti 销售/RevOps/广告三包 GitHub 仅 3/1/2★、limrun-inc/skills 仅 2★，站内热度与 GitHub 背离、按防刷量铁律不收；skillhub.cn 热榜轮：下载榜前 15 仍是编程类断层领先，详情页均无 GitHub 源码链接无法交叉验证 0 收录；新需求信号：短视频爆款 8 维拆解与反向二创（3.0万）、AI 视频创作师（1.1万）、AdMapix 广告投放（53.0万）、公众号爆款封面生成器（19.6万）、小红薯轮播图（5.5万）；X 热度洞察一句话：视频 skill 的竞争已从“能不能做”转向“能不能稳定批量出片、按行业卖月包”——而获客端的新变量是 LinkedIn：英文 B2B 获客正在复制 X/TikTok 的“钩子+批准后才发”打法
 - 2026-10-25：v2.7 原帖复核轮追加 8 条（营销增长 2 条：sharbelxyz/x-bookmarks X 收藏夹变行动清单（拉取→分类→行动建议→定期摘要）290★（无 LICENSE，已警告）、Jakeschincariol/x-agent-skill X 账号全流程（21 钩子公式+线程+回复+主页评分+周计划+分析审计，批准后才发）41★；去 AI 味 5 条：hardikpandya/stop-slop 删 AI 痕迹三件套 18315★、MrGeDiao/shuorenhua 中文优先说人话 2257★、jzOcb/writing-style-skill 文风自动学习模板 273★（无 LICENSE，已警告）、Anbeeld/WRITING.md 人味规则集 381★、adewale/anti-slop-writing 具体细节编辑测试 21★（刚过硬线）；提示词 1 条：alchaincyf/nuwa-skill 蒸馏任何人的思维方式 35832★），共 129 个 skills；去重/淘汰/记信号：水哥AI 8 skill 对应 7 链接（X Viral 与 X Audit 同仓 Jakeschincariol/x-agent-skill），其中 rohunvora/x-research-skill 与 sergebulaev/x-skills（Humanizer 子 skill）库内已有，tweet-md/skill 1★ 与 ceoguy/x-algorithm-skill 1★ 未达硬线（库内 twitter-algorithm-optimizer 条目源自 ComposioHQ awesome 合集，非 ceoguy），alberduris/skills x-twitter 为整仓 21★ 且 X API 发布/互动管理自动化风险 + 与库内两套 X 创作包重叠，未收；Haosen 去 AI 味清单 22 名（19 附链接、3 未附链接）：stop-slop-zh 6★ 未达硬线，chatgpt-comparison-detection（HC3 语料/检测器）与 AIGC_text_detector（ICLR 论文代码）非 skill 形态，baibanbao/qu-ai-wei 73★ 同名已有更强条目（LifelongLazyLearner 690★，原帖已提醒勿混淆）不堆同名分叉，hylarucoder/ai-flavor-remover 1189★ 但仅 README 内一段 prompt、无 SKILL.md、无 LICENSE、仅 Gemini 2.5 Pro 测试，yzhao062/agent-style 725★ 为 RULES.md 通用写作规则、非打包 skill 且无 LICENSE，dongbeixiaohuo/writing-agent 439★ 为独立 Windows 写作客户端（harness，RC 版）非 skill，iniwap/AIWriteX 2143★ 为公众号全自动工具（非 skill）+ 洗稿/多账号自动发布风险；已入库去重：blader/humanizer、op7418/Humanizer-zh（已有独立 skill 在用）、zenstory-ai/oh-story-claudecode、Leonxlnx/taste-skill（v2.2 已淘汰：前端设计向，原帖亦提醒非中文改稿工具）；未附链接无法核验 3 项：openai-detector、humanize-text、De-AI-Prompt-Enhancer（仅名称线索，不认定与库内 OUBIGFA 条目同一）；Marvin Grok Bot 10 工作流属另一管线，不入本库；X 热度洞察一句话：去 AI 味已从单点改写卷成“检测→改写→文风学习”全链条，而 X 运营 skill 的分水岭是“批准后才发”——带人工点头的才配进库
 - 2026-10-25 补记（skillhub.cn 热榜轮）：下载热榜前 15 + 最近更新排序第一页 24 条共 39 条，详情页均无 GitHub 源码链接（ClawHub 来源链接不等于 GitHub 源码，已区分），无法做 star + 更新时间交叉验证，0 收录；需求信号：编程类仍占榜首（编程大神 900.7 万、搜索引擎 856.8 万、编程专家Pro 526.5 万），视频全能创作（短视频/图片/音乐/音频/配音/口播/数字人）117.2 万；最近更新页 humanizer-zh 同名不同作者出现 6 条（1.2 万–24.3 万，含 1 条 Pay Skill），中文去 AI 味是站内高频新上类目，与 X 侧去 AI 味信号一致；“最近上新”实际为按更新时间排序，非严格首发
 - 2026-10-25：v2.6 X 信号轮追加 1 条（营销增长：kangarooking/x-skills X 推文创作全链路（收集→筛选→创作→草稿箱，人工点头后才真发）340★），共 121 个 skills；星数刷新：qu-ai-wei 660→690、calesthio/OpenMontage 70348→71617；X 信号 10 帖命中（只读无互动，@Hjn8899 登录态正常、未遇验证）比对：MarketerHub Vox 风格工作流（/skill-creator 库内已有 + Higgsfield Seedance 2.5，已覆盖）、Seanvon OpenMontage 帖（库内已有，仅刷新星数）、Haosen Anatomy × OpenMAIC（Anatomy 库内已有；OpenMAIC 本体为清华多智能体互动课堂教育平台、章节不匹配，未收）、Haosen 去 AI 味 3 步法（方法帖无新增可核验仓库，记需求信号）、luogo 双 skill 帖（x-create 即本次收录的 kangarooking/x-skills，qu-ai-wei 库内已有仅刷新）、月明抖音文案抓取系列（zzyong24/moonlit-douyin-transcribe 等 4 仓均 0–2★，未达硬线，未收，但记抖音文案抓取拆解需求信号）、水哥AI X 运营 8 skill 帖与 Marvin Grok Bot 10 工作流（原帖复核进行中，结果另起批次）、陈大黄变现风险讨论（skill 文件纯 Markdown 无防复制、闲鱼 1 元打包，记市场信号：卖文件难跑通，价值在装上能用的服务）、农夫求推荐帖（superpowers 系 dev 向先例，未收）；skillhub.cn 热榜轮仍进行中，结果另起批次；X 热度洞察一句话：中文搞钱人群此刻要的是“选题→成稿→草稿箱”这种人工点头的完整运营流水线，而不是单点提示词
