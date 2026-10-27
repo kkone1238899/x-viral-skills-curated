@@ -190,7 +190,7 @@
   4. 付费墙自动绕过（300+ 站点：UA 伪装 → AMP → archive.today）；小宇宙 / 喜马拉雅 / B 站转写走 Get笔记 API（带时间戳）
 - **安装**：`cd ~/.claude/skills/ && git clone https://github.com/joeseesun/qiaomu-anything-to-notebooklm && cd qiaomu-anything-to-notebooklm && ./install.sh`（需 `notebooklm login`）
 - **怎么用它搞钱**：把爆款文章 / 播客变成自己的播客节目或 PPT 课程素材，一源多用；或接"知识库搭建 / 播客代运营"单
-- **来源**：[joeseesun/qiaomu-anything-to-notebooklm](https://github.com/joeseesun/qiaomu-anything-to-notebooklm) · ⭐6229
+- **来源**：[joeseesun/qiaomu-anything-to-notebooklm](https://github.com/joeseesun/qiaomu-anything-to-notebooklm) · ⭐6399
 
 ### product-launch-video（产品发布视频）
 
@@ -337,7 +337,7 @@
   4. 中文 README_CN.md 齐全；Ink Press 样片（36 秒、10 镜头、钉好时间点的音效）可照着拆
 - **安装**：`npx skills add Vincentwei1021/video-shotcraft`
 - **怎么用它搞钱**：接"代码视频"定制单（产品演示 / 动态海报 / 数据可视化）：配方卡保证效果下限，改数字重渲染边际成本为零
-- **来源**：[Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) · ⭐12170
+- **来源**：[Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) · ⭐13855
 
 ### liyupi/ai-promo-video-maker（产品宣传片）
 - **一句话**：一句话描述产品，AI 自动调研、两轮提问、画样帧、配音配乐、剪辑校验，最后交付 4K 商业宣传片——适合要给产品做宣传片但没预算请外包的人
@@ -491,7 +491,7 @@
   5. 版本固定：releases 页有 v1.4.1 安装包+SHA256 校验，更新仓库不会自动动已安装副本
 - **安装**：`npx skills add threerocks/sweety-handdraw-video --skill sweety-handdraw-video --agent claude-code codex --global --copy --yes`
 - **怎么用它搞钱**：做手绘故事/知识账号：小红书《AI 替我说》500 亿流量激励、YouTube CPM $3–5、Faceless 频道月入 $5000（@leo_xiaolei 变现盘点）；或接"手绘讲解"定制单，描线+配音是标准化交付
-- **来源**：[threerocks/sweety-handdraw-video](https://github.com/threerocks/sweety-handdraw-video) · ⭐742
+- **来源**：[threerocks/sweety-handdraw-video](https://github.com/threerocks/sweety-handdraw-video) · ⭐891
 
 ### Kianzzz/xilo-opus-video（Opus 5.5 写代码做视频：三方案竞标）
 - **一句话**：让 Opus 5.5"竞标式"做视频的 skill：先给三个拉开差别的方案+预览，你挑一个，它再写成 brief.md 逐镜渲染——适合要风格化短片、怕"一句话丢过去靠运气"的人（@growaiskills 8 skills 选型指南收录对比）
@@ -526,7 +526,7 @@
   4. 输出视频+可继续修改的工程：分镜文案、原创配乐都在工程里，改文案不用重做
 - **安装**：`npx skills add https://github.com/op7418/guizang-product-video-skill --skill guizang-product-video-skill`
 - **怎么用它搞钱**：给独立开发者/小商家做"发版宣传片"接单：复用真实组件是差异化卖点；或自己每次发版都出一支，保持产品声量
-- **来源**：[op7418/guizang-product-video-skill](https://github.com/op7418/guizang-product-video-skill) · ⭐831（注：AGPL-3.0，商用/二次分发注意开源义务）
+- **来源**：[op7418/guizang-product-video-skill](https://github.com/op7418/guizang-product-video-skill) · ⭐872（注：AGPL-3.0，商用/二次分发注意开源义务）
 
 ### calesthio/OpenMontage（AI 剪辑工作室：12 条制片流水线）
 - **一句话**：把 Claude Code/Cursor 变成完整视频制片工作室：12 条制片流水线（AI 成片/真实素材混剪/口播/动画/换脸配音等）、49 个 skills，一句"给我做个 60 秒讲解视频"就开工——适合想批量产视频、不想学剪辑的人。
@@ -652,7 +652,7 @@
   4. 渲染：无头 Chrome 渲染 + ffmpeg 编码成片，不依赖任何生图/生视频模型
 - **安装**：`/plugin marketplace add tuzhechen2005/opus-video-skills` 后 `/plugin install painted-animation@opus-video-skills` / `/plugin install kinetic-reel@opus-video-skills`（README 官方插件方式）
 - **怎么用它搞钱**：接纯代码动画单（歌词视频/作品集 showreel/品牌短片，零模型成本=报价全是利润）；或把水彩/字体两套风格做成模板包按套卖
-- **来源**：[tuzhechen2005/opus-video-skills](https://github.com/tuzhechen2005/opus-video-skills) · ⭐320
+- **来源**：[tuzhechen2005/opus-video-skills](https://github.com/tuzhechen2005/opus-video-skills) · ⭐345
 
 ### makevoid/motion-graphics-music-video-skill（Opus 5.5 音乐 MV 全流程）
 - **一句话**：一首歌+一句创意提示词，Opus 5.5 出完整音乐 MV：角色/画面用 GPT 生图、MiniMax H3 做动画、p5.js 做动效，适合做音乐人 MV/翻唱视频的人
@@ -663,7 +663,7 @@
   4. 成片 MP4 落 output 目录；成本先算清：约 $30 Fal 额度 + 约 3M Opus tokens / 3 分钟歌
 - **安装**：`claude plugin marketplace add makevoid/motion-graphics-music-video-skill` 后 `claude plugin install motion-graphics-music-video@makevoid-music-video --scope user`（需 Fal API key）
 - **怎么用它搞钱**：接音乐人 MV 代工单（独立音乐人/翻唱号按支收费，成本透明好报价）；或自己做 MV 矩阵号吃音乐流量
-- **来源**：[makevoid/motion-graphics-music-video-skill](https://github.com/makevoid/motion-graphics-music-video-skill) · ⭐184
+- **来源**：[makevoid/motion-graphics-music-video-skill](https://github.com/makevoid/motion-graphics-music-video-skill) · ⭐187
 
 ### video-use（对话剪片：素材丢进去，聊着剪出成片）
 - **一句话**：把原始素材丢给 Claude Code，用对话剪片：去口头禅/死区、自动调色、烧字幕、并行动画叠加，剪完自检才交片——适合有口播/教程/访谈素材但不想自己剪的人
@@ -724,6 +724,29 @@
 - **怎么用它搞钱**：做国风古诗账号：逐诗成片、系列化更新跑流量分成；或接“一首诗一条片”定制单，按诗收费
 - **来源**：[Mr-funny/hbg-classical-poem-silk-video](https://github.com/Mr-funny/hbg-classical-poem-silk-video) · ⭐373（2026-08-03 更新，MIT；需 Docker + Gemini I2V 前置）
 
+### andyhuo520/digital-human-koubo（数字人口播：一张照片+一句话出片）
+- **一句话**：一张照片加一句话出数字人口播成片：写稿、分段、对口型生成、包装剪辑全包，适合做口播、带货、解读号、真人不出镜的人
+- **核心用法**：
+  1. 先定风格再开工：按内容在 5 档里选（小林式解说/网红花字口播/发布解读/保姆级教程/多主播多语言），风格、比例时长、花字强度、主播一次定进 brief.json
+  2. 写稿按 10 秒切段：每段一句或两句约 40-55 字，标 full/pip/vlog/depth 镜头；生成前先报段数、秒数、预估 credits、余额，用户点头才生成（720p 约 17 credits/秒、480p 约 10 credits/秒）
+  3. 走 Renoise MCP 分段生成：每 10 个任务一批，下载用多段并发加断点续传、ffmpeg 解码校验；逐段回听（whisper 转写比对文稿）、每段抽 4 帧查烧字幕，有问题只重拍那段
+  4. 套 48 个包装组件出片：开场钩子、数字钉子、文字在人身后、证据截图、地图路线、弹幕、投票、复盘板，Remotion 拼接、loudnorm -16 出片
+  5. 红线：成片标“内容由 AI 数字人演绎”；用户本人形象只用在自己的片子；不冒充真人、不学真实创作者的脸和声音
+- **安装**：`git clone https://github.com/andyhuo520/digital-human-koubo.git` 后把 skills/digital-human-koubo 拷进 ~/.claude/skills/，再按 README 接 Renoise MCP（需 Renoise 账号，credits 按量付）
+- **怎么用它搞钱**：接“数字人口播代做”单：一张客户照片加一句话卖点出 30-120 秒带货/解读片，按条收费；或自己起矩阵号，同一数字人多风格复用，边际成本只剩 credits
+- **来源**：[andyhuo520/digital-human-koubo](https://github.com/andyhuo520/digital-human-koubo) · ⭐761
+
+### eternityspring/shuohao-skills（AI 短剧制作 7 件套：小说到分镜）
+- **一句话**：小说到可拍摄物料的短剧全链路 skill 组：大纲、角色、美术、剧本、开场走位、分镜，适合做 AI 短剧、小说改编的人
+- **核心用法**：
+  1. 按管线顺序跑：novel-outline 定改编大纲 → novel-characters 立角色卡 → novel-art 出场景与道具设定 → novel-script 写剧本 → novel-staging 定每场开场站位 → novel-storyboard 出分镜，character-refs 单独出角色参考图
+  2. 每步产物是结构化文件，上一步的文件就是下一步的输入，不靠口头传话；场景图里能站能坐的物件就是走位依据，没有场景图时走位标“暂定”
+  3. 装一次长期用：clone 后 ./scripts/install.sh 软链全部 skill 进 Claude Code/Codex，git pull 即更新；单装某一个就 ./scripts/install.sh novel-characters
+  4. 零 API 依赖：脚本只用 Node 18 标准库，不装 npm 包；不走 API key，用当前会话额度；只有 character-refs 需要出图通道（自建 ComfyUI / Codex 出图 / OpenAI API / 自定义命令四选一）
+- **安装**：`git clone https://github.com/eternityspring/shuohao-skills.git && cd shuohao-skills && ./scripts/install.sh`（需 Node 18+）
+- **怎么用它搞钱**：接“小说改短剧”代制单：大纲到分镜一套交付，按集/按本收费；或自己跑短剧矩阵号，7 件套是可复用的生产管线不是一次性 prompt
+- **来源**：[eternityspring/shuohao-skills](https://github.com/eternityspring/shuohao-skills) · ⭐5418
+
 ## 文案钩子（7 个）
 
 ### shangdan-post-skill
@@ -747,7 +770,7 @@
   5. 最终检查：锚点真实、对比逻辑合理、实际价格确有划算感、读起来自然。
 - **安装**：git clone https://github.com/kangarooking/viral-copywriting-skill.git
 - **怎么用它搞钱**：做带货文案代写——给客户写短视频/朋友圈文案时套用"惊喜优惠标题"公式，让中高客单价产品在标题里直接制造价格冲击，按篇收费卖差异化。
-- **来源**：[kangarooking/viral-copywriting-skill](https://github.com/kangarooking/viral-copywriting-skill) · ⭐67
+- **来源**：[kangarooking/viral-copywriting-skill](https://github.com/kangarooking/viral-copywriting-skill) · ⭐74
 
 ### fear-appeal
 - **一句话**：痛点产品（电动牙刷、保险、净水器）读者不够重视时，用"痛苦场景 + 严重后果"两步法激发紧迫购买欲；源自《爆款文案》第一章。
@@ -759,7 +782,7 @@
   5. 边界：享乐型产品（零食、旅游、娱乐）与品牌形象广告不用；不给读者贴负面标签（"懒癌""拖延症晚期"会激起逆反），用自测打钩让读者自己下结论。
 - **安装**：git clone https://github.com/kangarooking/viral-copywriting-skill.git
 - **怎么用它搞钱**：接牙科/体检/课程机构的公众号推文单——用恐惧诉求结构替换干巴巴的功能介绍，接单话术直接用书中案例（"电动牙刷 24 小时卖光 1 万支"）。
-- **来源**：[kangarooking/viral-copywriting-skill](https://github.com/kangarooking/viral-copywriting-skill) · ⭐67
+- **来源**：[kangarooking/viral-copywriting-skill](https://github.com/kangarooking/viral-copywriting-skill) · ⭐74
 
 ### friend-chat-title
 - **一句话**：朋友圈、私域、个人 IP 需要"像朋友聊天一样"的亲切标题时用的三步改写法；源自《爆款文案》第四章。
@@ -771,7 +794,7 @@
   5. 朗读检验：读起来像"发给朋友的一条微信消息"才算通过，像广告语就回炉继续改。
 - **安装**：git clone https://github.com/kangarooking/viral-copywriting-skill.git
 - **怎么用它搞钱**：做微商/私域代运营的起手服务——把客户原有硬广标题批量改成好友对话体，案例句式"赚了 1173 万元，愿意手把手教你"，按账号收月费。
-- **来源**：[kangarooking/viral-copywriting-skill](https://github.com/kangarooking/viral-copywriting-skill) · ⭐67
+- **来源**：[kangarooking/viral-copywriting-skill](https://github.com/kangarooking/viral-copywriting-skill) · ⭐74
 
 ### ai-copywriter
 - **一句话**：英文双技能——写转化文案时先"以读者为先"摸准需求再动笔，写完再过一遍 33 项 AI 味检查；适合做跨境文案和英文内容的人。
@@ -783,7 +806,7 @@
   5. 误杀保护：看的是"特征簇"不是孤立证据（单个破折号、一处 however 不算病）；有作者真实样稿时，样稿的风格优先级高于去 AI 规则。
 - **安装**：npx skills add mikiarlo3/ai-copywriter --global
 - **怎么用它搞钱**：接英文跨境文案单——给独立站/SaaS 写落地页和 LinkedIn 帖，卖点是"读起来像真人写的转化文案"，可打包卖"文案 + 去 AI 味审核"两道工序。
-- **来源**：[mikiarlo3/ai-copywriter](https://github.com/mikiarlo3/ai-copywriter) · ⭐1207
+- **来源**：[mikiarlo3/ai-copywriter](https://github.com/mikiarlo3/ai-copywriter) · ⭐1232
 
 ### tt-hook-scripter
 - **一句话**：给 TikTok/短视频写前 1–3 秒钩子——口播台词 + 屏幕文案 + 首帧画面三层一起定，目标就是让人刷不走；钩子是全平台最大留存杠杆。
@@ -955,7 +978,7 @@
   4. skills 之间互相引用（如 copywriting 写完调 copy-editing 逐行改），形成流水线
 - **安装**：`npx skills add coreyhaines31/marketingskills`
 - **怎么用它搞钱**：接"增长顾问"单：用这套 skills 给客户做落地页+广告+邮件全案；或自己做产品时，营销环节全部 AI 化，一个人跑完获客闭环
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐56,714
 
 ### copywriting（转化文案）
 
@@ -967,7 +990,7 @@
   4. 缺证据就标 `[NEED: ...]`，绝不编造数据和 testimonials
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill copywriting`
 - **怎么用它搞钱**：接落地页文案单；自己卖课/卖服务时，销售页转化率直接挂钩收入
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐56,714
 
 ### ad-creative（广告创意量产）
 
@@ -979,7 +1002,7 @@
   4. 覆盖 UGC/绿幕/口播/信息流等多格式，文案同样过"去 AI 味"质检
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill ad-creative`
 - **怎么用它搞钱**：接广告代投/素材单：别人一条条写，你一次出几十条变体做 A/B 测试；自己带货时素材迭代速度就是 ROAS
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐56,714
 
 ### lead-magnets（获客钩子）
 
@@ -991,7 +1014,7 @@
   4. 钩子要自然导向产品试用，写完调 copywriting 写落地页、调 emails 写捕获后的培育序列
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill lead-magnets`
 - **怎么用它搞钱**：帮客户搭"钩子→邮箱→培育→成交"漏斗收服务费；自己做号时这是涨粉最稳的路径之一
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐56,714
 
 ### pricing（定价策略）
 
@@ -1003,7 +1026,7 @@
   4. 新品定价先定"能学到东西的价格"，跑数据再调
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill pricing`
 - **怎么用它搞钱**：给 SaaS/知识付费做定价咨询；自己产品定价从"成本加成"换成"价值定价"，利润率直接上一个台阶
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐56,714
 
 ### offers（offer 设计）
 
@@ -1015,7 +1038,7 @@
   4. 设计完调 copywriting 写销售页、调 pricing 定档
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill offers`
 - **怎么用它搞钱**：帮知识付费/教练做 offer 重构收咨询费；自己卖课时 offer 改好，转化率翻倍比投流便宜得多
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐56,714
 
 ### cro（转化率优化）
 
@@ -1027,7 +1050,7 @@
   4. 表单 abandonment、A/B 测试想法有专门的 references 可调
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill cro`
 - **怎么用它搞钱**：接"落地页诊断"单，按页收费；自己投流时，转化率提 1 个点等于获客成本降一截
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐56,714
 
 ### cold-email（冷邮件）
 
@@ -1039,7 +1062,7 @@
   4. 一个低 friction 的 CTA（"值得聊聊？"），不要一上来就约会议
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill cold-email`
 - **怎么用它搞钱**：帮 B2B/出海客户做冷启动获客；自己找商单、谈分销时，回复率就是 pipeline
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐56,714
 
 ### emails（邮件序列）
 
@@ -1051,7 +1074,7 @@
   4. 和 lead-magnets 联动：钩子捕获 → 欢迎序列 → 培育 → 成交
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill emails`
 - **怎么用它搞钱**：帮客户搭"名单→培育→复购"邮件体系收服务费；自己做私域时，邮件是复购率最高的渠道之一
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐54,281
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐56,714
 
 ### marketing-skills（广告审计整库总览）
 
@@ -1181,7 +1204,7 @@
   4. 放量阶段用 07-营销推广（KOL / 广告 / 活动 / 预算）+ 08-增长策略（算法 / 变现 / 长期战略）
 - **安装**：`/plugin marketplace add vivy-yi/xiaohongshu-skills` 后 `/plugin install xiaohongshu-complete-skills@xiaohongshu-skills`
 - **怎么用它搞钱**：接小红书代运营 / 起号单：139 个技能就是现成 SOP，定位→内容→转化全链路可交付；自己做带货号，选品 + 种草 + 漏斗一条龙跑通
-- **来源**：[vivy-yi/xiaohongshu-skills](https://github.com/vivy-yi/xiaohongshu-skills) · ⭐492
+- **来源**：[vivy-yi/xiaohongshu-skills](https://github.com/vivy-yi/xiaohongshu-skills) · ⭐506
 
 ### AgriciDaniel/claude-seo（全栈 SEO 审计系统）
 - **一句话**：26 个子 skill + 19 个专家 agent 并行的全栈 SEO 系统（技术 SEO / 内容 E-E-A-T / Schema / GEO / 本地 / 电商 / 国际化），适合做独立站、内容站靠搜索获客的人
@@ -1410,7 +1433,7 @@
 - **怎么用它搞钱**：接 X 账号代运营单（钩子+线程+周计划+复盘一条龙）；或用分析审计给客户出“什么内容真有效”的复盘报告，按次收费
 - **来源**：[Jakeschincariol/x-agent-skill](https://github.com/Jakeschincariol/x-agent-skill) · ⭐41
 
-## 去 AI 味（12 个）
+## 去 AI 味（14 个）
 
 > 注：op7418/Humanizer-zh 不在本批次提炼范围（已有独立 skill 在用）。humanizer 走检查清单路线，tt-humanizer 专攻短视频口播，qu-ai-wei 专攻简体中文改写，humanizer-skill 带检测评分 + 多人声改写。kill-ai-slop 专攻 vibe-coded 网页的视觉+文案双重去味（带扫描器）。
 
@@ -1435,7 +1458,7 @@
   5. 误杀保护：有作者真实样稿时，样稿优先级高于去 AI 规则（作者真用破折号就按作者频率保留）；学术/技术/法律文本中性平实就是"人味"，不强加观点。
 - **安装**：npx skills add blader/humanizer
 - **怎么用它搞钱**：做公众号/小红书代运营的"去 AI 味润色"增值服务——客户用 AI 写初稿，你按 26 项清单人工过一遍再发布，按千字收费；或打包卖"AI 代写 + 去味"两道工序，做差异化接单。
-- **来源**：[blader/humanizer](https://github.com/blader/humanizer) · ⭐58140（10-19 复核，持续上涨）
+- **来源**：[blader/humanizer](https://github.com/blader/humanizer) · ⭐61069（10-19 复核，持续上涨）
 
 ### tt-humanizer
 - **一句话**：专给短视频口播脚本/字幕去 AI 味——纸上读着顺、嘴上说出来像机器人的问题，用四道工序逐个修；注意它不保证过 AI 检测器，目标是观众听着像真人。
@@ -1457,7 +1480,7 @@
   4. 真人味文字（有具体经历 / 自嘲 / 自然节奏）会停手不乱改；输入含密码、key 等敏感信息先过门检
 - **安装**：`npx skills add https://github.com/LifelongLazyLearner/qu-ai-wei`
 - **怎么用它搞钱**：接文案代写单：AI 初稿 + qu-ai-wei 去味，交付"真人感"文案按千字收费；做矩阵号时去味后多平台分发，降低被判营销号 / 限流风险
-- **来源**：[LifelongLazyLearner/qu-ai-wei](https://github.com/LifelongLazyLearner/qu-ai-wei) · ⭐690
+- **来源**：[LifelongLazyLearner/qu-ai-wei](https://github.com/LifelongLazyLearner/qu-ai-wei) · ⭐700
 
 ### Aboudjem/humanizer-skill（55 模式检测 + 5 人声）
 - **一句话**：55 种 AI 写作模式检测 + 0-100 AI 味评分 + 5 种人声改写，适合发英文博客 / LinkedIn / Newsletter 怕被看出 AI 味的人
@@ -1468,7 +1491,7 @@
   4. `--purpose` 按用途调（essay / email / marketing / technical），`--score` 输出量化分
 - **安装**：`claude plugin marketplace add Aboudjem/10x && claude plugin install humanizer@10x`
 - **怎么用它搞钱**：接英文内容代写 / 领英代运营单：AI 量产 + humanizer 去味，交付"母语写手"质感收溢价；做英文利基站，内容去味后广告审核、投稿通过率更高
-- **来源**：[Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill) · ⭐281
+- **来源**：[Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill) · ⭐291
 
 ### ilien-dev/quiron（量得出来的英文去 AI 味）
 - **一句话**：英文去 AI 味 skill，改完不凭感觉：对照实测人类写作基线量一遍，改没改到位有数，支持博客/小说/西班牙语三种语体，适合做英文内容代写的人
@@ -1549,6 +1572,30 @@
 - **怎么用它搞钱**：接技术文档/DevRel 写作润色单（README/发布稿/技术博客按篇收费）；或给技术团队做写作审校，腔调统一就是交付标准
 - **来源**：[adewale/anti-slop-writing](https://github.com/adewale/anti-slop-writing) · ⭐21
 
+### op7418/Humanizer-zh（中文去 AI 味：保事实保声音）
+- **一句话**：中文专用的去 AI 味编辑 skill：删空话、重复和模板化表达，但不改事实、不改作者声音，适合所有要公开发布的中文稿件
+- **核心用法**：
+  1. 先定约束再改：不增删事实、数字、名字、日期和限定词（可能/据称/仅/正在/计划）；不把相关改成因果、可能改成确定
+  2. 按 31 条模式清单查表达问题：假对比（“不仅是 X，更是 Y”）、空泛铺垫、强凑三段式、破折号泛滥——但清单只是线索，不是黑名单，没有问题的段落原样保留
+  3. 匹配作者声音：有样稿就学句长、用词和标点，不把样稿里的经历和数据搬进目标文本；技术/商务/学术文本保留正式程度，不强行口语化
+  4. 交稿前对照原文自查：有没有新增、遗漏或强化主张；施事者、时间、条件、范围、否定与归因是否一致；通读一遍，通顺的文字不为凑工作量硬改
+  5. 边界：只润色已有文本，不判断作者身份、不保证通过 AI 检测器；代码块、链接、YAML、表格数据原样不动
+- **安装**：`npx skills add https://github.com/op7418/Humanizer-zh.git`（README 官方安装方式）
+- **怎么用它搞钱**：做“AI 代写 + 去味”两道工序的代运营增值服务，按千字收费；或给公众号/小红书客户做发前润色包月，中文稿是刚需
+- **来源**：[op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh) · ⭐21083
+
+### Nutlope/hallmark（网页去 AI 味：16 条硬底线 + 自动 lint）
+- **一句话**：治网页“一眼 AI”味的设计 skill：16 条硬底线加自动 lint，让 AI 出的页面看起来像人设计的，适合做落地页、产品页、活动页的人
+- **核心用法**：
+  1. 先过硬底线（Floor，16 条不可豁免）：颜色字体全走 :root token、不许 transition: all、不许标题里单个斜体词、不许 eyebrow 小字大写标签、不许紫蓝渐变/卡片套卡片/emoji 当图标、不许编造数据、证言、logo 墙
+  2. 一屏只讲一件事：首屏 1280×800 内放下标题、一句话和主按钮；单屏约 80 词；容器居中封顶，大屏只长边距不拉宽版式
+  3. 按流程走：先读项目（pre-flight）→ 一次问清材料/受众/用途/语气 → 定版式和主题 → 先出首屏再铺全页 → sloplint --render 扫到干净才交付
+  4. 有料才设计：材料（截图/真实数字/署名引言/可用 logo）先行，没有的标“缺失”不编造；真实品牌不凭记忆套主题
+  5. 只在用户点名时才动老设计：redesign/audit 两个动词专用于已有页面，平时只用于新页面
+- **安装**：`npx skills add nutlope/hallmark -g`（README 官方安装方式；需 Node 18+；浏览器检查另需 puppeteer-core + Chrome，没有也能跑静态检查）
+- **怎么用它搞钱**：接“AI 建站精修”单：客户用 AI 出的落地页一眼假，你用 Hallmark 底线加 lint 重做一版，按页收费；或给独立开发者做产品页，设计感就是转化率
+- **来源**：[Nutlope/hallmark](https://github.com/Nutlope/hallmark) · ⭐36633
+
 ---
 
 ## 提示词
@@ -1564,7 +1611,7 @@
   4. 输出格式固定：单个可复制提示词块 + 🎯目标行（一句话说明优化了什么）+ 必要时 1-2 行粘贴前准备说明，不加废话
 - **安装**：`git clone https://github.com/nidhinjs/prompt-master.git ~/.claude/skills/prompt-master`
 - **怎么用它搞钱**：接"提示词代写 / 优化"单；或把它嵌进自己的 AI 工作流产品里当标配模块
-- **来源**：[nidhinjs/prompt-master](https://github.com/nidhinjs/prompt-master) · ⭐14345
+- **来源**：[nidhinjs/prompt-master](https://github.com/nidhinjs/prompt-master) · ⭐15116
 
 ### skill-creator
 - **一句话**：Anthropic 官方 skill，教你从零创建、测试、迭代一个 skill，适合想把自己的工作流变成资产的人
@@ -1620,6 +1667,7 @@
 
 ## 更新日志
 
+- 2026-10-26 晚：v2.9 追加 4 条（视频生产 2 条：andyhuo520/digital-human-koubo 一张照片出数字人口播（5 档风格+48 包装组件+先报价后生成，Renoise credits 按量付）761★、eternityspring/shuohao-skills AI 短剧 7 件套（大纲→角色→美术→剧本→走位→分镜，Node 标准库零 API 依赖）5418★；去 AI 味 2 条：op7418/Humanizer-zh 中文去 AI 味 31 条模式清单（保事实保声音，不承诺过检测）21083★、Nutlope/hallmark 网页去 AI 味 16 条硬底线+sloplint（与 kill-ai-slop 互补）36633★；注：Humanizer-zh 此前多轮记为“已有”，实查本库去 AI 味 12 条中无其独立条目、仅章节注提及，本轮补立，去 AI 味计 12→14 条），共 138 个 skills；星数刷新：video-shotcraft 12170→13855、prompt-master 14345→15116、ai-copywriter 1207→1232、qu-ai-wei 690→700、humanizer-skill 281→291、kangarooking viral-copywriting 67→74、opus-video-skills 320→345、motion-graphics-music-video 184→187、guizang-product-video 831→872、qiaomu 6229→6399、blader/humanizer 58140→61069、sweety-handdraw-video 742→891、marketingskills 54281→56714、vivy-yi 小红书 492→506；去重/淘汰/记信号：X 信号 10 帖命中（只读无互动，@Hjn8899 登录态正常、未遇验证）：Humanizer-zh、digital-human-koubo、shuohao-skills 多帖重复出现；ZJU-REAL/Easel 4115★ 为社媒 Agent 整机（OpenClaw agent + 多平台发布链路，按 autoclaw/white0dew 一致性未收）、Panniantong/Agent-Reach 103777★ 为搜索 CLI 工具非 skill 形态未收；Diagram Design 仓库名截断无法核验 + 图表设计向章节不合未收；Grok Bot 选题玩法为方法帖、非 GitHub skill 且属另一管线未收；@leo_xiaolei 手绘口播为库内 sweety-handdraw-video 进度更新不另立；xuejoker 9 项清单中 baoyu 系/blader/humanizer 库内已有、xhs-visual-director 仓库名截断无法核验；wxg8866 6 项清单全去重（awesome-gpt-image-2 提示词合集非 skill 先例）；DTC 续 hold（27★、双 owner 同名仓来源不明、SKILL.md 默认开 analytics 上报）；chengfeng-videocut 续 hold（公开 Runtime 仍 v0.4.11，不满足新 Skill ≥0.5.9 要求）；wshuyi/remotion-video-skill 仍无 LICENSE 且与 Remotion 官方路由重叠未收；skills.sh All Time/Trending 仍老面孔为主，新冒头 uizze 系 GitHub 仅 68★（与站内 75 万 install 严重背离，防刷量铁律不收）、gencraft-labs 系刷量嫌疑延续、hyperframes/remotion-dev 系库内已有；skillhub.cn 热榜轮：下载榜前列仍编程类断层领先，视频全能创作 121.6 万、去 AI 味文章工具 81.7 万、李白 93.2 万，抽查 5 详情页均无本 skill GitHub 源码链接、无法交叉验证 0 收录；X 热度洞察一句话：数字人+短剧成片 skill 正在接管视频生产章，而去 AI 味从“改写文字”扩到“网页一眼 AI 味”——中文搞钱人群要的是装上就能出片、发前能过关的整套家伙
 - 2026-10-25 晚：v2.8 追加 5 条（视频生产 5 条：browser-use/video-use 对话剪片（转写稿出发+点头后剪+切点自检+project.md 记忆）29832★、JimLiu/baocut 可编辑视频（转录/双语字幕/翻译配音/剪辑一条龙，需装 App）1471★（LICENSE 文件存在但 SPDX 未识别，已警告）、nexu-io/html-video HTML 写代码出视频（文章/仓库链接→模板→本地渲染，21 模板）4754★、ahkamboh/agent-caption 本地精准字幕（强制对齐时间轴绝不漂移）38★、Mr-funny/hbg-classical-poem-silk-video 古诗国风竖屏（逐句一景+毛笔字逐字题写，需 Docker + Gemini I2V）373★），Remotion 条目安装源更新为独立仓 remotion-dev/skills（5703★，⚠️ 该仓暂无 LICENSE，已警告），共 134 个 skills；去重/淘汰/记信号：sergebulaev/linkedin-skills 5187★ 第三次复核仍淘汰——LinkedIn 场景与中文搞钱人群需求不匹配（10-17、10-21 两轮先例延续，本轮 X 17 帖亦无任何 LinkedIn 需求信号佐证；本轮初稿误收后已回滚，计数随之修正）；X 信号 17 帖命中（只读无互动，@Hjn8899 登录态正常、未遇验证）：代码做视频成竞争主线（Remotion 官方 skills 独立仓、ffmpeg-skill、8 视频 Skill 合集、火柴人更新、BaoCut、Lemo-Opuscar、Seedance 2.5+即梦流程、video-shotcraft 均已覆盖或已入库）；合集内 ahkamboh/inkling 仅 2★、ahkamboh/scrolltape 仅 4★ 未达硬线未收；Jakeschincariol/replica-skill 5505★ 与 SawyerHood/dev-browser 6698★ 为开发向、与本库搞钱+视频受众不匹配未收；Bomx/super-video-maker-skill 322★（无 LICENSE）为跨工具编排大包，与库内 Hyperframes/Remotion/ffmpeg 覆盖重叠，按整库大包先例不另立；wx4766/html-to-video 109★ 为渲染原语、与 nexu-io/html-video 重叠不堆；enesozturk/dimensional-drawing 为 UI 尺寸图设计工具、非五章优先类未收；TermiX 赚钱 Skills 平台叙事无已验证订单证据未收；小红书起号 10 Skill 合集未列具体名字无法核验、Muse 全自动运营小红书讨论记封号风险信号；skills.sh All Time/Trending 仍为老面孔，trending 冒头的 mbfinotti 销售/RevOps/广告三包 GitHub 仅 3/1/2★、limrun-inc/skills 仅 2★，站内热度与 GitHub 背离、按防刷量铁律不收；skillhub.cn 热榜轮：下载榜前 15 仍是编程类断层领先，详情页均无 GitHub 源码链接无法交叉验证 0 收录；新需求信号：短视频爆款 8 维拆解与反向二创（3.0万）、AI 视频创作师（1.1万）、AdMapix 广告投放（53.0万）、公众号爆款封面生成器（19.6万）、小红薯轮播图（5.5万）；X 热度洞察一句话：视频 skill 的竞争已从“能不能做”转向“能不能稳定批量出片、按行业卖月包”——而获客端的新变量是 LinkedIn：英文 B2B 获客正在复制 X/TikTok 的“钩子+批准后才发”打法
 - 2026-10-25：v2.7 原帖复核轮追加 8 条（营销增长 2 条：sharbelxyz/x-bookmarks X 收藏夹变行动清单（拉取→分类→行动建议→定期摘要）290★（无 LICENSE，已警告）、Jakeschincariol/x-agent-skill X 账号全流程（21 钩子公式+线程+回复+主页评分+周计划+分析审计，批准后才发）41★；去 AI 味 5 条：hardikpandya/stop-slop 删 AI 痕迹三件套 18315★、MrGeDiao/shuorenhua 中文优先说人话 2257★、jzOcb/writing-style-skill 文风自动学习模板 273★（无 LICENSE，已警告）、Anbeeld/WRITING.md 人味规则集 381★、adewale/anti-slop-writing 具体细节编辑测试 21★（刚过硬线）；提示词 1 条：alchaincyf/nuwa-skill 蒸馏任何人的思维方式 35832★），共 129 个 skills；去重/淘汰/记信号：水哥AI 8 skill 对应 7 链接（X Viral 与 X Audit 同仓 Jakeschincariol/x-agent-skill），其中 rohunvora/x-research-skill 与 sergebulaev/x-skills（Humanizer 子 skill）库内已有，tweet-md/skill 1★ 与 ceoguy/x-algorithm-skill 1★ 未达硬线（库内 twitter-algorithm-optimizer 条目源自 ComposioHQ awesome 合集，非 ceoguy），alberduris/skills x-twitter 为整仓 21★ 且 X API 发布/互动管理自动化风险 + 与库内两套 X 创作包重叠，未收；Haosen 去 AI 味清单 22 名（19 附链接、3 未附链接）：stop-slop-zh 6★ 未达硬线，chatgpt-comparison-detection（HC3 语料/检测器）与 AIGC_text_detector（ICLR 论文代码）非 skill 形态，baibanbao/qu-ai-wei 73★ 同名已有更强条目（LifelongLazyLearner 690★，原帖已提醒勿混淆）不堆同名分叉，hylarucoder/ai-flavor-remover 1189★ 但仅 README 内一段 prompt、无 SKILL.md、无 LICENSE、仅 Gemini 2.5 Pro 测试，yzhao062/agent-style 725★ 为 RULES.md 通用写作规则、非打包 skill 且无 LICENSE，dongbeixiaohuo/writing-agent 439★ 为独立 Windows 写作客户端（harness，RC 版）非 skill，iniwap/AIWriteX 2143★ 为公众号全自动工具（非 skill）+ 洗稿/多账号自动发布风险；已入库去重：blader/humanizer、op7418/Humanizer-zh（已有独立 skill 在用）、zenstory-ai/oh-story-claudecode、Leonxlnx/taste-skill（v2.2 已淘汰：前端设计向，原帖亦提醒非中文改稿工具）；未附链接无法核验 3 项：openai-detector、humanize-text、De-AI-Prompt-Enhancer（仅名称线索，不认定与库内 OUBIGFA 条目同一）；Marvin Grok Bot 10 工作流属另一管线，不入本库；X 热度洞察一句话：去 AI 味已从单点改写卷成“检测→改写→文风学习”全链条，而 X 运营 skill 的分水岭是“批准后才发”——带人工点头的才配进库
 - 2026-10-25 补记（skillhub.cn 热榜轮）：下载热榜前 15 + 最近更新排序第一页 24 条共 39 条，详情页均无 GitHub 源码链接（ClawHub 来源链接不等于 GitHub 源码，已区分），无法做 star + 更新时间交叉验证，0 收录；需求信号：编程类仍占榜首（编程大神 900.7 万、搜索引擎 856.8 万、编程专家Pro 526.5 万），视频全能创作（短视频/图片/音乐/音频/配音/口播/数字人）117.2 万；最近更新页 humanizer-zh 同名不同作者出现 6 条（1.2 万–24.3 万，含 1 条 Pay Skill），中文去 AI 味是站内高频新上类目，与 X 侧去 AI 味信号一致；“最近上新”实际为按更新时间排序，非严格首发
