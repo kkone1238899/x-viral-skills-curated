@@ -759,7 +759,55 @@
 - **怎么用它搞钱**：视频号历史/人物故事挂车带货（图书、滋补健康品）或接同类账号代运营：一条龙省掉选题/写稿/配音/分镜/剪辑多道人工，同一管线多账号复用
 - **来源**：[konlu/story-studio](https://github.com/konlu/story-studio) · ⭐175（⚠️ 带货与播放数据为作者自述未核验；克隆音色须自备授权音频，勿用他人音频克隆）
 
-## 文案钩子（7 个）
+### maxazure/video-editing-skill（小红书/抖音/视频号三平台剪辑流水线）
+- **一句话**：为小红书/抖音/微信视频号调过参的中文剪辑大流水线：素材导入→口播重组→平台守门→渲染→三平台导出一条龙，80+ 条平台雷区 lint + 全程 approval gate——适合做口播/教程/访谈/播客短视频、要稳定过审出片的人。
+- **核心用法**：
+  1. `git clone https://github.com/maxazure/video-editing-skill ~/projects/video-editing-skill`，按 README 配 FFmpeg + Whisper/FunASR（Apple Silicon 用 mlx-whisper、NVIDIA 用 faster-whisper）
+  2. 先跑素材导入与 conform：VFR 转 CFR、黑场/黑边处理、多机位同步，全部带 proof/gate，不凭感觉剪
+  3. 转写后走语义审校：词级时间戳 + 幻觉疑点回听 + 最少补丁验证，再定剪辑决策
+  4. 出片前过三道门：内容守门（80+ 平台雷区 lint）→ 事实收据（claim 配 URL/截图）→ 审批收据（渲染后任何改动都让旧审批过期重审）
+  5. 发布只出上传包不直传：`publish_package.py` 只合成平台视频/封面/字幕/文案 + gate 状态，不调用平台 API，手工上传或交外部 connector
+- **安装**：`git clone https://github.com/maxazure/video-editing-skill ~/projects/video-editing-skill`（需 FFmpeg + Python，⚠️ 该仓暂无 LICENSE）
+- **怎么用它搞钱**：接口播/教程类剪辑代做单：平台 lint + 审批收据就是“一次过审”的谈单证据；或自己跑三平台矩阵号，同一管线换平台参数即复用
+- **来源**：[maxazure/video-editing-skill](https://github.com/maxazure/video-editing-skill) · ⭐205
+
+### pycodebr/heditor（风格化创意剪辑：每条片子单独设计）
+- **一句话**：把口播/课程/播客录像剪成竖屏短视频或长片的创意剪辑 CLI：30+ 命名风格（电影/游戏/预告片/纪录片…）+ 逐词字幕 + 声音设计 + 钩子换头测试，HyperFrames/GSAP 本地渲染——适合不满足于模板剪辑、要“每条都不一样”的创作者。
+- **核心用法**：
+  1. `npx skills add pycodebr/heditor -g` 后跑 `bash <skill>/scripts/setup.sh`，`heditor doctor` 必须报 ready；首次填 `~/.heditor/brand.json`（名字/handle/配色/logo）
+  2. 先定模式：固定风格（`heditor styles` 查表）/ 创意模式 / 创意+参考（如 GTA 6 风）/ 长片模式 / 原始素材先 `heditor triage`（读口误、重录、破第四墙的剪辑备注）
+  3. 剪辑按“每条单独设计”走：风格是视觉语言不是模板，同一批两条长得一样算没做完
+  4. 已跑量视频换钩子不用重剪：`heditor splice` 只换开头、片体原样，A/B 测新开头
+  5. 可选 HeyGen 数字人分身当素材源（需自有账号与授权），或 Mixkit 免费 B-roll（已核 license 并记录来源）
+- **安装**：`npx skills add pycodebr/heditor -g` 后按 README 跑 setup.sh（需 FFmpeg/Node/Python + Chrome；⚠️ LICENSE 文件存在但 SPDX 未识别）
+- **怎么用它搞钱**：接高单价创意剪辑单：风格库 + 钩子换头测试是“不像模板”的溢价点；或给课程/播客客户做长片 + 竖屏切片打包收费
+- **来源**：[pycodebr/heditor](https://github.com/pycodebr/heditor) · ⭐103
+
+### chang416/cutcraft（对话式剪片：字幕先看图再开剪）
+- **一句话**：用对话把 raw 素材剪成成片的中文剪辑 skill：先检查环境、先看片、先出三套字幕预览图让你选、改逐字稿可逆、成品与过程分开交付——适合怕“剪完不满意返工”、要逐句改稿的口播/短影音作者。
+- **核心用法**：
+  1. 首次跑 readiness gate：`python3 helpers/check_environment.py`，缺依赖先停下来给官方安装指引，不静默装东西
+  2. 盘点素材并转写：先看代表性画面，再把所有创意问题一次问清，不边剪边问
+  3. 字幕先看图再开剪：生成三套字幕预览图（推荐/干净叙事/大胆社交），按“往下 4%”“字大 15%”这类口头调整直接改
+  4. 成片只放 `成品/`（`<项目>_final.mp4` + 逐字稿 md + srt），预览/片段/EDL/校验全放 `過程/`，交付物一眼分清
+  5. 改稿不用重转写：说“第 18 句改成……”即对 master.srt 打补丁、重渲染、重校验，时间轴不动
+- **安装**：`git clone https://github.com/chang416/cutcraft` 后把 skills/cutcraft 拷进 ~/.claude/skills/（MIT；转写可用本地 Whisper，ElevenLabs key 只放 ~/.config/cutcraft/.env 且权限 600）
+- **怎么用它搞钱**：接口播/知识类剪辑单：三套字幕预览 + 逐句改稿是“改到满意为止”的服务卖点，返工成本低；或做剪辑教学，流程本身就是 SOP
+- **来源**：[chang416/cutcraft](https://github.com/chang416/cutcraft) · ⭐53
+
+### Pluviobyte/awesome-talking-head-skills（口播博主动作蒸馏：不露脸数字人口播）
+- **一句话**：把 5 位抖音口播博主的出镜动作逐帧拆成 Agent Skill：手势词汇表、节拍规则、机位、开头结构、禁止动作，配一个“拆新博主”的 analyzer skill——适合做不露脸口播数字人、总被手崩/表情脱节卡住的人。
+- **核心用法**：
+  1. 按难度选风格：求稳选李一帆（表情主导、手基本不入画、崩手风险最低）或大师（证据先行）；要活力借秋芝的 3–4 个标志手势；长教程目录式开场用木子；财经/讲故事用小Lin说（素材冷开场 + 小窗配音 + 情绪句回全屏）
+  2. 复制对应 `skills/talking-head-<slug>/` 到 Agent 的 skills 目录，对 Agent 说“用某某风格，给这段台词写一份数字人动作说明书”
+  3. 动作只写可执行的：哪只手、什么形状、在什么高度、持续多久、卡在哪个词上；不写“自然、生动”这类模型无法执行的词
+  4. 生成描述里写死禁止动作（如手不过下巴和肩、不频繁耸肩），并写明“双手在画面下沿以外”防模型自加手势
+  5. 想拆新博主走 `talking-head-analyzer`：选 4 条本人棚拍口播、只截开头 25 秒、观察与建议分开写
+- **安装**：`git clone https://github.com/Pluviobyte/awesome-talking-head-skills` 后把 `skills/talking-head-<风格>/` 拷进 Agent 的 skills 目录（MIT）
+- **怎么用它搞钱**：接不露脸口播数字人代做单：动作说明书 + 难度分档（低/中/高）就是可报价的交付标准；或自己跑口播矩阵号，同一说明书换台词和 B-roll 即复用
+- **来源**：[Pluviobyte/awesome-talking-head-skills](https://github.com/Pluviobyte/awesome-talking-head-skills) · ⭐56（⚠️ 2026-10-27 新库，X 原帖 @Pluvio9yte 10-28 20:26 北京，22.8K 浏览/224 收藏；红线已在条目中注明：只学动作节奏、不描述长相服饰、不把样本片段喂给生成模型、参考图只用自有或已授权形象、发布按平台要求标注 AI 生成）
+
+## 文案钩子（8 个）
 
 ### shangdan-post-skill
 - **一句话**：给接商单的创作者的"商单前置质检员"：新单先调历史经验拆 Brief、给 3 组策划方向+写好的开篇钩子、发布前自检、复盘归档——解决商单博主"每单从零起步"的重复劳动。
@@ -844,6 +892,18 @@
 - **来源**：[dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill) · ⭐10708
 
 ---
+
+### rediumvex/viral-hooks-skill（100 条钩子公式 × 10 种心理触发）
+- **一句话**：短视频钩子公式库：100 条公式按好奇/反常识/权威/情绪/清单/提问/故事/否定/具体/自白 10 种心理触发分类，每次给脚本配 3 条不同类别的钩子——适合每条视频开头都要“3 秒留人”的短视频作者。
+- **核心用法**：
+  1. 丢脚本或只给话题：只有话题时先问一句受众/角度，再动手
+  2. 先判脚本的情绪节拍属于 10 触发中的哪一类，再从 `hooks-database.md` 里挑
+  3. 一次出 3 条且类别要混搭：一条止滑类（否定/具体/提问）+ 一条留存类（故事/自白/情绪）+ 一条自由选，两条同类钩子等于白给
+  4. 填空只填脚本里的具体话题/数字/痛点/受众，每条钩子压到 12 词以内，并按平台调性出中文版（TikTok/IG 偏口语、X 偏短促反常识、YouTube 偏标题式）
+  5. 每条附类别标签和一句“适合什么”，最后给一句“先用哪条、为什么”，方便 A/B 测
+- **安装**：`npx skills add rediumvex/viral-hooks-skill`
+- **怎么用它搞钱**：接短视频脚本/钩子代写单：100 公式 × 10 触发是可量化的交付物；或自己做账号时每条配 3 钩子轮测，留存数据反哺选题
+- **来源**：[rediumvex/viral-hooks-skill](https://github.com/rediumvex/viral-hooks-skill) · ⭐113
 
 ## 营销增长
 
@@ -1703,6 +1763,7 @@
 
 ## 更新日志
 
+- 2026-10-29：v3.2 追加 5 条（视频生产 4 条：maxazure/video-editing-skill 小红书/抖音/视频号三平台剪辑大流水线（80+ 平台雷区 lint + 审批收据，发布只出上传包不直传）205★（⚠️ 暂无 LICENSE）、pycodebr/heditor 风格化创意剪辑（30+ 命名风格 + 钩子换头 splice，HyperFrames 本地渲染）103★（⚠️ LICENSE 未识别）、chang416/cutcraft 对话式剪片（字幕三方案预览图 + 逐句改稿可逆）53★ MIT、Pluviobyte/awesome-talking-head-skills 口播博主动作蒸馏（5 风格 + analyzer，10-27 新库，X 原帖 @Pluvio9yte 22.8K 浏览/224 收藏，只学动作节奏、不喂样本、不克隆脸声、标注 AI 生成）；文案钩子 1 条：rediumvex/viral-hooks-skill 100 钩子公式 × 10 心理触发（每次配 3 条混搭）113★ MIT），共 146 个 skills；去重/淘汰/记信号：GitHub `claude skills` 前 15 全已入库或已淘汰（导航/ dev /安全/LinkedIn 场景不匹配先例）；Jaycheng1103/chatgpt-video-editing-skills（607★ MIT，setup + 8 步剪辑双 skill）与库内 video-use 重叠不另立；znyupup/ai-video-editing-skill（168★ MIT，旅行 vlog 自动剪辑）与本轮 maxazure 重叠、赛道更窄不堆；843645440/wechat-skill（128★，排版确定性渲染器 + 校验）与库内 md2wechat/gzh-design/wewrite 三重重叠待 X 信号再议；aiworkskills/wechat-article-skills（715★ Apache-2.0，9 子 skill 公众号一条龙，默认只写草稿箱）与库内 wewrite 同属全流程大包不堆（默认 draft + sticker 子 skill 为差异化点，记观察）；gainubi/wechat-skills（172★，无 LICENSE，2026-05-21 后未更新）与 BND-1/wechat_article_skills（318★，无 LICENSE，2026-01-16 后未更新）重叠且久未更新不收；zJay26/douyin-skills（60★）10-25 封号风险一致性先例延续不收；UnderleveledBuilder/awesome-short-drama-skills（1154★）纯目录形态先例不收；X 侧已核验：@Pluvio9yte 数字人口播 Article（2026-10-28 20:26 北京）→收录 talking-head；@liangzhu_AI LinkedIn 17-skill 帖（2026-10-28 10:20 北京，1703 浏览）即 charlie947/social-media-skills，v3.0 已淘汰（LinkedIn 核心）不重复算；其余 X 浏览器任务与 skills.sh/skillhub.cn 浏览器任务报告截至发稿仍未送达，结果待下档补记；X 全程只读无互动；热度洞察一句话：剪辑 skill 正在分化成三条线——平台过审流水线（maxazure）、风格化创意剪辑（heditor）、对话式改稿（cutcraft），而数字人口播的瓶颈已从“能不能生成”变成“动作说明书够不够具体”
 - 2026-10-28 补记：v3.1 追加 2 条（视频生产 1 条：konlu/story-studio 历史/人物故事视频号一条龙（选题核实→钩子→正文→豆包配音→本地字音对齐→三画风分镜→剪映草稿导出）175★ MIT，带货与播放数据为作者自述未核验、克隆音色须自备授权音频；去 AI 味 1 条：Nanako0129/sepia 架构级去 AI 味 6 子 skill（review/refactor 最常用，Import code 导入坑已注）3526★ MIT，去 AI 味计 15→16 条），共 141 个 skills；星数刷新：lemo-opuscar 51→59 种风格、3064→8730★；迟到 X 报告闭环（只读无互动，@Hjn8899 登录态正常、未遇验证；两帖已在 v3.0 记过的不重复算）：@Tanghulu188 Story Studio→收录、@QQTeng sepia（原帖链接经 fxtwitter 展开核实为 Nanako0129/sepia）→收录、@vista8 Hallmark→库内已有（Nutlope/hallmark）仅作刷屏佐证、@liangzhu_AI charlie947→v3.0 已记淘汰不重复；去重/淘汰/记信号：tigerless-labs/autoharness 10932★ MIT（自学习 skill 层，dev 向章节不合；Windows python3 钩子静默失败为实测踩坑，记信号不收）、UnderleveledBuilder/awesome-short-drama-skills（纯目录形态，按目录先例不收；AXIS 拆解方法论记信号：短剧 skill 须用对照组实测，收藏≠会用）、Skillry/LaunchMotion（无 GitHub 仓库，平台产品不收；卖 skill 平台月入自述记市场信号）、Smaug Humanizer（仅 Hugging Face 线索，无可核验 GitHub skill 不收）、Creator Buddy（SpaceZephyr/creator-buddy 1737★，无 LICENSE；类目库已收，本库暂缓不堆，待授权补齐再议）、Obsidian skills/Cloudflare security-audit/MotionSites/skill-forge（笔记/安全/设计向或仓库路径未核实，章节不合或无法交叉验证，均不收）；X 热度洞察一句话：视频人群要一句话跑通选题到剪映草稿并挂车带货的全流程，去 AI 味人群要带依据的最小改写，同时 demo 落地与短剧套壳正被对照组实测质疑——收藏和 star 不再等于好用
 - 2026-10-28：v3.0 追加 1 条（去 AI 味 1 条：larashero3-dotcom/lieflat-less-ai-tone 证据驱动中文去 AI 味（两轮实测：629 篇对照 + 270 对同题配对，约 520 万字、100+ 指标；先出检测报告、用户点头再改写复测，SKILL.md + detect.py + DETECT.md + 案例齐全）4333★（⚠️ CC BY-NC 4.0，商用接单前需作者授权），去 AI 味计 14→15 条），共 139 个 skills；去重/淘汰/记信号：X 信号 2 帖核验（只读无互动，@Hjn8899 登录态正常、未遇验证，原帖经 fxtwitter API 逐条直读核验）：@GaoXiaoxiao2022（2026-10-28 09:07 北京）推荐 lieflat-less-ai-tone→收录；@liangzhu_AI（2026-10-28 10:20 北京）推荐 charlie947/social-media-skills 17 skills 4383★ MIT 今日更新→未收：hook-generator/post-scorer 均为 LinkedIn 定制、post-scorer 真实数据需 Apify，按 sergebulaev/linkedin-skills 三次淘汰先例（LinkedIn 场景与中文搞钱人群不匹配）需求匹配不过，整库不入，reels-scripting/youtube-thumbnail 通用模块可待单拎评估；GitHub `claude skills` 前 15 全已入库或 dev/平台向不匹配；skills.sh All Time/Trending 仍老面孔为主：新冒头 uizze/uizze 71★（站内 78 万 install 严重背离，防刷量铁律不收；设计向章节亦不合）、flowkit-labs/skills 23★（reddit-automation 方法干净：人工复核后发、诚实披露，但刚过硬线且 Reddit 非中文搞钱主战场，记观察）、gencraft-labs 0★ 刷量嫌疑延续、prime-skills/runcomfy 60★ 刷量嫌疑延续、iannuttall/seo 597★（Search Console 真实数据 SEO，MCP/CLI 为主、与库内 claude-seo + geo-seo 重叠，记信号不堆）、binance-skills-hub 1095★（加密钱包 Agent、无 LICENSE、章节不合）、AliceMarket 143★（金融数据 MCP、无 LICENSE、章节不合）、ponytail 178266★（dev 向）、autonnel 5★/designed-by-ai 20★ 未达硬线、antibrow/liarjs 系规避工具不收；观察项续 hold：chengfeng-videocut（公开 Runtime 仍 v0.4.11，不满足新 Skill ≥0.5.9）、wshuyi/remotion-video-skill（433★ 仍无 LICENSE + Remotion 官方路由重叠）、500bitcoins/recast 仍 0★、xiaolu-ai26/video-close-reading 仍 0★；skillhub.cn 飙升榜：搜索引擎 799.6 万、编程专家 Pro 526.0 万、视频全能创作 114.8 万、文章去 AI 味 77.8 万，抽查视频全能创作详情页（Beatra 平台工具）无 GitHub 源码链接、无法交叉验证 0 收录；X 热度洞察一句话：去 AI 味正在从“凭感觉改写”升级为“先拿数据报告、再动手改”的证据路线——中文搞钱人群要的是改前能讲清依据、改后能复测的家伙，而不是又一张禁用词表
 - 2026-10-26 晚：v2.9 追加 4 条（视频生产 2 条：andyhuo520/digital-human-koubo 一张照片出数字人口播（5 档风格+48 包装组件+先报价后生成，Renoise credits 按量付）761★、eternityspring/shuohao-skills AI 短剧 7 件套（大纲→角色→美术→剧本→走位→分镜，Node 标准库零 API 依赖）5418★；去 AI 味 2 条：op7418/Humanizer-zh 中文去 AI 味 31 条模式清单（保事实保声音，不承诺过检测）21083★、Nutlope/hallmark 网页去 AI 味 16 条硬底线+sloplint（与 kill-ai-slop 互补）36633★；注：Humanizer-zh 此前多轮记为“已有”，实查本库去 AI 味 12 条中无其独立条目、仅章节注提及，本轮补立，去 AI 味计 12→14 条），共 138 个 skills；星数刷新：video-shotcraft 12170→13855、prompt-master 14345→15116、ai-copywriter 1207→1232、qu-ai-wei 690→700、humanizer-skill 281→291、kangarooking viral-copywriting 67→74、opus-video-skills 320→345、motion-graphics-music-video 184→187、guizang-product-video 831→872、qiaomu 6229→6399、blader/humanizer 58140→61069、sweety-handdraw-video 742→891、marketingskills 54281→56714、vivy-yi 小红书 492→506；去重/淘汰/记信号：X 信号 10 帖命中（只读无互动，@Hjn8899 登录态正常、未遇验证）：Humanizer-zh、digital-human-koubo、shuohao-skills 多帖重复出现；ZJU-REAL/Easel 4115★ 为社媒 Agent 整机（OpenClaw agent + 多平台发布链路，按 autoclaw/white0dew 一致性未收）、Panniantong/Agent-Reach 103777★ 为搜索 CLI 工具非 skill 形态未收；Diagram Design 仓库名截断无法核验 + 图表设计向章节不合未收；Grok Bot 选题玩法为方法帖、非 GitHub skill 且属另一管线未收；@leo_xiaolei 手绘口播为库内 sweety-handdraw-video 进度更新不另立；xuejoker 9 项清单中 baoyu 系/blader/humanizer 库内已有、xhs-visual-director 仓库名截断无法核验；wxg8866 6 项清单全去重（awesome-gpt-image-2 提示词合集非 skill 先例）；DTC 续 hold（27★、双 owner 同名仓来源不明、SKILL.md 默认开 analytics 上报）；chengfeng-videocut 续 hold（公开 Runtime 仍 v0.4.11，不满足新 Skill ≥0.5.9 要求）；wshuyi/remotion-video-skill 仍无 LICENSE 且与 Remotion 官方路由重叠未收；skills.sh All Time/Trending 仍老面孔为主，新冒头 uizze 系 GitHub 仅 68★（与站内 75 万 install 严重背离，防刷量铁律不收）、gencraft-labs 系刷量嫌疑延续、hyperframes/remotion-dev 系库内已有；skillhub.cn 热榜轮：下载榜前列仍编程类断层领先，视频全能创作 121.6 万、去 AI 味文章工具 81.7 万、李白 93.2 万，抽查 5 详情页均无本 skill GitHub 源码链接、无法交叉验证 0 收录；X 热度洞察一句话：数字人+短剧成片 skill 正在接管视频生产章，而去 AI 味从“改写文字”扩到“网页一眼 AI 味”——中文搞钱人群要的是装上就能出片、发前能过关的整套家伙
