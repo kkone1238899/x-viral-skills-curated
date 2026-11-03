@@ -190,7 +190,7 @@
   4. 付费墙自动绕过（300+ 站点：UA 伪装 → AMP → archive.today）；小宇宙 / 喜马拉雅 / B 站转写走 Get笔记 API（带时间戳）
 - **安装**：`cd ~/.claude/skills/ && git clone https://github.com/joeseesun/qiaomu-anything-to-notebooklm && cd qiaomu-anything-to-notebooklm && ./install.sh`（需 `notebooklm login`）
 - **怎么用它搞钱**：把爆款文章 / 播客变成自己的播客节目或 PPT 课程素材，一源多用；或接"知识库搭建 / 播客代运营"单
-- **来源**：[joeseesun/qiaomu-anything-to-notebooklm](https://github.com/joeseesun/qiaomu-anything-to-notebooklm) · ⭐6451
+- **来源**：[joeseesun/qiaomu-anything-to-notebooklm](https://github.com/joeseesun/qiaomu-anything-to-notebooklm) · ⭐6456
 
 ### product-launch-video（产品发布视频）
 
@@ -337,7 +337,7 @@
   4. 中文 README_CN.md 齐全；Ink Press 样片（36 秒、10 镜头、钉好时间点的音效）可照着拆
 - **安装**：`npx skills add Vincentwei1021/video-shotcraft`
 - **怎么用它搞钱**：接"代码视频"定制单（产品演示 / 动态海报 / 数据可视化）：配方卡保证效果下限，改数字重渲染边际成本为零
-- **来源**：[Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) · ⭐15870
+- **来源**：[Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) · ⭐16206
 
 ### liyupi/ai-promo-video-maker（产品宣传片）
 - **一句话**：一句话描述产品，AI 自动调研、两轮提问、画样帧、配音配乐、剪辑校验，最后交付 4K 商业宣传片——适合要给产品做宣传片但没预算请外包的人
@@ -360,7 +360,7 @@
   5. `/yt-viral`：找本赛道爆款，按"超出该频道自身均值倍数"排名——抄公式不抄大号
 - **安装**：`git clone https://github.com/Jakeschincariol/youtube-agent-skill.git && cp -r youtube-agent-skill/skills/yt-* ~/.claude/skills/`（或 Claude Code 里 `/plugin marketplace add Jakeschincariol/youtube-agent-skill`）
 - **怎么用它搞钱**：YouTube 广告分成——一个人跑 N 个频道做矩阵；或接"YouTube 频道代运营"单：脚本+封面+剪辑清单一套交付，比请剪辑师便宜一个数量级
-- **来源**：[Jakeschincariol/youtube-agent-skill](https://github.com/Jakeschincariol/youtube-agent-skill) · ⭐4172
+- **来源**：[Jakeschincariol/youtube-agent-skill](https://github.com/Jakeschincariol/youtube-agent-skill) · ⭐4314
 
 ### AirsupHQ/machine-skill（工程机械 3D 动画）
 - **一句话**：一句话描述一台机器，Claude 按真实尺寸和物理原理在浏览器里造出一台可交互的 3D 机器（three.js，无需构建），再一键转成可发的短片——适合做工业品演示、产品技术展示的人
@@ -877,7 +877,7 @@
   5. `music` 只在已登记音轨不适用时调 ElevenLabs 生成可循环 BGM（默认短、纯音乐、不抢人声）；`douyin-cover` 在标题与发布方向锁定后出封面
 - **安装**：`git clone https://github.com/bozhouDev/video-skills-toolkit.git && cp -R skills/* ~/.agents/skills/`（须整目录复制，脚本/references/测试夹具是包的一部分；另需 MiniMax/火山 ASR/ElevenLabs 等 key，二创依赖个人设定库）
 - **怎么用它搞钱**：接"对标拆解+二创成片"代做单：给客户账号做爆款证据包→迁移脚本→口播成片全套；或自己起矩阵号，同一套流程多账号复用
-- **来源**：[bozhouDev/video-skills-toolkit](https://github.com/bozhouDev/video-skills-toolkit) · ⭐155 MIT
+- **来源**：[bozhouDev/video-skills-toolkit](https://github.com/bozhouDev/video-skills-toolkit) · ⭐156 MIT
 
 ### unclejobs-ai/motion-video-skill（动态图形宣传片：参考片量化 + 七阶段门禁验收）
 
@@ -890,7 +890,7 @@
   5. 演示 5 秒排版片约 30 秒渲染：Remotion 引擎 probe 通过再正式渲染
 - **安装**：`npx skills add unclejobs-ai/motion-video-skill --skill motion-video-production`（需 Node 24+、ffmpeg、Python 3；Remotion 与 HyperFrames 双引擎）
 - **怎么用它搞钱**：接"产品宣传片/动态海报"定制单：参考片量化+门禁验收让报价有验收标准；同一套门禁多客户复用，返工率低
-- **来源**：[unclejobs-ai/motion-video-skill](https://github.com/unclejobs-ai/motion-video-skill) · ⭐131 MIT
+- **来源**：[unclejobs-ai/motion-video-skill](https://github.com/unclejobs-ai/motion-video-skill) · ⭐134 MIT
 
 ### nopefallacy/vertical-video-editing-skills（竖屏短视频编辑标准：钩子语法 + 渲染验证门禁）
 - **一句话**：把脚本 + 口播/旁白素材剪成创作者级竖屏短片的编辑标准：钩子语法、A-roll/B-roll 主线、0.2 秒级非节拍剪辑、编辑设计系统 + 渲染前必过的验证门禁——适合已有脚本和素材、要“剪出来不像模板”的人。
@@ -1266,7 +1266,7 @@
   4. 要读实时账户数据时接免费 Ryze MCP：`claude mcp add ryze --transport http https://connector.get-ryze.ai/mcp`
 - **安装**：`cd ~/.claude/skills/ && git clone https://github.com/irinabuht12-oss/marketing-skills`（按 `skills/` 目录名逐个启用）
 - **怎么用它搞钱**：接"投放审计"单——一次审计输出可见度评分卡 + 竞品引用源地图 + 修补动作清单，按次收费；AI 可见度是 2026 年新蓝海，信息差大
-- **来源**：[irinabuht12-oss/marketing-skills](https://github.com/irinabuht12-oss/marketing-skills) · ⭐6593
+- **来源**：[irinabuht12-oss/marketing-skills](https://github.com/irinabuht12-oss/marketing-skills) · ⭐6726
 
 ### xhs-account-teardown（小红书账号拆解）
 
@@ -1384,7 +1384,7 @@
   4. 放量阶段用 07-营销推广（KOL / 广告 / 活动 / 预算）+ 08-增长策略（算法 / 变现 / 长期战略）
 - **安装**：`/plugin marketplace add vivy-yi/xiaohongshu-skills` 后 `/plugin install xiaohongshu-complete-skills@xiaohongshu-skills`
 - **怎么用它搞钱**：接小红书代运营 / 起号单：139 个技能就是现成 SOP，定位→内容→转化全链路可交付；自己做带货号，选品 + 种草 + 漏斗一条龙跑通
-- **来源**：[vivy-yi/xiaohongshu-skills](https://github.com/vivy-yi/xiaohongshu-skills) · ⭐520
+- **来源**：[vivy-yi/xiaohongshu-skills](https://github.com/vivy-yi/xiaohongshu-skills) · ⭐521
 
 ### AgriciDaniel/claude-seo（全栈 SEO 审计系统）
 - **一句话**：26 个子 skill + 19 个专家 agent 并行的全栈 SEO 系统（技术 SEO / 内容 E-E-A-T / Schema / GEO / 本地 / 电商 / 国际化），适合做独立站、内容站靠搜索获客的人
@@ -1484,7 +1484,7 @@
   5. 每周跑一遍周计划 skill：固定节奏出 Reels，不断更
 - **安装**：`git clone https://github.com/Jakeschincariol/instagram-agent-skill.git && cp -r instagram-agent-skill/skills/ig-* ~/.claude/skills/`
 - **怎么用它搞钱**：IG 带货/引流：Reels 钩子公式+主页诊断是涨粉两件套；或接"IG 账号代运营"，周计划+文案流水线化交付
-- **来源**：[Jakeschincariol/instagram-agent-skill](https://github.com/Jakeschincariol/instagram-agent-skill) · ⭐4357
+- **来源**：[Jakeschincariol/instagram-agent-skill](https://github.com/Jakeschincariol/instagram-agent-skill) · ⭐4520
 
 ### Jakeschincariol/founder-skill（创业想法验证）
 - **一句话**：11 个 skill 在花大钱之前验证生意：董事会（Hormozi/Thiel/Jobs 框架）挑刺、营销总监定打法、CFO 算真实利润率、100 个买家代理跑购买场景——适合想搞副业/创业但怕踩坑的人
@@ -1622,7 +1622,7 @@
   4. 成稿前过一遍去 AI 味合规（wb-xhs-humanize-compliance），排期复盘（wb-xhs-schedule-review）定期复盘；每个 skill 执行需外部程序的步骤前会先自查工具版本
 - **安装**：`git clone https://github.com/jackbauerxu/workbuddy-xhs-skills.git && cp -R workbuddy-xhs-skills/wb-xhs-* ~/.claude/skills/`
 - **怎么用它搞钱**：接小红书冷启动代运营 / 陪跑单：10 件套 = 10 个交付节点，变现倒推定位是高价咨询点；或做自己的小红书号，0→1000 粉路径可复用
-- **来源**：[jackbauerxu/workbuddy-xhs-skills](https://github.com/jackbauerxu/workbuddy-xhs-skills) · ⭐44（2026-08-01 推送；⚠️ 暂无 LICENSE；X 原帖 @NFTCPS 2026-10-30 21:14 北京，5,064 浏览 / 80 赞 / 66 收藏；@shanyanggm 100,475 浏览帖亦引用同一链接）
+- **来源**：[jackbauerxu/workbuddy-xhs-skills](https://github.com/jackbauerxu/workbuddy-xhs-skills) · ⭐45（2026-08-01 推送；⚠️ 暂无 LICENSE；X 原帖 @NFTCPS 2026-10-30 21:14 北京，5,064 浏览 / 80 赞 / 66 收藏；@shanyanggm 100,475 浏览帖亦引用同一链接）
 
 ### JuneYaooo/xhs-writer-skill（小红书笔记生成器：卡片组 / 视频稿 + 落盘）
 - **一句话**：把主题 + 可选素材（文字 / 图片 / 视频）做成一套小红书图文卡片组或一段带分镜的视频稿，配 caption + hashtags，落盘到 output/小红书/——适合要批量出小红书图文 / 视频稿的人
@@ -1646,7 +1646,7 @@
   5. 硬边界：不承诺 100% 过审；绝不给谐音、错字、拆字、emoji 替换等绕审手段；审核到检查单为止，不代点发布
 - **安装**：`git clone https://github.com/yuwen-cool/yuwen-publish-precheck.git ~/.cursor/skills/yuwen-publish-precheck`（README 官方安装方式；海外平台内容审核、起号涨粉、写稿本身不在服务范围）
 - **怎么用它搞钱**：接"发前审稿"单：按条收费帮账号过审前把关；或自己做矩阵号时批量审稿，少一次删帖就省一次起号成本
-- **来源**：[yuwen-cool/yuwen-publish-precheck](https://github.com/yuwen-cool/yuwen-publish-precheck) · ⭐801 MIT
+- **来源**：[yuwen-cool/yuwen-publish-precheck](https://github.com/yuwen-cool/yuwen-publish-precheck) · ⭐802 MIT
 
 ### huangbai-AI/guoshen（过审：语音＋字幕＋画面三路联合预检）
 
@@ -1659,7 +1659,7 @@
   5. 卡审复盘：凭平台通知原文、失败环节、提交日期做归因；案例可经授权提交共建，未经授权不上传原视频与对话
 - **安装**：`git clone https://github.com/huangbai-AI/guoshen.git ~/.codex/skills/guoshen`（本地提取需 Python、FFmpeg、whisper.cpp；画面文字识别用 macOS Vision；任务后询问点 Star 需用户明确授权才执行）
 - **怎么用它搞钱**：接"成片过审预检"单：按条收费帮客户在发布前定位风险帧；或自己发视频前批量预检，少一次下架就少一次流量损失
-- **来源**：[huangbai-AI/guoshen](https://github.com/huangbai-AI/guoshen) · ⭐172 MIT
+- **来源**：[huangbai-AI/guoshen](https://github.com/huangbai-AI/guoshen) · ⭐175 MIT
 
 ### ziguishian/xhs-visual-director-skill（小红书图文视觉导演：风格＋结构＋逐页构图＋审查）
 
@@ -1672,7 +1672,7 @@
   5. 附带输出标题、正文、标签、评论区引导，图文与文案一次成套
 - **安装**：把 `xhs-visual-director-skill/skill/` 作为 Skill 目录使用（内含 SKILL.md；根目录 docs/templates/examples 为维护资料）
 - **怎么用它搞钱**：接"小红书图文代做"单：视觉方案＋成图一次交付；或自己做图文号时把"风格/结构/审查"标准化，多账号复用同一套母版
-- **来源**：[ziguishian/xhs-visual-director-skill](https://github.com/ziguishian/xhs-visual-director-skill) · ⭐1455 MIT
+- **来源**：[ziguishian/xhs-visual-director-skill](https://github.com/ziguishian/xhs-visual-director-skill) · ⭐1468 MIT
 
 ## 去 AI 味（18 个）
 
@@ -1872,7 +1872,7 @@
   4. 还能顺手出一段“自我去 AI 味”短视频直接发帖（X 原帖提法，效果以实测为准）
 - **安装**：`git clone https://github.com/heydamir/unslop && mkdir -p ~/.claude/skills && cp -r unslop/skills/unslop ~/.claude/skills/`（单项目放项目内 .claude/skills/）
 - **怎么用它搞钱**：接落地页 / 看板“去 AI 味”翻新单：改前先列 slop 清单、改后逐项对照是可验收的交付；或给自己的产品页批量去味，提高转化信任感
-- **来源**：[heydamir/unslop](https://github.com/heydamir/unslop) · ⭐4959 CC-BY-4.0（商用署名即可；2026-11-01 推送；X 原帖 @CY160909 2026-10-31 06:20 北京推荐，原作者 @heydamir）
+- **来源**：[heydamir/unslop](https://github.com/heydamir/unslop) · ⭐6366 CC-BY-4.0（商用署名即可；2026-11-01 推送；X 原帖 @CY160909 2026-10-31 06:20 北京推荐，原作者 @heydamir）
 
 ### KKKKhazix/human-writing（活人感写作：从零写出具体的人在说话）
 - **一句话**：通用中文创作与改稿 skill：默认把文章写成一个见过事、查过材料、愿意把来龙去脉讲清楚的人在说话——适合公众号、知乎、论坛长帖、口播稿等一切“读起来不能像 AI 写的”中文长内容
@@ -1899,7 +1899,7 @@
   4. 输出格式固定：单个可复制提示词块 + 🎯目标行（一句话说明优化了什么）+ 必要时 1-2 行粘贴前准备说明，不加废话
 - **安装**：`git clone https://github.com/nidhinjs/prompt-master.git ~/.claude/skills/prompt-master`
 - **怎么用它搞钱**：接"提示词代写 / 优化"单；或把它嵌进自己的 AI 工作流产品里当标配模块
-- **来源**：[nidhinjs/prompt-master](https://github.com/nidhinjs/prompt-master) · ⭐15382
+- **来源**：[nidhinjs/prompt-master](https://github.com/nidhinjs/prompt-master) · ⭐15434
 
 ### skill-creator
 - **一句话**：Anthropic 官方 skill，教你从零创建、测试、迭代一个 skill，适合想把自己的工作流变成资产的人
@@ -1954,6 +1954,8 @@
 - 两边互补，互链不合并
 
 ## 更新日志
+
+- 2026-11-02 晚档：v3.7 星数刷新专档（0 新增）：星数刷新 14 项：video-shotcraft 15870→16206、prompt-master 15382→15434、marketing-skills 6593→6726、qiaomu-anything-to-notebooklm 6451→6456、instagram-agent-skill 4357→4520、youtube-agent-skill 4172→4314、unslop 4959→6366、vivy-yi 小红书 520→521、workbuddy-xhs-skills 44→45、video-skills-toolkit 155→156、motion-video-skill 131→134、yuwen-publish-precheck 801→802、guoshen 172→175、xhs-visual-director-skill 1455→1468；去重纠错：本轮初核曾把 kiki-lgtm-dot/light-retro-collage-xiaohongshu-skill（25★）当新仓起草条目，复核发现其与 Irixil/xiaohongshu-skill（22★）均为 2026-10-24 v2.4 已收条目，已回滚重复条目、计数恢复 162，今后小红书关键词命中须先对条目区（非仅日志）做去重；去重/淘汰/记信号：GitHub `claude skills` 前 15 全已入库或淘汰（ComposioHQ/travisvn/BehiSecc 纯目录先例、Jeffallan/dev-browser/gamedev-skills 开发向、SnailSploit 安全向、replica-skill 开发向三轮先例、sergebulaev/linkedin-skills 5518★ LinkedIn 场景四轮淘汰先例、Jakeschincariol/day-trader-skill 4613★ 日内交易决策类与五章变现需求不匹配不收、qiaomu/prompt-master/marketing-skills 库内已有）；补充关键词：`xiaohongshu skill`：white0dew 3560★ 与 autoclaw-cc 2020★ 自动发布/互动类封号风险先例延续不收、freestylefly 98★ 付费 API 包装先例延续不收、DeliciousBuding 43★ 采集发布类不收、kiki-lgtm-dot 25★ 与 Irixil 22★ 均为 v2.4 已收条目去重、ibreez3 21★ 描述为空且重型 MCP 适配器形态＋封号风险先例不收；`video editing skill`：Jaycheng1103 614★ 与 video-use 重叠先例延续、znyupup 171★ 与 maxazure 重叠先例延续、favstash 56★ 自动发布＋商业服务依赖先例延续、6missedcalls 49★ 与 ffmpeg-skill＋maxazure 重叠延续（10-29 有推送但仍重叠）；`short drama skill`：awesome-short-drama-skills 1673★ 纯目录先例延续、YvonneMovingon 96★ 与 xixihhhh 81★ 及 muxia0396 32★ 库内已有；`douyin skill`：zJay26 60★ 封号风险先例延续，其余 <20★；skills.sh All Time 仍老面孔（find-skills 4.2M、mattpocock 系、hyperframes/remotion-dev 系库内已有；新冒头 open.feishu.cn 飞书 Lark 簇 17.7M、rigorpilot 研究簇、stablyai/orca 均为办公/dev 向章节不合；flowkit reddit-automation 1.2M 对 25★、runcomfy video-edit 443.3K 对 62★、gencraft video-edit 396.5K 对 0★、uizze ios-design 417.5K 对 78★，防刷量均不收）；skillhub.cn 首页飙升榜仍无视频/去 AI 味/营销新面孔（编程专家 Pro 610.0 万、搜索引擎 1069.7 万、防诈专家、育儿专家等，详情页无 GitHub 源码链接无法交叉验证，0 收录）；X 侧说明：按 kk 2026-10-19 指令（X 运营全部归 kk、Luna 不登录 X），本档未派 @Hjn8899 登录态浏览器任务，改以公开搜索信号补位——手绘口播 sweety-handdraw-video v1.4 更新与 HyperFrames/Remotion/hook-lab 选型讨论均为库内已有，公开信号中知识图文“查证＋出处”路线与库内 kiki 条目一致，属已有条目印证而非新收录；热度洞察一句话：小红书图文正在从“排版好看”卷向“有据可查”——查证＋来源标注正在成为知识图文号区别于 AI 批量水帖的谈单证据，而去 AI 味 unslop 一周 4959→6366 的涨幅说明“改后能复测”仍是全库最陡的需求线
 
 - 2026-11-01 晚档：v3.6 追加 1 条（视频生产：nopefallacy/vertical-video-editing-skills 竖屏剪辑编辑标准（钩子语法＋A-roll/B-roll 主线＋0.2 秒级非节拍剪辑＋编辑设计系统＋渲染验证门禁，SKILL.md 已核验）66★ MIT，2026-06-21 推送），共 162 个 skills；星数刷新：video-shotcraft 15513→15870、prompt-master 15336→15382、unslop 3599→4959、marketing-skills 6460→6593、qiaomu-anything-to-notebooklm 6446→6451、instagram-agent-skill 4196→4357、youtube-agent-skill 4025→4172、vivy-yi 小红书 506→520；去重/淘汰/记信号：GitHub `claude skills` 前 15 全已入库或淘汰（目录/dev/安全/游戏/LinkedIn 向先例）；补充关键词：darrenli6/JJKoubo 42★（本地 Whisper 转写＋去废话＋钩子前置＋frame.md 风格门＋封面，SKILL.md 真实）因 LICENSE 未识别且与库内口播包装簇重叠记观察不堆、alisadiq-ai/favstash-ai-video-editing-skills 54★ Apache-2.0（找灵感→写稿→剪辑→发布复盘 10 skill 全链路）因含自动发布环节且依赖 FavStash 商业服务，按封号风险先例不收、6missedcalls/video-editing-skill 49★ MIT（纯 Bash＋FFmpeg＋Whisper 基础剪裁/跳切/字幕）与库内 ffmpeg-skill＋maxazure 重叠且 2026-02-27 后未更新不收、Jaycheng1103/chatgpt-video-editing-skills 613★ 与库内 video-use 重叠不另立、znyupup/ai-video-editing-skill 169★ 与 maxazure 重叠不堆、white0dew/autoclaw-cc 自动发布类封号风险先例延续不收、zJay26/douyin-skills 60★ 封号风险先例延续不收；skills.sh All Time 仍老面孔（flowkit reddit-automation 1.2M install 对 25★、runcomfy video-edit 442.8K 对 62★、gencraft 381K 对 0★、uizze 903K 对 78★，防刷量均不收；新面孔 rigorpilot/leonxlnx-taste/microsoft-azure/caveman 均为 dev/设计向，章节不合）；skillhub.cn 首页飙升榜首仍为搜索引擎（1065.0 万），未见视频/去 AI 味新面孔，详情页无 GitHub 源码链接缺口延续，0 收录；X 侧说明：按 kk 2026-10-19 指令（X 运营全部归 kk、Luna 不登录 X），本档未派 @Hjn8899 登录态浏览器任务，改以公开搜索信号补位——LINUX DO 的 Opus 5.5 视频蒸馏 skill 帖（把满意成片存为可复用配方、再用便宜模型复现）未给仓库名无法核验记信号、oschina 小红书 OpenClaw 流水线拆解（飞书一句话→标题评分→仿写→配图，10 分钟出两篇）无公开仓库名记信号且其文末 AI 托管账号治理提醒与自动发布不收先例一致；热度洞察一句话：剪辑 skill 正在从“能剪”卷向“剪完可验收”——钩子语法、风格包、渲染门禁三件套正在成为口播剪辑单的谈单证据，而发前过审与自动发布之间的界线（人工上传包 vs 直传 API）仍是中文搞钱人群最该先分清的一条线
 - 2026-11-01 补记：v3.5 X 信号轮追加 3 条（营销增长 3 条：yuwen-cool/yuwen-publish-precheck 发布前审稿（逐平台结论＋原文位置＋规则依据＋可直接替换的修复稿，38 篇真实样本校准，80+ 官方原文可查证）801★ MIT；huangbai-AI/guoshen 成片三路联合预检（语音＋字幕＋画面文字，按四平台动态规则输出定位与改法）172★ MIT；ziguishian/xhs-visual-director-skill 小红书图文视觉导演（风格＋结构＋逐页构图＋一致性母版＋审查清单，默认先出 1 张确认图）1455★ MIT），共 161 个 skills；星数刷新：workbuddy-xhs-skills 35→44；去重/淘汰/记信号：X 信号 30 余帖核验（只读无互动，@Hjn8899 登录态正常、未遇验证，窗口约 2026-10-30 至 2026-11-01 10:35 北京，8 组关键词 Latest 首屏，未翻完分页、去 AI 味组曾加载报错，结果完整性有限如实注明）：去重：Tim 10 款清单中 HyperFrames/video-use/Remotion/ffmpeg-skill/agent-caption 库内已有、Gk 6 款中 marketingskills/guizang-ppt/Humanizer-zh/guizang-social-card/qiaomu-anything-to-notebooklm 库内已有、柒晨 12 款中 social-auto-upload/guizang-social-card/xiaohongshu-ops 库内已有、unslop 两帖佐证库内已有条目（刚刷新至 3599★）、shuohao-skills 库内已有、Serena 10-30 帖与 guoshen 同仓不重复计；淘汰/记信号：XiaohongshuSkills/xiaohongshu-mcp/xiaohongshu-skills/Auto-Redbook 含自动发布/互动，封号风险先例不收；Agent-Reach 工具非 skill 先例不收；baoyu-xhs-images 为 baoyu 系子项不另立；xhs-cli 竞品调研/笔记采集，采集类不收；awesome-gpt-image-2 提示词合集非 skill 先例不收；TapCanvas 作者自称未开源不收；梦老湿漫剧为提示词包形态、对应 SKILL 仓 15★ 未达硬线不收（同帖 SKILL 仓已在提示词优化库收录，跨库不重复计）；liangdabiao/smy-seedance-storyboard 224★ 暂无 LICENSE 且同帖已在提示词优化库收录，本库暂不重复立条记观察；Jingyi-Wu-Richael/douyin-rule-check 67★ 暂无 LICENSE 且与 yuwen/guoshen 抖音部分重叠记观察；patch-gg/pixelfx 1503★ MIT（SKILL.md 真实，244 个代码像素特效）为游戏向（Godot/Unity/Phaser 精灵动画）章节不合不收，X 帖称约 750★ 与 API 1503★ 不符以 API 为准；Stageshow 查无对应仓库无法核验记信号（假 UI 展示图需求，设计向）；Nathan 45 个口播特效、Tim 清单中 video-subtitle-translator/video-dubbing 均无对应仓库名或低星（dubbing 类最高 4★）记信号（口播特效打包、多语言字幕配音需求存在）；gbro-cover-design 937★ 仅名无完整仓库名无法核验记信号；热度洞察一句话：发前审核正在成独立刚需——文稿规则审＋音画三路预检＋图文视觉导演三件套同时冒头，中文搞钱人群此刻最怕的不是做不出内容，而是发出去被限流下架；同时口播剪辑仍是最高频需求线，而变现警示线也在抬头（先跑通一条最容易收钱的工作流、Star 多不等于能变现）
