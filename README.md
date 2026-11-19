@@ -102,7 +102,7 @@
   4. 最后只做"精修"不做"加法"：第二遍问"怎么让现有构图更像艺术品"，而不是加元素
 - **安装**：`npx skills add anthropics/skills`
 - **怎么用它搞钱**：接品牌概念海报 / 播客封面 / 课程封面单；宣言+成图双交付显得专业，溢价空间大
-- **来源**：[anthropics/skills](https://github.com/anthropics/skills) · ⭐196785
+- **来源**：[anthropics/skills](https://github.com/anthropics/skills) · ⭐197250
 
 ### algorithmic-art
 - **一句话**：Anthropic 官方 skill，用 p5.js 写生成艺术（flow field / 粒子系统），适合要做动态视觉 / NFT 风格藏品的人
@@ -113,7 +113,7 @@
   4. 输出单文件 HTML（含 p5.js CDN + 参数滑杆 + 种子导航），浏览器打开即玩，方便交付和传播
 - **安装**：`npx skills add anthropics/skills`
 - **怎么用它搞钱**：卖"一键生成 100 张不重样"的头像 / 壁纸包；或给品牌做可交互的生成艺术装置
-- **来源**：[anthropics/skills](https://github.com/anthropics/skills) · ⭐196785
+- **来源**：[anthropics/skills](https://github.com/anthropics/skills) · ⭐197250
 
 ---
 
@@ -128,7 +128,7 @@
   5. 需要 Node.js 22+ 和 FFmpeg；先 `npx hyperframes usage --json` 查额度
 - **安装**：`claude plugin marketplace add heygen-com/hyperframes && claude plugin install hyperframes@hyperframes`
 - **怎么用它搞钱**：接"代码视频"定制单（数据可视化/产品演示/动态海报）：改数字就重新渲染，边际成本为零；Fiverr 上 AI 视频 $100/单档，代码驱动是降本利器
-- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86041
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86578
 
 ### hyperframes-cli（开发循环）
 
@@ -142,7 +142,7 @@
   6. 验片：`ffprobe` 对时长/fps，读 render summary 第二行看 GPU 模式（Linux 上 screenshot+software gpu 是慢路径）
 - **安装**：随 Hyperframes 插件安装，`npx hyperframes` 即用
 - **怎么用它搞钱**：把"10 步循环"变成你的 SOP，接单时"当天出片"就是竞争力；改片用 history 回滚，不返工就是利润
-- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86041
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86578
 
 ### hyperframes-core（技术契约）
 
@@ -154,7 +154,7 @@
   4. 按需读 references：最小骨架看 minimal-composition、选单体还是模块化看 composition-patterns、剪辑手法抄 creator-editing-recipes
 - **安装**：随 Hyperframes 插件安装
 - **怎么用它搞钱**：吃透这套契约才能做"模板化"：一套 composition 换数据批量出片（百条矩阵号/多语言版本），这是代码视频真正的规模红利
-- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86041
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86578
 
 ### general-video（通用视频工作流）
 
@@ -166,7 +166,7 @@
   4. 素材要先 `npx hyperframes auth status` 确认登录，离线走可用 provider，卡住就如实报 blocker
 - **安装**：随 Hyperframes 插件安装
 - **怎么用它搞钱**：这是"接单-生产"的主流程跑道；Figma 到成片一条龙，设计师客户给稿你直接出片
-- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86041
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86578
 
 ### Remotion 最佳实践
 
@@ -178,7 +178,7 @@
   4. 和 Hyperframes 的关系：Remotion 是 React 范式，Hyperframes 是 HTML 范式；已有 Remotion 工程可走 remotion-to-hyperframes 迁移
 - **安装**：`npx skills add remotion-dev/skills`（官方独立 skills 仓，含 create/markup/captions/maps/studio/render 等 12 个 skills）
 - **怎么用它搞钱**：React 开发者做视频零学习成本；接数据视频/播客剪辑单，代码复用率高
-- **来源**：[remotion-dev/skills](https://github.com/remotion-dev/skills) · ⭐7437（2026-10-22 更新；⚠️ 该独立仓暂无 LICENSE 文件，商用前请确认授权）
+- **来源**：[remotion-dev/skills](https://github.com/remotion-dev/skills) · ⭐7508（2026-10-22 更新；⚠️ 该独立仓暂无 LICENSE 文件，商用前请确认授权）
 
 ### qiaomu-anything-to-notebooklm（内容转播客）
 
@@ -190,7 +190,7 @@
   4. 付费墙自动绕过（300+ 站点：UA 伪装 → AMP → archive.today）；小宇宙 / 喜马拉雅 / B 站转写走 Get笔记 API（带时间戳）
 - **安装**：`cd ~/.claude/skills/ && git clone https://github.com/joeseesun/qiaomu-anything-to-notebooklm && cd qiaomu-anything-to-notebooklm && ./install.sh`（需 `notebooklm login`）
 - **怎么用它搞钱**：把爆款文章 / 播客变成自己的播客节目或 PPT 课程素材，一源多用；或接"知识库搭建 / 播客代运营"单
-- **来源**：[joeseesun/qiaomu-anything-to-notebooklm](https://github.com/joeseesun/qiaomu-anything-to-notebooklm) · ⭐6524
+- **来源**：[joeseesun/qiaomu-anything-to-notebooklm](https://github.com/joeseesun/qiaomu-anything-to-notebooklm) · ⭐6529
 
 ### product-launch-video（产品发布视频）
 
@@ -202,7 +202,7 @@
   4. 三处用户门卡：brief（Step 0）、故事板（Step 3）、成片（Step 6）；音频/BGM 先 `npx hyperframes auth status` 看走 HeyGen 还是本地引擎
 - **安装**：随 Hyperframes 插件安装，`npx hyperframes` 即用；`npx hyperframes skills update product-launch-video` 保鲜
 - **怎么用它搞钱**：给 SaaS / 独立开发者做产品发布视频代工——他们缺这个；自己产品上线时一条推广片全渠道分发
-- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86041
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86578
 
 ### mortiflix-oss（本地动态设计工作室）
 
@@ -237,7 +237,7 @@
   4. 三处用户门卡：brief（Step 0）、故事板（Step 3）、成片（Step 6）；无采集步骤，所有视觉都是下游发明的
 - **安装**：随 Hyperframes 插件安装，`npx hyperframes` 即用
 - **怎么用它搞钱**：批量做"无脸知识视频"矩阵号（读书 / 科普 / 财经解读），一条文本 = 一条视频；或接"文章转视频"代工单。
-- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86041
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86578
 
 ### talking-head-recut（口播/访谈包装）
 - **一句话**：给现成的口播 / 访谈 / 播客视频加定时设计的图形卡片（动态标题 / 下三分之一 / 数据标注 / 金句卡 / 画中画），按转录文本同步；原片不动，适合做访谈节目 / 播客切片 / 课程包装的人。
@@ -248,7 +248,7 @@
   4. 无固定卡片模板——卡片从转录实际内容里长出来，按需出现
 - **安装**：随 Hyperframes 插件安装；动工前 `npx hyperframes skills update talking-head-recut` 保鲜
 - **怎么用它搞钱**：接"访谈 / 播客视频包装"单（别人给 raw 片子，你交付带图形包装的成片）；自己做口播号时，卡片包装是完播率杠杆。
-- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86041
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86578
 
 ### motion-graphics（动态图形短片）
 - **一句话**：10 秒内的设计驱动动态图形：动态字体 / 数字滚动 / 图表打击 / Logo 定格 / 动态地图 / 推文卡片动画，motion 本身就是信息——适合做品牌片头 / 数据可视化 / 营销动效的人。
@@ -259,7 +259,7 @@
   4. 输出 MP4 或透明通道 overlay（可叠到别的视频上用）
 - **安装**：随 Hyperframes 插件安装，`npx hyperframes` 即用
 - **怎么用它搞钱**：接"品牌动态设计 / 数据可视化"单（一条 10 秒动效抵十页 PPT）；或打包"社交媒体动效模板"按套卖。
-- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86041
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86578
 
 ### music-to-video（音乐卡点视频）
 - **一句话**：一首音乐变成卡点同步的视频：歌词视频 / 幻灯片 / 动感宣传片，音乐定全部节奏；零素材也能出完整片子，适合做音乐号 / 卡点视频 / 歌词视频的人。
@@ -269,7 +269,7 @@
   3. 两处门卡：Step 3 计划确认、Step 6 渲染确认；无旁白无网站采集，字体和模板是下限
 - **安装**：随 Hyperframes 插件安装；`npx hyperframes skills update music-to-video` 保鲜
 - **怎么用它搞钱**：批量做卡点 / 歌词视频矩阵号；接"音乐人宣传片 / 品牌 BGM 视频"单，beat 网格是专业卖点。
-- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86041
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86578
 
 ### embedded-captions（特效字幕）
 - **一句话**：给口播视频加字幕：默认"安静字幕轨 + 高潮处嵌入式大字"，另有纯电影感嵌入和 35 套主题风格（含中文"炸 / 特效 / 酷炫字幕"）；转录和人物抠像全本地跑，适合做口播号 / 知识视频的人。
@@ -280,7 +280,7 @@
   4. 这是字幕不是包装——要图形卡片叠加走 talking-head-recut
 - **安装**：随 Hyperframes 插件安装；`npx hyperframes skills update embedded-captions` 保鲜
 - **怎么用它搞钱**：接"口播视频字幕包装"单（特效字幕是中文口播号标配）；或做"字幕风格包"卖给 MCN / 代运营团队。
-- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86041
+- **来源**：[heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) · ⭐86578
 
 ### stickman-video-director（火柴人动画视频）
 - **一句话**：文案 / 话题变成火柴人线条动画讲解视频（默认 60 秒，10 秒倍数可调），4 套视觉风格（含治愈故事风），走 Gemini Omni Flash 分段生成 prompt 包——适合做职场 / 情感解说类短视频、成本趋近于 0 的人。
@@ -291,7 +291,7 @@
   4. 配剪映热门解说音色 + 口播文案即成片
 - **安装**：`git clone https://github.com/kaomei/stickman-video-director`（`skills/directing-stickman-videos` 为 skill 本体）
 - **怎么用它搞钱**：批量做火柴人解说矩阵号（职场 / 情感 / 故事赛道），"妥妥的爆款预定，成本趋近于 0"；或接"文案转火柴人视频"代工单。
-- **来源**：[kaomei/stickman-video-director](https://github.com/kaomei/stickman-video-director) · ⭐6794（@CrazyKaomei 推荐帖 21K 浏览）
+- **来源**：[kaomei/stickman-video-director](https://github.com/kaomei/stickman-video-director) · ⭐6952（@CrazyKaomei 推荐帖 21K 浏览）
 
 ### youtube-clipper（长视频切短视频）
 - **一句话**：YouTube 长视频智能剪辑：下载 + AI 生成精细章节 → 你选片段 → 自动剪辑 + 中英双语字幕烧录 + 总结文案，适合做二创切片、搬运本地化的人。
@@ -324,7 +324,7 @@
   4. 中文 README_CN.md 齐全；Ink Press 样片（36 秒、10 镜头、钉好时间点的音效）可照着拆
 - **安装**：`npx skills add Vincentwei1021/video-shotcraft`
 - **怎么用它搞钱**：接"代码视频"定制单（产品演示 / 动态海报 / 数据可视化）：配方卡保证效果下限，改数字重渲染边际成本为零
-- **来源**：[Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) · ⭐21032
+- **来源**：[Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) · ⭐21356
 
 ### liyupi/ai-promo-video-maker（产品宣传片）
 - **一句话**：一句话描述产品，AI 自动调研、两轮提问、画样帧、配音配乐、剪辑校验，最后交付 4K 商业宣传片——适合要给产品做宣传片但没预算请外包的人
@@ -347,7 +347,7 @@
   5. `/yt-viral`：找本赛道爆款，按"超出该频道自身均值倍数"排名——抄公式不抄大号
 - **安装**：`git clone https://github.com/Jakeschincariol/youtube-agent-skill.git && cp -r youtube-agent-skill/skills/yt-* ~/.claude/skills/`（或 Claude Code 里 `/plugin marketplace add Jakeschincariol/youtube-agent-skill`）
 - **怎么用它搞钱**：YouTube 广告分成——一个人跑 N 个频道做矩阵；或接"YouTube 频道代运营"单：脚本+封面+剪辑清单一套交付，比请剪辑师便宜一个数量级
-- **来源**：[Jakeschincariol/youtube-agent-skill](https://github.com/Jakeschincariol/youtube-agent-skill) · ⭐6309
+- **来源**：[Jakeschincariol/youtube-agent-skill](https://github.com/Jakeschincariol/youtube-agent-skill) · ⭐6424
 
 ### AirsupHQ/machine-skill（工程机械 3D 动画）
 - **一句话**：一句话描述一台机器，Claude 按真实尺寸和物理原理在浏览器里造出一台可交互的 3D 机器（three.js，无需构建），再一键转成可发的短片——适合做工业品演示、产品技术展示的人
@@ -394,7 +394,7 @@
   5. 一支片子约 30–60 分钟 agent 时间，注意 token 成本；默认 1920×1080@24fps
 - **安装**：`claude plugin marketplace add lemomo-ai/lemo-opuscar && claude plugin install lemo-opuscar@lemolab`（需 Node 20+、ffmpeg、Python 3.11+）
 - **怎么用它搞钱**：风格化短片定制（婚礼/品牌故事/产品发布）：风格库是现成菜单，客户点风格你出片；或做"一镜一世界"系列账号，66 种风格=66 期内容不断更
-- **来源**：[lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) · ⭐17880（注：风格为 Claude Opus 5.5 调优，其他模型效果可能打折）
+- **来源**：[lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) · ⭐18360（注：风格为 Claude Opus 5.5 调优，其他模型效果可能打折）
 
 ### echris6/motion-video-kit（商业级动态影片）
 - **一句话**：商业级 AI 辅助视频 skill kit：从 28 部 SaaS 产品发布片提炼的动效语法＋独立 critic 评审循环＋可测量的质量门，专做"看起来贵"的商业宣传片——适合接 B 端宣传片/发布会视频单的人
@@ -515,18 +515,18 @@
 - **怎么用它搞钱**：给独立开发者/小商家做"发版宣传片"接单：复用真实组件是差异化卖点；或自己每次发版都出一支，保持产品声量
 - **来源**：[op7418/guizang-product-video-skill](https://github.com/op7418/guizang-product-video-skill) · ⭐941（注：AGPL-3.0，商用/二次分发注意开源义务）
 
-### calesthio/OpenMontage（AI 剪辑工作室：12 条制片流水线）
+### OpenMontageInc/OpenMontage（AI 剪辑工作室：12 条制片流水线）
 - **一句话**：把 Claude Code/Cursor 变成完整视频制片工作室：12 条制片流水线（AI 成片/真实素材混剪/口播/动画/换脸配音等）、49 个 skills，一句"给我做个 60 秒讲解视频"就开工——适合想批量产视频、不想学剪辑的人。
 - **核心用法**：
-  1. `git clone https://github.com/calesthio/OpenMontage.git && cd OpenMontage && make setup`（需 Python 3.10+、FFmpeg、Node 18+；各模型走自己 API key）
+  1. `git clone https://github.com/OpenMontageInc/OpenMontage.git && cd OpenMontage && make setup`（需 Python 3.10+、FFmpeg、Node 18+；各模型走自己 API key）
   2. AI 成片流：`create-video`（HeyGen Video Agent：提示词→脚本/形象/配音/字幕全自动）、`ai-video-gen` 调各家文生视频模型
   3. 代码成片流：`remotion-best-practices`（React 视频）+ `manim-composer`（数据动画），字幕走 rules/subtitles.md 的规格
   4. 数字人流：`avatar-video`（HeyGen）+ `faceswap`，配音用 `elevenlabs`/`azure-text-to-speech`
   5. 真实素材流：直接说"只用真实素材"——agent 联网找素材、写脚本、配播客级配音、自动找 BGM 混音
   6. MCP 优先：每个 skill 的 Tool Selection 表列了 MCP 工具和 curl 兜底，有 MCP 就走 MCP，不用手拼请求
-- **安装**：`git clone https://github.com/calesthio/OpenMontage.git && cd OpenMontage && make setup`
+- **安装**：`git clone https://github.com/OpenMontageInc/OpenMontage.git && cd OpenMontage && make setup`
 - **怎么用它搞钱**：批量产 AI 短视频跑流量分成（多流水线=多账号多风格不重复）；接"AI 视频代做"单：选题→成片一条龙，按条收费
-- **来源**：[OpenMontageInc/OpenMontage](https://github.com/OpenMontageInc/OpenMontage) · ⭐81370
+- **来源**：[OpenMontageInc/OpenMontage](https://github.com/OpenMontageInc/OpenMontage) · ⭐81582
 
 ### rossark-motion-skill
 - **一句话**：把任意 SVG 变成 60 帧专业动画的方法论+小引擎：人物微动、身体表演、植物火焰水光天气全覆盖，React Native/SwiftUI 双模板，离线渲染成视频——适合要做 App 开屏、吉祥物、产品演示动画的人。
@@ -570,7 +570,7 @@
   4. 看图确认：`look.py OUTPUT --tiles 3x2` 抽帧看，探针看不见字幕压没压上
 - **安装**：`npx ffmpeg-skill doctor`（需 Python 3.10+、本地 FFmpeg；MCP 接入见仓库）
 - **怎么用它搞钱**：做"AI 剪辑代工"：口播/知识视频的批量剪辑按条收费，本地 FFmpeg 零边际成本
-- **来源**：[kajisho5/ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill) · ⭐7776（2026-10-23；MIT）
+- **来源**：[kajisho5/ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill) · ⭐8044（2026-10-23；MIT）
 
 ### sugarforever/boring-video-studio（视频策划全链路：选题到成片）
 - **一句话**：一套视频策划 Agent Skill 组合：boring-video 把选题变成可执行方案（选题研究→成文→节拍→口播稿→分镜→故事板），再交给 HyperFrames 做生产渲染；另含 verysmallwoods-video 完整发布工作流（封面/平台文案/博客/社媒）——适合做知识/口播类视频、想把"选题到发布"装进终端的人。
@@ -745,7 +745,7 @@
   5. 发布只出上传包不直传：`publish_package.py` 只合成平台视频/封面/字幕/文案 + gate 状态，不调用平台 API，手工上传或交外部 connector
 - **安装**：`git clone https://github.com/maxazure/video-editing-skill ~/projects/video-editing-skill`（需 FFmpeg + Python，⚠️ 该仓暂无 LICENSE）
 - **怎么用它搞钱**：接口播/教程类剪辑代做单：平台 lint + 审批收据就是“一次过审”的谈单证据；或自己跑三平台矩阵号，同一管线换平台参数即复用
-- **来源**：[maxazure/video-editing-skill](https://github.com/maxazure/video-editing-skill) · ⭐211
+- **来源**：[maxazure/video-editing-skill](https://github.com/maxazure/video-editing-skill) · ⭐215
 
 ### pycodebr/heditor（风格化创意剪辑：每条片子单独设计）
 - **一句话**：把口播/课程/播客录像剪成竖屏短视频或长片的创意剪辑 CLI：30+ 命名风格（电影/游戏/预告片/纪录片…）+ 逐词字幕 + 声音设计 + 钩子换头测试，HyperFrames/GSAP 本地渲染——适合不满足于模板剪辑、要“每条都不一样”的创作者。
@@ -817,7 +817,7 @@
   5. 交付可选续审 ≤3 轮；数字人生成不在本 skill 内，人物素材需自备
 - **安装**：`git clone https://github.com/Vincentwei1021/video-talkcraft.git ~/.claude/skills/video-talkcraft`（SKILL.md 在仓根）
 - **怎么用它搞钱**：接口播 / 解说 / 科普视频外包：稿 + 配音进、成片出，配方卡与验收闸是“一次过”的谈单证据；或做自己的口播号，同一管线换稿即出新片
-- **来源**：[Vincentwei1021/video-talkcraft](https://github.com/Vincentwei1021/video-talkcraft) · ⭐2333（2026-10-12 推送；⚠️ PolyForm Noncommercial 1.0.0：非商用免费、商用需作者授权；X 原帖 @ganfanren_ai 2026-10-30 21:07 北京合集帖）
+- **来源**：[Vincentwei1021/video-talkcraft](https://github.com/Vincentwei1021/video-talkcraft) · ⭐2418（2026-10-12 推送；⚠️ PolyForm Noncommercial 1.0.0：非商用免费、商用需作者授权；X 原帖 @ganfanren_ai 2026-10-30 21:07 北京合集帖）
 
 ### YeJe-cpu/SeeCut（网感口播精剪：粗剪→动效样片→剪映分层草稿）
 - **一句话**：把口播粗剪 + B-roll / 截图 / 录屏，自动剪成“网感口播精剪风格”动效样片：真实证据 + chip / 卡 / 大字 + 手作质感 + 弹簧动效，人像按“对你说露、给你看藏”调度——适合已有口播粗剪、想快速出网感成片的人
@@ -878,7 +878,7 @@
   5. 出片前必过验证门：预览截图 + ffprobe + 抽帧点检 + 渲染门禁脚本，任一不过不交付
 - **安装**：`npx vertical-video-editing-skill`（需 Node 16+、HyperFrames、ffmpeg/ffprobe）
 - **怎么用它搞钱**：接口播/知识类竖屏剪辑单：钩子语法 + 验证门禁就是“成片质量可验收”的谈单证据；同一风格包多客户复用，返工率低
-- **来源**：[nopefallacy/vertical-video-editing-skills](https://github.com/nopefallacy/vertical-video-editing-skills) · ⭐72 MIT
+- **来源**：[nopefallacy/vertical-video-editing-skills](https://github.com/nopefallacy/vertical-video-editing-skills) · ⭐74 MIT
 
 ### Emily2040/seedance-2.0（Seedance 2.0 提示词操作系统：28 个子 skill + 门禁）
 - **一句话**：Seedance 2.0 的全套提示词操作系统：根 skill 路由 + 28 个子 skill（镜头/运镜/光线/角色锁定/续接/排障/版权/反 AI 味），覆盖 Dreamina/即梦/CapCut/豆包/fal 等全平台，适合要系统化做 Seedance 短片的人
@@ -950,7 +950,7 @@
   5. 验收用数字不用眼睛：按 PSNR 分贝表读每一拍有没有发生；表演的最后一步靠剪接（死帧用插入镜头盖、情绪转折两头对接），不要一直改提示词
 - **安装**：`npx skills add phileiny/h3-storyboard-skill`
 - **怎么用它搞钱**：接 H3 短剧分镜/导演单：按"剧本→分镜表→H3 提示词"交付，实测规则写进交付标准、返工次数可承诺；或自己跑 H3 漫剧/短剧号，分镜表就是出片速度。
-- **来源**：[phileiny/h3-storyboard-skill](https://github.com/phileiny/h3-storyboard-skill) · ⭐198 MIT（2026-10-03 推送；每条规则分已验证/部分验证/推断三档标注，见 SOURCES.md）
+- **来源**：[phileiny/h3-storyboard-skill](https://github.com/phileiny/h3-storyboard-skill) · ⭐199 MIT（2026-10-03 推送；每条规则分已验证/部分验证/推断三档标注，见 SOURCES.md）
 
 ### jtydhr88/screenwriting-skills（编剧手艺 26 技能：契诃夫/小津/《继承之战》方法论）
 - **一句话**：47 本编剧手艺书 + 23 卷剧本蒸馏出的 26 个编剧 skill：人物冲突、对话、场景、类型解剖、季播剧引擎、编剧室流程全套——适合写短剧/剧集剧本、总觉得人物扁平对白没劲的人。
@@ -998,7 +998,7 @@
   5. 先验 layout 再全渲：`node scripts/render.mjs template/section/index.html --stills check --times 1,4,8` 看 1/4/8 秒静帧，没问题再整段渲染
 - **安装**：`npx skills add RoverEva/eva-video-style`（另需 `npm install && npx playwright install chromium` + `pip install numpy opencv-python onnxruntime`）
 - **怎么用它搞钱**：接双语口播包装单：22 套模板就是 22 种"风格菜单"，客户点单、你按模板出片；或自己做口播号，固定模板=固定人设，更新成本只剩录口播。注意：模板全是 16:9 横屏，竖屏需重新排版；T07 卡通版需作者本人的卡通素材。
-- **来源**：[RoverEva/eva-video-style](https://github.com/RoverEva/eva-video-style) · ⭐59 MIT（2026-11-10 推送；SKILL.md 已核验，22 套模板各有成片 demo）
+- **来源**：[RoverEva/eva-video-style](https://github.com/RoverEva/eva-video-style) · ⭐75 MIT（2026-11-10 推送；SKILL.md 已核验，22 套模板各有成片 demo）
 
 ### artemnovitckii/claude-animation-skills（无素材动画 Reels：6 套代码动画）
 - **一句话**：不用任何素材，6 个 skill 直接代码画出 Reels 动画：3D 卡通讲解、火柴人、极简线条、3D 地图路线……30–45 秒竖屏成片——适合做知识类 Reels/Shorts、没空拍素材又想有画面的人。
@@ -1119,7 +1119,7 @@
   5. 剪辑动作走专用 skills：cut-silences 去静音、cut-mistakes 去口误、short-form-edit 出 1080x1920 成片（可另出 16:9 版，各自独立验开口与 CTA），406 张动效卡片直接套
 - **安装**：`git clone https://github.com/nateherkai/herk-edit-kit.git && cd herk-edit-kit && npm ci && npm run setup`（需 Node 22+/Git/FFmpeg/Chrome；转写可选 ElevenLabs key，本地 Whisper 也行）
 - **怎么用它搞钱**：接"口播剪辑代行"单：客户给 raw 录像，你按这套流程出成片 + 字幕 + B-roll，一条龙按条收费；或自己日更口播号，剪辑时间从小时级压到分钟级
-- **来源**：[nateherkai/herk-edit-kit](https://github.com/nateherkai/herk-edit-kit) · ⭐2845 MIT（2026-11-13 推送；15 个 skills，SKILL.md 1.6–21.7KB 已核验）
+- **来源**：[nateherkai/herk-edit-kit](https://github.com/nateherkai/herk-edit-kit) · ⭐2953 MIT（2026-11-13 推送；15 个 skills，SKILL.md 1.6–21.7KB 已核验）
 
 ### elevenlabs-skills（官方配音/音效/音乐/翻译全家桶）
 
@@ -1184,7 +1184,20 @@
   5. 素材自己找：Playwright MCP 自己上 Pinterest/Behance/品牌站抓参考图，字体/音乐/音效走 Firecrawl、Pexels/Pixabay、Freesound、LottieFiles，密钥只放 .env 不贴聊天记录
 - **安装**：`npx skills add mattypark/Motion-graphics-skill`（⚠️ 仓库 README 内安装命令仍写旧 owner 名 Miftahul-Islam-Efaz，该路径已 404，以上按现 owner 修正；或作 Claude Code 插件装）
 - **怎么用它搞钱**：接"口播代做"单：客户给 raw 口播 + 参考，你交付剪好字幕配好音的成片，按条收费；或做讲解/产品片号，一条流程从配音稿走到成片
-- **来源**：[mattypark/Motion-graphics-skill](https://github.com/mattypark/Motion-graphics-skill) · ⭐74（⚠️ 暂无 LICENSE；SKILL.md 53.6KB 已核验，skills/motion-video-director/SKILL.md；2026-10-08 推送）
+- **来源**：[mattypark/Motion-graphics-skill](https://github.com/mattypark/Motion-graphics-skill) · ⭐78（⚠️ 暂无 LICENSE；SKILL.md 53.6KB 已核验，skills/motion-video-director/SKILL.md；2026-10-08 推送）
+
+### moluyao/ai-talking-head-edit（口播剪辑全套 SOP：脚本表→剪气口→反馈循环→剪映交付）
+
+- **一句话**：把真人口播 / 数字人 / AI 配音素材剪成完整横版知识视频的全套工作流：脚本表 → 生成 → 剪气口粗剪 → 表格化反馈循环 → 剪映工程交付——适合做口播 / 知识类视频、想把剪辑交给 AI 按流程走的人
+- **核心用法**：
+  1. 先做脚本表（5 列：口播字幕 / 画面描述 / 花字 / 分镜参考 / 后期资料）：没有画面要求列，Claude 就会按自己的理解乱排分镜；口播素材三选一：真人自己录、数字人（Seedance 2.5 / 可灵）、AI 配音（声纹克隆别加太多语气提示词，会出怪腔）
+  2. 主提示词一次生成：调色给一张调好的参考图对照（模型对中国人肤色调色学得不好，别让它自己调）、分镜走动画风格 skill、BGM 给附件或让 Claude 去已登录音乐网站下、音效走 Openverse 匹配；模型用 Opus 5.5、推理强度 Medium 即可
+  3. 关键一招先只做开头 30 秒：把算力集中在开头打磨视觉与叙事趣味，确认后再延展成全片（原作者小号验证：精良开头与普通开头数据差距非常大）
+  4. 剪气口粗剪用原文提示词：开口前留 0.15 秒、说完留 0.2 秒；0.35 秒内自然停顿保留，超 0.35 秒按句内犹豫 / 逗号 / 句号 / 换段分别缩到约 0.4 / 0.35–0.45 / 0.55 / 0.7 秒；同一内容录多遍只留一遍，跨 Take 只在实测静音的逗号、句号处拼；附每段 Take 与问题时间码清单
+  5. 表格化反馈循环 2–3 轮：剪辑意见文档一行一条（截图 + 时间码 + 意见 + 全局 / 局部标签），让 Claude 每 10 分钟轮询一次文档自动改；梗与幽默 AI 搞不定时导出剪映工程人工补
+- **安装**：`git clone https://github.com/moluyao/ai-talking-head-edit.git && cp -r ai-talking-head-edit/skills/ai-talking-head-edit ~/.claude/skills/`
+- **怎么用它搞钱**：接口播 / 知识视频代剪单：客户给脚本和口播原片，你按 SOP 出开头 30 秒样片确认、再出全片 + 剪映工程，按条收费；或自己批量做知识口播号，原作者团队实测单条从人工一周压到 2–3 天
+- **来源**：[moluyao/ai-talking-head-edit](https://github.com/moluyao/ai-talking-head-edit) · ⭐50（2026-11-17 新库；⚠️ LICENSE 为中文版权声明、非标准开源许可：工作流与「剪气口 / 挑 Take」提示词版权归原作者「大师的AI小灶」所有，整理者已署名；SKILL.md 13.8KB 已核验；X 原帖 @dashiAIxz 2026-11-17，5.3 万浏览 / 1185 收藏）
 
 ## 文案钩子（9 个）
 
@@ -1309,7 +1322,7 @@
   5. 发布后第一小时内尽快回复评论——算法奖励活跃对话
 - **安装**：`git clone https://github.com/ComposioHQ/awesome-claude-skills.git`（awesome 合集，按需取单个 skill 目录即可）
 - **怎么用它搞钱**：把"凭感觉发帖"变成"按算法改帖"的 X 代运营服务，按月收费；或每天把热点帖套算法模板改写成自己风格，蹭流量涨粉再变现。
-- **来源**：[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) · ⭐79748
+- **来源**：[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) · ⭐79830
 
 ### competitive-ads-extractor
 - **一句话**：从 Facebook / LinkedIn 广告库批量扒下竞品在跑的广告，拆解它们在打什么痛点、用什么文案套路——适合跑广告、做投放代运营的人。
@@ -1321,7 +1334,7 @@
   5. 按"痛点 → 模式 → 缺口"输出分析报告，并给出自己广告的测试建议
 - **安装**：`git clone https://github.com/ComposioHQ/awesome-claude-skills.git`（awesome 合集，按需取单个 skill 目录即可）
 - **怎么用它搞钱**：接广告代投单时先出一份《竞品广告拆解报告》当签单钩子；跨境卖家上新前先抄验证过的痛点和文案公式，少交测试学费。
-- **来源**：[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) · ⭐79748
+- **来源**：[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) · ⭐79830
 
 ### content-research-writer
 - **一句话**：一个陪你写长文的 AI 搭档：搭大纲、找资料加引用、改开头钩子、逐段给反馈——适合写公众号 / 博客 / Newsletter 的人。
@@ -1333,7 +1346,7 @@
   5. 全稿终审过发布清单：所有断言有来源、引用格式统一、有行动号召，再发布
 - **安装**：`git clone https://github.com/ComposioHQ/awesome-claude-skills.git`（awesome 合集，按需取单个 skill 目录即可）
 - **怎么用它搞钱**：接"深度长文代写"单（行业白皮书、创始人 IP 稿），有引用、有结构就能收高客单价；长文拆成推文串/短视频脚本，一鱼多吃。
-- **来源**：[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) · ⭐79748
+- **来源**：[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) · ⭐79830
 
 ### x-twitter-growth
 - **一句话**：X 账号增长全套引擎：审主页 → 扒竞品 → 定内容 → 算法规则 → 增长日历，还附带 5 个 Python 脚本——适合从 0 起号或想系统化做 X 的人。
@@ -1345,7 +1358,7 @@
   5. 按体量定节奏：<1K 粉每天 2–3 推 + 每周 1–2 串 + 每天 10–20 条回复；跑 `growth_tracker.py` 跟踪 30 天数据
 - **安装**：`git clone https://github.com/alirezarezvani/claude-skills.git`（README 官方方式：clone 后按所用平台跑对应安装脚本）
 - **怎么用它搞钱**：X 代运营标准化 SOP：先出《账号诊断报告》签单，再按周交付内容日历 + 数据复盘；帮跨境/出海品牌起英文 X 账号。
-- **来源**：[alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) · ⭐30000
+- **来源**：[alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) · ⭐30080
 
 ### youtube-full
 - **一句话**：YouTube 的"读"能力：取字幕、搜视频、看频道更新、扒播放列表——适合做选题研究、竞品监控、内容二创的人。
@@ -1357,7 +1370,7 @@
   5. 省额度纪律：先用免费接口确认有更新再花额度；不经用户确认不批量转录整个频道
 - **安装**：`git clone https://github.com/alirezarezvani/claude-skills.git`（README 官方方式：clone 后按所用平台跑对应安装脚本）
 - **怎么用它搞钱**：监控 20 个对标 YouTube 频道，一出爆款视频 10 分钟内产出中文拆解/二创脚本，抢时效流量；把英文教程字幕批量转成中文付费专栏/课程素材。
-- **来源**：[alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) · ⭐30000
+- **来源**：[alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) · ⭐30080
 
 ### copywriting
 - **一句话**：转化文案写作：从首页到落地页到定价页，按"清晰 > 机智、利益 > 功能、具体 > 模糊"写出让人行动的页面文案——适合自己卖产品或接建站文案单的人。
@@ -1369,7 +1382,7 @@
   5. 交付带注释 + 备选：每个关键文案说明为什么这么写，标题和 CTA 至少给 2–3 个选项
 - **安装**：`git clone https://github.com/alirezarezvani/claude-skills.git`（README 官方方式：clone 后按所用平台跑对应安装脚本）
 - **怎么用它搞钱**：接独立站/落地页文案单，"标题打分 + 结构 + 注释"的交付物显得专业、好收高价；给自己的产品页重写一遍，直接提转化率。
-- **来源**：[alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) · ⭐30000
+- **来源**：[alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) · ⭐30080
 
 ### ad-creative
 - **一句话**：付费广告的文案生产线：按漏斗阶段选框架、批量生成多平台合规广告文案、拿数据迭代——适合跑 Google / Meta / TikTok 广告的人。
@@ -1381,7 +1394,7 @@
   5. 发布前过质检清单：字数合规、无全大写/多感叹号、无"点击这里"、无无法佐证的"第一/最佳"
 - **安装**：`git clone https://github.com/alirezarezvani/claude-skills.git`（README 官方方式：clone 后按所用平台跑对应安装脚本）
 - **怎么用它搞钱**：广告代投的核心交付：每周产出几十条合规测试素材 + 迭代报告，按效果收费；帮电商卖家把一条爆款文案扩展成"角度 × 平台"矩阵批量测。
-- **来源**：[alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) · ⭐30000
+- **来源**：[alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) · ⭐30080
 
 ### tt-trend-mapper
 - **一句话**：TikTok 蹭热点的"该不该蹭"决策器：先做四项适配检查，通过了才给你编" recognizable 的梗 + 你 niche 的转折"——适合做 TikTok / 抖音、不想蹭得尴尬的人。
@@ -1440,7 +1453,7 @@
   4. skills 之间互相引用（如 copywriting 写完调 copy-editing 逐行改），形成流水线
 - **安装**：`npx skills add coreyhaines31/marketingskills`
 - **怎么用它搞钱**：接"增长顾问"单：用这套 skills 给客户做落地页+广告+邮件全案；或自己做产品时，营销环节全部 AI 化，一个人跑完获客闭环
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61059
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61281
 
 ### copywriting（转化文案）
 
@@ -1452,7 +1465,7 @@
   4. 缺证据就标 `[NEED: ...]`，绝不编造数据和 testimonials
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill copywriting`
 - **怎么用它搞钱**：接落地页文案单；自己卖课/卖服务时，销售页转化率直接挂钩收入
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61059
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61281
 
 ### ad-creative（广告创意量产）
 
@@ -1464,7 +1477,7 @@
   4. 覆盖 UGC/绿幕/口播/信息流等多格式，文案同样过"去 AI 味"质检
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill ad-creative`
 - **怎么用它搞钱**：接广告代投/素材单：别人一条条写，你一次出几十条变体做 A/B 测试；自己带货时素材迭代速度就是 ROAS
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61059
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61281
 
 ### lead-magnets（获客钩子）
 
@@ -1476,7 +1489,7 @@
   4. 钩子要自然导向产品试用，写完调 copywriting 写落地页、调 emails 写捕获后的培育序列
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill lead-magnets`
 - **怎么用它搞钱**：帮客户搭"钩子→邮箱→培育→成交"漏斗收服务费；自己做号时这是涨粉最稳的路径之一
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61059
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61281
 
 ### pricing（定价策略）
 
@@ -1488,7 +1501,7 @@
   4. 新品定价先定"能学到东西的价格"，跑数据再调
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill pricing`
 - **怎么用它搞钱**：给 SaaS/知识付费做定价咨询；自己产品定价从"成本加成"换成"价值定价"，利润率直接上一个台阶
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61059
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61281
 
 ### offers（offer 设计）
 
@@ -1500,7 +1513,7 @@
   4. 设计完调 copywriting 写销售页、调 pricing 定档
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill offers`
 - **怎么用它搞钱**：帮知识付费/教练做 offer 重构收咨询费；自己卖课时 offer 改好，转化率翻倍比投流便宜得多
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61059
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61281
 
 ### cro（转化率优化）
 
@@ -1512,7 +1525,7 @@
   4. 表单 abandonment、A/B 测试想法有专门的 references 可调
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill cro`
 - **怎么用它搞钱**：接"落地页诊断"单，按页收费；自己投流时，转化率提 1 个点等于获客成本降一截
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61059
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61281
 
 ### cold-email（冷邮件）
 
@@ -1524,7 +1537,7 @@
   4. 一个低 friction 的 CTA（"值得聊聊？"），不要一上来就约会议
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill cold-email`
 - **怎么用它搞钱**：帮 B2B/出海客户做冷启动获客；自己找商单、谈分销时，回复率就是 pipeline
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61059
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61281
 
 ### emails（邮件序列）
 
@@ -1536,7 +1549,7 @@
   4. 和 lead-magnets 联动：钩子捕获 → 欢迎序列 → 培育 → 成交
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill emails`
 - **怎么用它搞钱**：帮客户搭"名单→培育→复购"邮件体系收服务费；自己做私域时，邮件是复购率最高的渠道之一
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61059
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61281
 
 ### marketing-skills（广告审计整库总览）
 
@@ -1548,7 +1561,7 @@
   4. 要读实时账户数据时接免费 Ryze MCP：`claude mcp add ryze --transport http https://connector.get-ryze.ai/mcp`
 - **安装**：`cd ~/.claude/skills/ && git clone https://github.com/irinabuht12-oss/marketing-skills`（按 `skills/` 目录名逐个启用）
 - **怎么用它搞钱**：接"投放审计"单——一次审计输出可见度评分卡 + 竞品引用源地图 + 修补动作清单，按次收费；AI 可见度是 2026 年新蓝海，信息差大
-- **来源**：[irinabuht12-oss/marketing-skills](https://github.com/irinabuht12-oss/marketing-skills) · ⭐8176
+- **来源**：[irinabuht12-oss/marketing-skills](https://github.com/irinabuht12-oss/marketing-skills) · ⭐8343
 
 ### xhs-account-teardown（小红书账号拆解）
 
@@ -1609,7 +1622,7 @@
   5. 像批评家一样验：headless Chrome 截图 + `node build.mjs --audit` 归零 + line check 归零 + 4× 放大看每个接缝，迭代到"一眼是真东西"
 - **安装**：`npx skills add wheresryan22/anatomy -g -a claude-code`（官方安装方式；也支持 OpenCode/Codex）
 - **怎么用它搞钱**：接"技术解释图"定制单（产品落地页/白皮书/课程的可交互演示图，一张图抵十页文档）；或做付费技术课程的配图演示，一套工作流复用
-- **来源**：[wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) · ⭐27892（2026-10-08 开源，5 天破 7000★，中英文社区反复推荐）
+- **来源**：[wheresryan22/anatomy](https://github.com/wheresryan22/anatomy) · ⭐28128（2026-10-08 开源，5 天破 7000★，中英文社区反复推荐）
 
 ### xiaohongshu-ops-skill（小红书全链路运营）
 - **一句话**：小红书全链路运营 skill：账号定位 → 选题研究 → 内容生产 → 发布执行 → 复盘修复，含 Viral Copy 链路（输爆款 URL 学封面 / 标题 / 正文结构）——适合想系统化做小红书获客的人。
@@ -1677,7 +1690,7 @@
   4. AI 搜索流量用 `seo-geo`，电商站加 `seo-ecommerce`，多语言站加 `seo-hreflang`
 - **安装**：`/plugin marketplace add AgriciDaniel/claude-seo` 后 `/plugin install claude-seo@agricidaniel-claude-seo`
 - **怎么用它搞钱**：接 SEO 审计 / 代运营单：26 个子 skill 并行出报告，一次审计即交付物，按月收 retainer；自己做利基站，GEO + 传统 SEO 双吃搜索流量
-- **来源**：[AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo) · ⭐30422
+- **来源**：[AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo) · ⭐30692
 
 ### zubair-trabzada/geo-seo-claude（GEO：AI 搜索优化）
 - **一句话**：专攻 AI 搜索（ChatGPT / Claude / Perplexity / Gemini / Google AI Overviews）的 GEO 优化 skill，适合传统 SEO 流量被 AI 搜索分流的人
@@ -1754,7 +1767,7 @@
   4. 与已下架的 jimliu/baoyu-design（Claude Design 本地运行，仓库 404，见 v4.9 日志）是不同 repo，不重复
 - **安装**：`npx skills add jimliu/baoyu-skills`（按需单装）
 - **怎么用它搞钱**：学顶流的内容生产管线：封面 + 插画 + 效率工具一套，复制到自己的内容业务里降本；或照着它的 skill 结构给自己定制专属 skills
-- **来源**：[JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) · ⭐27645
+- **来源**：[JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) · ⭐27686
 
 ### Jakeschincariol/instagram-agent-skill（Instagram 账号全链路）
 - **一句话**：13 个 skill 运营 Instagram 账号：按 26 个钩子公式写 Reels 并打分、找本赛道真爆款 Reels、主页 100 分制诊断改写、周计划，还自带去 AI 味 humanizer——适合做 IG 引流/带货/出海获客的人
@@ -1766,7 +1779,7 @@
   5. 每周跑一遍周计划 skill：固定节奏出 Reels，不断更
 - **安装**：`git clone https://github.com/Jakeschincariol/instagram-agent-skill.git && cp -r instagram-agent-skill/skills/ig-* ~/.claude/skills/`
 - **怎么用它搞钱**：IG 带货/引流：Reels 钩子公式+主页诊断是涨粉两件套；或接"IG 账号代运营"，周计划+文案流水线化交付
-- **来源**：[Jakeschincariol/instagram-agent-skill](https://github.com/Jakeschincariol/instagram-agent-skill) · ⭐6995
+- **来源**：[Jakeschincariol/instagram-agent-skill](https://github.com/Jakeschincariol/instagram-agent-skill) · ⭐7130
 
 ### Jakeschincariol/founder-skill（创业想法验证）
 - **一句话**：11 个 skill 在花大钱之前验证生意：董事会（Hormozi/Thiel/Jobs 框架）挑刺、营销总监定打法、CFO 算真实利润率、100 个买家代理跑购买场景——适合想搞副业/创业但怕踩坑的人
@@ -1778,7 +1791,7 @@
   5. 通过验证的才进 founder-launch 流程——省下几万块试错费
 - **安装**：Claude Code 里 `/plugin marketplace add Jakeschincariol/founder-skill` 后 `/plugin install founder-skill@founder-skill`
 - **怎么用它搞钱**：副业立项前先验证——100 买家代理≈免费用户访谈；或做"商业 idea 验证"咨询，按项目收费帮人省试错钱
-- **来源**：[Jakeschincariol/founder-skill](https://github.com/Jakeschincariol/founder-skill) · ⭐4050
+- **来源**：[Jakeschincariol/founder-skill](https://github.com/Jakeschincariol/founder-skill) · ⭐4152
 
 ### marswaveai/skills（一稿多发：ListenHub 内容复用包）
 - **一句话**：ListenHub.ai/ColaOS 官方 skill 包：一稿多发是核心用法——一个链接拆成播客/解说视频/幻灯片/TTS 配音/图文成套出，外加声音克隆/AI 配乐——适合做小红书起号、多平台分发的人（@xoyif63862452《小红书起号：7 个 Skill 搞定运营流水线》推荐的一稿多发环节）
@@ -1801,7 +1814,7 @@
   4. 先小号实测再上矩阵号：各平台风控规则不同，分开发布节奏
 - **安装**：`npx skills add dreammis/social-auto-upload`（MIT；详见仓库 README 的平台对照表）
 - **怎么用它搞钱**：内容矩阵的"最后一公里"：一条视频 6 平台同步发，吃满各平台流量补贴；或打包成"代发服务"按账号收费
-- **来源**：[dreammis/social-auto-upload](https://github.com/dreammis/social-auto-upload) · ⭐16642（2026-10-23；MIT）
+- **来源**：[dreammis/social-auto-upload](https://github.com/dreammis/social-auto-upload) · ⭐16688（2026-10-23；MIT）
 
 ### gzh-design-skill
 - **一句话**：把 Markdown 一键排成能直接粘进公众号编辑器的精致 HTML：6 套精选主题+主题生成器，自动章节编号、引言卡片、代码块、作者签名——适合写公众号的人。
@@ -1967,7 +1980,7 @@
   5. 发布后不停：按优先级排下一次宣布（功能/更新/数据），每次发布复用同一套流程，势头复利
 - **安装**：`npx skills add coreyhaines31/marketingskills --skill launch`
 - **怎么用它搞钱**：接"产品发布代操"单：一次发布=Product Hunt 榜单＋Show HN＋X 帖＋Reddit＋Medium＋邮件全套资产；或自己做产品时，每次发版都是一次获客，不再裸奔上线
-- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61059
+- **来源**：[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ⭐61281
 
 ### aso-appstore-screenshots（App Store 高转化截图生成）
 
@@ -2020,7 +2033,7 @@
   5. 误杀保护：有作者真实样稿时，样稿优先级高于去 AI 规则（作者真用破折号就按作者频率保留）；学术/技术/法律文本中性平实就是"人味"，不强加观点。
 - **安装**：npx skills add blader/humanizer
 - **怎么用它搞钱**：做公众号/小红书代运营的"去 AI 味润色"增值服务——客户用 AI 写初稿，你按 26 项清单人工过一遍再发布，按千字收费；或打包卖"AI 代写 + 去味"两道工序，做差异化接单。
-- **来源**：[blader/humanizer](https://github.com/blader/humanizer) · ⭐70413（10-19 复核，持续上涨）
+- **来源**：[blader/humanizer](https://github.com/blader/humanizer) · ⭐70854（10-19 复核，持续上涨）
 
 ### tt-humanizer
 - **一句话**：专给短视频口播脚本/字幕去 AI 味——纸上读着顺、嘴上说出来像机器人的问题，用四道工序逐个修；注意它不保证过 AI 检测器，目标是观众听着像真人。
@@ -2156,7 +2169,7 @@
   5. 只在用户点名时才动老设计：redesign/audit 两个动词专用于已有页面，平时只用于新页面
 - **安装**：`npx skills add nutlope/hallmark -g`（README 官方安装方式；需 Node 18+；浏览器检查另需 puppeteer-core + Chrome，没有也能跑静态检查）
 - **怎么用它搞钱**：接“AI 建站精修”单：客户用 AI 出的落地页一眼假，你用 Hallmark 底线加 lint 重做一版，按页收费；或给独立开发者做产品页，设计感就是转化率
-- **来源**：[Nutlope/hallmark](https://github.com/Nutlope/hallmark) · ⭐56944
+- **来源**：[Nutlope/hallmark](https://github.com/Nutlope/hallmark) · ⭐57585
 
 ### larashero3-dotcom/lieflat-less-ai-tone（证据驱动的中文去 AI 味：先出检测报告、你点头再改）
 - **一句话**：基于两轮实测语料（629 篇对照 + 270 对同题配对，约 520 万字、100+ 项指标、约 50 万次语义判断）的中文去 AI 味 skill：不直接改稿，先交付有指标、研究参照、原文例句和具体改法的检测报告，你回复“按建议改”后才改写并复测出前后对比，适合写公众号 / 小红书 / 长文、怕被一眼认出 AI 味的人
@@ -2193,7 +2206,7 @@
   4. 还能顺手出一段“自我去 AI 味”短视频直接发帖（X 原帖提法，效果以实测为准）
 - **安装**：`git clone https://github.com/heydamir/unslop && mkdir -p ~/.claude/skills && cp -r unslop/skills/unslop ~/.claude/skills/`（单项目放项目内 .claude/skills/）
 - **怎么用它搞钱**：接落地页 / 看板“去 AI 味”翻新单：改前先列 slop 清单、改后逐项对照是可验收的交付；或给自己的产品页批量去味，提高转化信任感
-- **来源**：[heydamir/unslop](https://github.com/heydamir/unslop) · ⭐17825 CC-BY-4.0（商用署名即可；2026-11-01 推送；X 原帖 @CY160909 2026-10-31 06:20 北京推荐，原作者 @heydamir）
+- **来源**：[heydamir/unslop](https://github.com/heydamir/unslop) · ⭐18327 CC-BY-4.0（商用署名即可；2026-11-01 推送；X 原帖 @CY160909 2026-10-31 06:20 北京推荐，原作者 @heydamir）
 
 ### KKKKhazix/human-writing（活人感写作：从零写出具体的人在说话）
 - **一句话**：通用中文创作与改稿 skill：默认把文章写成一个见过事、查过材料、愿意把来龙去脉讲清楚的人在说话——适合公众号、知乎、论坛长帖、口播稿等一切“读起来不能像 AI 写的”中文长内容
@@ -2232,7 +2245,7 @@
   4. 输出格式固定：单个可复制提示词块 + 🎯目标行（一句话说明优化了什么）+ 必要时 1-2 行粘贴前准备说明，不加废话
 - **安装**：`git clone https://github.com/nidhinjs/prompt-master.git ~/.claude/skills/prompt-master`
 - **怎么用它搞钱**：接"提示词代写 / 优化"单；或把它嵌进自己的 AI 工作流产品里当标配模块
-- **来源**：[nidhinjs/prompt-master](https://github.com/nidhinjs/prompt-master) · ⭐16111
+- **来源**：[nidhinjs/prompt-master](https://github.com/nidhinjs/prompt-master) · ⭐16133
 
 ### skill-creator
 - **一句话**：Anthropic 官方 skill，教你从零创建、测试、迭代一个 skill，适合想把自己的工作流变成资产的人
@@ -2243,7 +2256,7 @@
   4. 根据测试结果改一版再测，循环到满意；最后跑 description 优化器提升触发准确率
 - **安装**：`npx skills add anthropics/skills`
 - **怎么用它搞钱**：把验证过的 skill 打包卖（kk 的 13 视频库就是这么攒出来的）；或给企业做定制 skill 咨询，一个 skill 一份报价
-- **来源**：[anthropics/skills](https://github.com/anthropics/skills) · ⭐196785
+- **来源**：[anthropics/skills](https://github.com/anthropics/skills) · ⭐197250
 
 ### cangjie-skill（书/播客蒸馏成 skills）
 
@@ -2300,6 +2313,7 @@
 - 两边互补，互链不合并
 
 ## 更新日志
+- 2026-11-19（10:43 档）：v5.3 追加 1 条（视频生产：moluyao/ai-talking-head-edit 50★ 口播剪辑全套 SOP（脚本表→生成→剪气口粗剪→表格化反馈→剪映工程交付，SKILL.md 13.8KB 已核验；⚠️ LICENSE 为中文版权声明、非标准开源许可，版权归原作者「大师的AI小灶」所有；X 原帖 @dashiAIxz 2026-11-17，5.3 万浏览/1185 收藏）），共 191 个 skills；星数刷新 31 项（56 处来源行）：heydamir/unslop 17825→18327（+502，仍是全库最陡的需求线）、Nutlope/hallmark 56944→57585（+641）、heygen-com/hyperframes 86041→86578（+537）、anthropics/skills 196785→197250（+465）、lemomo-ai/lemo-opuscar 17880→18360（+480）、blader/humanizer 70413→70854（+441）、Vincentwei1021/video-shotcraft 21032→21356（+324）、AgriciDaniel/claude-seo 30422→30692（+270）、wheresryan22/anatomy 27892→28128（+236）、coreyhaines31/marketingskills 61059→61281（+222）、OpenMontageInc/OpenMontage 81370→81582（+212）、Jakeschincariol/instagram-agent-skill 6995→7130（+135）、Jakeschincariol/youtube-agent-skill 6309→6424（+115）、kaomei/stickman-video-director 6794→6952（+158）、phileiny/h3-storyboard-skill 198→199（+1）；kajisho5/ffmpeg-skill 7776→8044（+268，11-14 的 5588 起五日 +2456，仍在爬升，推送 2026-11-19）、dreammis/social-auto-upload 16642→16688（+46）、Jakeschincariol/founder-skill 4050→4152（+102）、remotion-dev/skills 7437→7508（+71）、ComposioHQ/awesome-claude-skills 79748→79830（+82）、alirezarezvani/claude-skills 30000→30080（+80）、nidhinjs/prompt-master 16111→16133（+22）、irinabuht12-oss/marketing-skills 8176→8343（+167）、joeseesun/qiaomu-anything-to-notebooklm 6524→6529（+5）、JimLiu/baoyu-skills 27645→27686（+41）、mattypark/Motion-graphics-skill 74→78（+4）；maxazure/video-editing-skill 211→215、RoverEva/eva-video-style 59→75（+16）、nopefallacy/vertical-video-editing-skills 72→74（+2）、nateherkai/herk-edit-kit 2845→2953（+108）、Vincentwei1021/video-talkcraft 2333→2418（+85）；0 回落；OpenMontage 标题与安装命令 owner 由 calesthio 修正为 OpenMontageInc（与已修正的来源行一致）；去重/淘汰/记信号：GitHub `claude skills` 前 15 全已入库或淘汰（ComposioHQ/alirezarezvani/prompt-master/unslop/marketing-skills/qiaomu/instagram-agent-skill/youtube-agent-skill 库内已有仅刷新；travisvn/BehiSecc 纯目录先例、Jeffallan/dev-browser 开发向、SnailSploit 安全向、replica-skill 开发向淘汰先例延续、sergebulaev/linkedin-skills LinkedIn 场景淘汰先例延续、day-trader-skill 日内交易决策类不收）；Jaycheng1103/chatgpt-video-editing-skills 630★ 与库内 video-use 重叠不另立（v3.2 淘汰先例延续，2026-07-26 后无推送）；intincrab/blueprint 22★ 专利图纸风动画讲解（SKILL.md 10.1KB + craft.md 14.4KB + 21 个示例，MIT）记观察（刚过 20★ 硬线、仅 2 天新仓、无需求侧证据、风格偏技术图解）；znyupup/ai-video-editing-skill 186★ 与 maxazure 重叠先例延续、alisadiq-ai/favstash-ai-video-editing-skills 80★ 自动发布+商业服务依赖先例延续、6missedcalls/video-editing-skill 55★ 与 ffmpeg-skill/maxazure 重叠先例延续；新仓其余全 <20★（vossashtonai/gta6-clipper 13★、arcticloud/ai-stream-clipper 13★、Git-Agni/apple-app-review-skill 13★、Nyxera0x/simulator 13★ 等）；skills.sh All Time 仍老面孔（find-skills 4.4M、grill-me 1.6M、hyperframes 簇库内已有；flowkit reddit-automation 1.4M 对 31★、runcomfy video-edit 450.3K 对 61★、gencraft ai-music 622.6K 对 3★、uizze ios-design 419.8K 对 85★，防刷量均不收；pbakaus/impeccable 418.6K 对 111435★ 设计向淘汰先例延续、leonxlnx/taste-skill 设计向淘汰先例延续）；Trending（本周）新面孔：beltsh/superpowers ai-video-generation 29.1K（superpowers 又一分叉，开发向大包不收）、proseify.xyz anti-prose-slop 4.6K（去 AI 味散文向，GitHub 仅 0★，记信号）、autonnel 落地页/漏斗 skill 簇 1.2K（GitHub 8★ 未达硬线）、antibrow/liarjs 系反检测规避工具不收、iannuttall/seo 1.0K 与库内 claude-seo 重叠不堆，其余均为库内已有（hyperframes/remotion/higgsfield/hallmark/marketingskills）；skillhub.cn 首页飙升榜首换为 suno AI 写歌音乐生成（此前 ima-skills），音乐生成非五章节且详情页无 GitHub 源码链接无法交叉验证，0 收录；X 侧说明：按 kk 2026-10-19 指令（X 运营全部归 kk、Luna 不登录 X），本档未派 @Hjn8899 登录态浏览器任务，改以公开搜索补位；公开信号：jxxy.net Claude Motion 五种赚钱路径（10-31，11-13 已记，Motion 仅 Team/Enterprise beta，Higgsfield Katana 无独立开源仓）、youmind Fable 5 月入 $9000 指南（Fable 5 + Whisper + ffmpeg + Remotion + Higgsfield + ElevenLabs 全链路，工具均库内已有，无新仓）、YouTube「Claude Code Can Now Clip ANY Video」（免费剪辑 skill 走 Skool 付费社群、无公开 GitHub 仓，无法星数交叉验证不收，记需求信号——长视频切竖屏仍是热门需求，库内已有 youtube-clipper/cutcraft/video-editing-skill 三条落点）；热度洞察一句话：口播剪辑终于等来中文实测 SOP——大师的AI小灶 5.3 万浏览教程两天内被整理成 50★ skill 入库，而去 AI 味 unslop 两日再涨 502、hallmark 再涨 641 仍是全库最陡的需求线，ffmpeg-skill 五日 +2456 说明“剪辑”正在接过“生成”的接力棒——连续四档 0 新收后首次开张，新供给仍稀缺，库的增长点继续从“收新仓”转向“盯着头部仓的迭代”
 - 2026-11-17 晚档：v5.2 星数刷新专档（0 新增），共 190 个 skills；头部 15 仓 GitHub API 实测：heydamir/unslop 17304→17825（+521，仍是全库最陡的需求线）、anthropics/skills 196103→196785（+682）、Nutlope/hallmark 56189→56944（+755）、Vincentwei1021/video-shotcraft 20632→21032（+400）、heygen-com/hyperframes 85291→86041（+750）、wheresryan22/anatomy 27719→27892（+173）、lemomo-ai/lemo-opuscar 17314→17880（+566）、blader/humanizer 69942→70413（+471）、AgriciDaniel/claude-seo 30079→30422（+343）、OpenMontageInc/OpenMontage 81038→81370（+332）、coreyhaines31/marketingskills 60842→61059（+217）、Jakeschincariol/instagram-agent-skill 6834→6995（+161）、Jakeschincariol/youtube-agent-skill 6177→6309（+132）、kaomei/stickman-video-director 6636→6794（+158）、phileiny/h3-storyboard-skill 198 未变；另刷新 10 项：kajisho5/ffmpeg-skill 5588→7776（+2188，三日暴涨，IG“五大剪辑 skills”帖与多篇实测指南引流，推送时间 2026-11-18，仍在分钟级爬升）、dreammis/social-auto-upload 16548→16642（+94）、Jakeschincariol/founder-skill 3669→4050（+381）、remotion-dev/skills 7128→7437（+309）、ComposioHQ/awesome-claude-skills 79660→79748、alirezarezvani/claude-skills 29914→30000、nidhinjs/prompt-master 16068→16111、irinabuht12-oss/marketing-skills 8038→8176、joeseesun/qiaomu-anything-to-notebooklm 6522→6524、JimLiu/baoyu-skills 27548→27645、mattypark/Motion-graphics-skill 69→74；0 回落；去重/淘汰/记信号：GitHub `claude skills` 前 15 全已入库或淘汰（ComposioHQ/alirezarezvani/prompt-master/unslop/marketing-skills/qiaomu/instagram-agent-skill/youtube-agent-skill 库内已有仅刷新；travisvn/BehiSecc 纯目录先例、Jeffallan/dev-browser 开发向、SnailSploit 安全向、replica-skill 开发向淘汰先例延续、sergebulaev/linkedin-skills LinkedIn 场景淘汰先例延续、day-trader-skill 日内交易决策类不收）；补充关键词（seedance / short drama / motion graphics / video editing / viral hooks / xiaohongshu）新命中全库内已有、重叠或未达硬线：robonuggets/alchaincyf/LeoYeAI（seedance 三仓）库内已有、xixihhhh/YvonneMovingon/muxia0396（短剧三仓）库内已有、znyupup/ai-video-editing-skill 183★ 与 maxazure 重叠先例延续、white0dew 3614★/autoclaw-cc 2050★ 自动发布类封号风险先例延续、freestylefly 98★ 付费 API 包装先例延续、DeliciousBuding 43★ 采集发布类不收、charlie947/motion-graphics-skills 709★（v4.8 观察先例延续，2026-10-11 后未更新）、Liamrjohnston/remotion-motion-graphics-skill 170★（Remotion 路由重叠观察先例延续）、imMamdouhaboammar/motion-graphics-skills 61★（LICENSE 未识别、疑似拼装观察先例延续）、mini20201314-crypto/xhs-ai-tools-writer 45★（2026-07-27 后零更新观察先例延续）、bytedance/agentkit-samples 492★（平台样品形态观察先例延续）、AokiFish/luca-skills 2★/timkoda/seedance-skill 10★/wwaa34682-lab 15★/Puhua-AI-Research 5★ 未达 star>20 硬线、awesome-short-drama-skills 2509★ 纯目录先例延续；新核验 1 项不收：worldwonderer/drama-skills 4409★ MIT（clelp.ai 11-17 视频榜单列出）——实测为 zenstory-ai/drama-skills（库内 v4.2 已收）的完整镜像：README 全文引用 zenstory-ai 品牌与安装命令、13 个 SKILL.md 与原仓一致、星数与推送时间（2026-11-16）与原仓完全相同，属重复镜像不另立；IG 信号：@david_knowsai 10-29“五大剪辑 skills”帖（Ghost Editor/FFmpeg/Higgsfield 动效/Claude Shorts/OpenMontage）均为库内已有概念，“Claude Shorts”对应 TakeOff-Team/claude-shortform-video-editor 仅 13★ 未达硬线、Ghost Editor 无公开仓库；@zachdoesai_ 10-18“5 Secret Video Editing Codes”同源（jakeschincariol-edit，库内已有）；skills.sh Trending（24h）新面孔：proseify.xyz anti-prose-slop（去 AI 味散文向，GitHub 仅 Dionisselami/proseify-plugins 0★，未达硬线，记信号——去 AI 味正在从 UI/文案扩到散文体）、vercel-labs/agent-browser 19.7K（dev 向）、flowkit website-builder 15.6K（dev 向）、autonnel 8★ 未达硬线、antibrow/liarjs 系反检测规避工具不收、juliusbrussee/caveman 与 emilkowalski/skills 均为 dev/设计向章节不合；All Time 仍老面孔（find-skills 4.4M、grill-me 1.6M、hyperframes 簇库内已有；flowkit reddit-automation 1.4M 对 31★、runcomfy video-edit 449.8K 对 61★、gencraft ai-music 607.7K 对 3★、uizze ios-design 419.6K 对 85★，防刷量均不收）；skillhub.cn 首页飙升榜首仍为 ima-skills（149.3万，OpenClaw 生态第二大脑向）、多引擎搜索 1107.9万，详情页无 GitHub 源码链接无法交叉验证，0 收录；X 侧说明：按 kk 2026-10-19 指令（X 运营全部归 kk、Luna 不登录 X），本档未派 @Hjn8899 登录态浏览器任务，改以公开搜索补位；公开信号：日文 smart-eight.jp 11-03“视频制作·编辑 skills 14 选”全为库内已有（Remotion/HyperFrames/huashu-motion/animate/vibe-knowledge-film/claude-code-video-toolkit/video-use/motion-prompt/motion-graphics-skills/Higgsfield/ElevenLabs）；clelp.ai 11-17 视频榜单其余条目均为库内已有（video-shotcraft/rea-video/social-auto-upload）；aihustletracker 11-07“用 AI 做视频和音乐”方法指南无新仓；热度洞察一句话：去 AI 味仍是全库最陡的需求线（unslop 一日再涨 521、hallmark 再涨 755），而 ffmpeg-skill 三日 +2188 说明“剪辑”正在接过“生成”的接力棒——连续四档 0 新收，新供给仍在放缓，库的增长点继续从“收新仓”转向“盯着头部仓的迭代”
 - 2026-11-16 晚档：v5.1 星数刷新专档（0 新增），共 190 个 skills；头部 15 仓 GitHub API 实测：heydamir/unslop 16797→17304（+507，仍是全库最陡的需求线）、anthropics/skills 195417→196103（+686）、Nutlope/hallmark 55553→56189（+636）、Vincentwei1021/video-shotcraft 20118→20632（+514）、heygen-com/hyperframes 84781→85291（+510）、wheresryan22/anatomy 27508→27719（+211）、lemomo-ai/lemo-opuscar 16817→17314（+497）、blader/humanizer 69506→69942（+436）、AgriciDaniel/claude-seo 29748→30079（+331）、OpenMontageInc/OpenMontage 80746→81038（+292）、coreyhaines31/marketingskills 60605→60842（+237）、Jakeschincariol/instagram-agent-skill 6646→6834（+188）、Jakeschincariol/youtube-agent-skill 6047→6177（+130）、kaomei/stickman-video-director 6467→6636（+169）、phileiny/h3-storyboard-skill 197→198（+1）；另刷新 6 项：ComposioHQ/awesome-claude-skills 79512→79660、alirezarezvani/claude-skills 29817→29914、nidhinjs/prompt-master 15981→16068、irinabuht12-oss/marketing-skills 7712→8038（+326）、joeseesun/qiaomu-anything-to-notebooklm 6513→6522、mattypark/Motion-graphics-skill 62→69；0 回落；去重/淘汰/记信号：GitHub `claude skills` 前 15 全已入库或淘汰（ComposioHQ/alirezarezvani/prompt-master/unslop/marketing-skills/qiaomu/instagram-agent-skill/youtube-agent-skill 库内已有仅刷新；travisvn/BehiSecc 纯目录先例、Jeffallan/dev-browser 开发向、SnailSploit 安全向、replica-skill 开发向淘汰先例延续、sergebulaev/linkedin-skills LinkedIn 场景淘汰先例延续、day-trader-skill 日内交易决策类不收）；补充关键词（seedance / short drama / motion graphics）新命中全库内已有或未达硬线：charlie947/motion-graphics-skills 702★（13 skills，launch-video SKILL.md 仅 4.5KB 偏薄，与库内 Barty-Bart 同角度不堆，v4.8 观察先例延续）、Liamrjohnston/remotion-motion-graphics-skill 166★（Remotion 路由与库内官方条目重叠，v4.8 观察先例延续）、imMamdouhaboammar/motion-graphics-skills 58★（109 个 SKILL.md，LICENSE 未识别，半数网页设计向、疑似拼装，暂不堆）、timkoda/seedance-skill 10★ 未达硬线、wwaa34682-lab/novel-to-short-drama-skill 15★ 未达硬线、awesome-short-drama-skills 2451★ 纯目录先例延续；skills.sh All Time 实测仍老面孔（find-skills 4.4M、grill-me 1.6M、hyperframes 簇库内已有；flowkit reddit-automation 1.4M 对 31★、runcomfy video-edit 449.4K 对 61★、gencraft ai-music 592.6K 对 3★、uizze ios-design 419.5K 对 85★，防刷量均不收；新面孔 pbakaus/impeccable 413.3K install 对 111435★——设计词汇 skill，2026-10-30 淘汰先例延续不收、leonxlnx/taste-skill 设计向淘汰先例延续、stablyai/orca 与 microsoft/azure-skills 及 prisma/supabase/neon 均为 dev 向、llllllama/rigorpilot-skills 研究向，均章节不合）；skillhub.cn 飙升榜首仍为 ima-skills（148.5万，OpenClaw 生态第二大脑向，详情页无 GitHub 源码链接无法交叉验证，0 收录）；X 侧说明：按 kk 2026-10-19 指令（X 运营全部归 kk、Luna 不登录 X），本档未派 @Hjn8899 登录态浏览器任务，改以公开搜索补位——公开信号：日文 Claude Code 副业 7 模式文章已更新（AI 音乐视频 YouTube 频道 9 月约 12.8 万日元，11-15 已记，无具体 skill 仓，记需求信号）、Leon Petrou「11 Second Edit」11 秒剪辑仍为 futurise.com 等候名单产品、无公开 GitHub 仓（11-16 待核查项闭环，不收）、Meta Edits 桌面版 + Claude MCP 教程所附「Reels Master Creator」skill 走 Skool 付费社群、无公开仓，不收；热度洞察一句话：去 AI 味仍是全库最陡的需求线（unslop 一日再涨 507、hallmark 再涨 636），而 anthropics 一日 +686 与 video-shotcraft +514 说明“官方大仓 + 看片拆片”两条头部还在加速——连续两档 0 新收，新供给正在变慢，库的增长点正在从“收新仓”转向“盯着头部仓的迭代”
 - 2026-11-15 晚档：v5.0 星数刷新专档（0 新增），共 190 个 skills；头部 15 仓 GitHub API 实测：heydamir/unslop 16059→16797（+738，仍是全库最陡的需求线）、anthropics/skills 194661→195417（+756）、Nutlope/hallmark 55069→55553（+484）、Vincentwei1021/video-shotcraft 19650→20118（+468）、heygen-com/hyperframes 84374→84781（+407）、wheresryan22/anatomy 27337→27508、lemomo-ai/lemo-opuscar 16245→16817（+572）、blader/humanizer 69152→69506、AgriciDaniel/claude-seo 29406→29748、calesthio/OpenMontage 80513→80746（仓库已迁至 OpenMontageInc/OpenMontage，来源链接已同步修正）、coreyhaines31/marketingskills 60354→60605、Jakeschincariol/instagram-agent-skill 6469→6646、Jakeschincariol/youtube-agent-skill 5935→6047、kaomei/stickman-video-director 6315→6467、phileiny/h3-storyboard-skill 197 未变；0 回落；去重/淘汰/记信号：GitHub `claude skills` 前 15 全已入库或淘汰（ComposioHQ/alirezarezvani/prompt-master/unslop/marketing-skills/qiaomu/instagram-agent-skill/youtube-agent-skill 库内已有仅刷新；travisvn/BehiSecc 纯目录先例、Jeffallan/dev-browser 开发向、SnailSploit 安全向、replica-skill 开发向淘汰先例延续、sergebulaev/linkedin-skills LinkedIn 场景淘汰先例延续、day-trader-skill 日内交易决策类不收）；补充关键词（video editing / short drama / motion graphics / copywriting / seedance）新命中全 ≤3★ 未达 star>20 硬线；观察仓：bytedance/agentkit-samples 489★（火山 AgentKit 官方样品库，新增实测：byted-bp-seedance-viral-creative-rewrite-skill 的 SKILL.md 真实完整、模板视频+产品图改写广告视频、带确认门与成本预警，但整库 100+ skills+教程共用 489★、热度无法归因到单个 skill，且为平台样品形态，观察先例延续不收）、imMamdouhaboammar/motion-graphics-skills 57★（109 个 SKILL.md，LICENSE 未识别，半数网页设计向、疑似拼装，与 v4.8 三条重叠，暂不堆）、mini20201314-crypto/xhs-ai-tools-writer 45★（2026-07-27 后零更新，暂不收）、AokiFish/luca-skills 2★ 未达硬线、renoise-ai/renoise-skills 本轮实测已 404（观察关闭）；skills.sh Trending 实测：新面孔 iannuttall/seo 628★（11-13 已评估：Search Console 真实数据 SEO，MCP/CLI 为主，与库内 claude-seo 重叠不堆）、dietrichgebert/ponytail 191504★（dev 向）、wind-alice/alicemarket 160★（金融数据 MCP，无 LICENSE，章节不合）、llllllama/rigorpilot-skills 486★（研究向）、autonnel/autonnel-skills 8★ 未达硬线、qu-skills/superpowers 4★ 未达硬线，其余仍为老面孔（gencraft 15.5K install 对 3★、flowkit reddit-automation 15.4K 对 31★、uizze 对 85★，防刷量均不收；hyperframes/remotion/mattpocock/hallmark/marketingskills 库内已有）；skillhub.cn 飙升榜：ima-skills 144.2万、多引擎搜索 1103.6万，视频全能创作 164.5万继续涨但详情页无 GitHub 源码链接无法交叉验证，0 收录；X 侧说明：按 kk 2026-10-19 指令（X 运营全部归 kk、Luna 不登录 X），本档未派 @Hjn8899 登录态浏览器任务，改以公开搜索补位——公开信号：justinmckelvey 11-12 Claude Motion vs Claude Code + Remotion 对照（11-14 已记，Motion 仅 Team/Enterprise beta，Remotion 路线库内已有）、Nilavil Pro Video Editor 付费 skill（₹2,999、无公开仓，11-14 已记）、jxxy.net 房产经纪人六 skill 流水线（11-13 已记，私有分发）、freakyjolly「Claude Skills for YouTube：10 Free SKILL.md」（频道简报/选题/脚本/钩子/SEO/缩略图/Shorts 改写等 10 个，站内下载、无 GitHub 仓无法星数交叉验证，且与库内 youtube-agent-skill 重叠，不收）、Leon Petrou「my-reel」11 秒剪辑 skill stack（11-13 发帖、11-16 上线，未见公开仓，待上线后核查）、日文 Claude Code 副业 7 模式（AI 音乐视频 YouTube 频道实测月 6–8 万日元、2026 年 8 月首破 10 万日元，Suno+fal.ai+Filmora 工作流，无具体 skill 仓，记需求信号——音乐 MV 频道仍是可验证的变现路径，库内已有 makevoid/mv-director 两条落点）、Facebook Higgsfield /shorts-studio 推广帖（Higgsfield 官方 skills 库内已有）；热度洞察一句话：去 AI 味仍是全库最陡的需求线（unslop 一日再涨 738、hallmark 再涨 484），而 video-shotcraft 一天 +468 与 lemo-opuscar +572 说明“先看片再拆片”和“代码出片”的头部还在加速——但本轮 0 新收也说明，新供给正在变慢，库的增长点正在从“收新仓”转向“盯着头部仓的迭代”
